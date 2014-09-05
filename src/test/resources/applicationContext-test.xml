@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:property-placeholder location="timetool.properties,timetool-test.properties"/>
+	
+	<import resource="applicationContext.xml" />
+	
+	<bean id="testGetBeansByType1" class="java.lang.String">
+		<constructor-arg value="test1" type="java.lang.String" />
+	</bean>
+	<bean id="testGetBeansByType2" class="java.lang.String">
+		<constructor-arg value="test2" type="java.lang.String" />
+	</bean>
+
+</beans>
