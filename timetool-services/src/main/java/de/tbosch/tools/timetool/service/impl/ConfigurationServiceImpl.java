@@ -11,9 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.tbosch.tools.timetool.dao.ConfigurationDao;
 import de.tbosch.tools.timetool.model.Configuration;
 import de.tbosch.tools.timetool.model.Configuration.Key;
+import de.tbosch.tools.timetool.repository.ConfigurationRepository;
 import de.tbosch.tools.timetool.service.ConfigurationService;
 import de.tbosch.tools.timetool.utils.LogUtils;
 
@@ -33,19 +33,19 @@ public class ConfigurationServiceImpl implements ConfigurationService {
 	private static final String DELIMITER = "@#;#@";
 
 	@Autowired
-	private ConfigurationDao configurationDao;
+	private ConfigurationRepository configurationRepository;
 
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public String getValue(Key key) {
-		String value = configurationDao.findValue(key);
-		if (value == null) {
+		Configuration configuration = configurationRepository.findByKey(key);
+		if (configuration == null || configuration.getValue() == null) {
 			LogUtils.logWarn("Configuration for key " + key + " not found", LOG);
 			return null;
 		}
-		return value;
+		return configuration.getValue();
 	}
 
 	/**
@@ -55,16 +55,16 @@ public class ConfigurationServiceImpl implements ConfigurationService {
 	public void setValue(Key key, String value) {
 		Validate.notNull(key, "the key should not be null");
 		Validate.notNull(value, "the value should not be null");
-		Configuration configuration = configurationDao.findByKey(key);
+		Configuration configuration = configurationRepository.findByKey(key);
 		if (configuration == null) {
 			configuration = new Configuration();
 			configuration.setKey(key);
 			configuration.setValue(value);
-			configurationDao.create(configuration);
+			configurationRepository.save(configuration);
 			LogUtils.logInfo("New configuration for key " + key + " was created: " + value, LOG);
 		} else {
 			configuration.setValue(value);
-			configurationDao.update(configuration);
+			configurationRepository.save(configuration);
 			LogUtils.logDebug("New configuration for key " + key + " is now: " + value, LOG);
 		}
 	}
@@ -74,7 +74,7 @@ public class ConfigurationServiceImpl implements ConfigurationService {
 	 */
 	@Override
 	public List<String> getValueList(Key key) {
-		Configuration configuration = configurationDao.findByKey(key);
+		Configuration configuration = configurationRepository.findByKey(key);
 		if (configuration == null) {
 			LogUtils.logWarn("Configuration for key " + key + " not found", LOG);
 			return null;
@@ -92,7 +92,7 @@ public class ConfigurationServiceImpl implements ConfigurationService {
 	public void setValueList(Key key, List<String> values) {
 		Validate.notNull(key, "the key should not be null");
 		Validate.notNull(values, "the value list should not be null");
-		Configuration configuration = configurationDao.findByKey(key);
+		Configuration configuration = configurationRepository.findByKey(key);
 		String valuesString = "";
 		for (String value : values) {
 			valuesString += value + DELIMITER;
@@ -101,11 +101,11 @@ public class ConfigurationServiceImpl implements ConfigurationService {
 			configuration = new Configuration();
 			configuration.setKey(key);
 			configuration.setValue(valuesString);
-			configurationDao.create(configuration);
+			configurationRepository.save(configuration);
 			LogUtils.logInfo("New configuration for key " + key + " was created: " + valuesString, LOG);
 		} else {
 			configuration.setValue(valuesString);
-			configurationDao.update(configuration);
+			configurationRepository.save(configuration);
 			LogUtils.logDebug("New configuration for key " + key + " is now: " + valuesString, LOG);
 		}
 	}

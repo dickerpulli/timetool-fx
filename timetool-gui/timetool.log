@@ -2025,3 +2025,168 @@ java.lang.ClassCastException: org.springframework.orm.hibernate4.SessionHolder c
 [05.09.2014, 15:38:04,518] [AWT-EventQueue-0] WARN  de.tbosch.tools.timetool.service.impl.ConfigurationServiceImpl  - Configuration for key LAST_USED_USER not found
 [05.09.2014, 15:38:04,520] [AWT-EventQueue-0] WARN  de.tbosch.tools.timetool.service.impl.ConfigurationServiceImpl  - Configuration for key LAST_USED_PASS not found
 [05.09.2014, 15:38:04,526] [AWT-EventQueue-0] WARN  de.tbosch.tools.timetool.service.impl.ConfigurationServiceImpl  - Configuration for key LAST_USED_PASS_SAVE not found
+[06.09.2014, 00:04:41,862] [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@170fbe75: startup date [Sat Sep 06 00:04:41 CEST 2014]; root of context hierarchy
+[06.09.2014, 00:04:41,911] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext.xml]
+[06.09.2014, 00:04:42,041] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/home/thomas/Entwicklung/git/timetool-fx/timetool-services/target/classes/applicationContext-services.xml]
+[06.09.2014, 00:04:42,263] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/home/thomas/Entwicklung/git/timetool-fx/timetool-jira/target/classes/applicationContext-jira.xml]
+[06.09.2014, 00:04:42,474] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool-services.properties]
+[06.09.2014, 00:04:42,485] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool.properties]
+[06.09.2014, 00:04:42,741] [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean  - Building JPA container EntityManagerFactory for persistence unit 'default'
+[06.09.2014, 00:04:42,776] [main] INFO  org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[06.09.2014, 00:04:42,863] [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.6.Final}
+[06.09.2014, 00:04:42,864] [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+[06.09.2014, 00:04:42,866] [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+[06.09.2014, 00:04:43,064] [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[06.09.2014, 00:04:43,414] [main] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - Database closed
+[06.09.2014, 00:04:43,594] [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+[06.09.2014, 00:04:43,742] [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+[06.09.2014, 00:04:43,783] [main] INFO  org.hibernate.validator.internal.util.Version  - HV000001: Hibernate Validator 5.1.2.Final
+[06.09.2014, 00:04:44,475] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Initializing ExecutorService  'timer'
+[06.09.2014, 00:04:44,729] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Shutting down ExecutorService 'timer'
+[06.09.2014, 00:04:44,733] [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean  - Closing JPA EntityManagerFactory for persistence unit 'default'
+[06.09.2014, 00:11:51,647] [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@58ee9368: startup date [Sat Sep 06 00:11:51 CEST 2014]; root of context hierarchy
+[06.09.2014, 00:11:51,743] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext.xml]
+[06.09.2014, 00:11:51,898] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/home/thomas/Entwicklung/git/timetool-fx/timetool-services/target/classes/applicationContext-services.xml]
+[06.09.2014, 00:11:52,125] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/home/thomas/Entwicklung/git/timetool-fx/timetool-jira/target/classes/applicationContext-jira.xml]
+[06.09.2014, 00:11:52,345] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool-services.properties]
+[06.09.2014, 00:11:52,356] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool.properties]
+[06.09.2014, 00:11:52,609] [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean  - Building JPA container EntityManagerFactory for persistence unit 'default'
+[06.09.2014, 00:11:52,640] [main] INFO  org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[06.09.2014, 00:11:52,717] [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.6.Final}
+[06.09.2014, 00:11:52,718] [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+[06.09.2014, 00:11:52,720] [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+[06.09.2014, 00:11:52,938] [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[06.09.2014, 00:11:53,289] [main] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - Database closed
+[06.09.2014, 00:11:53,468] [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+[06.09.2014, 00:11:53,609] [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+[06.09.2014, 00:11:53,645] [main] INFO  org.hibernate.validator.internal.util.Version  - HV000001: Hibernate Validator 5.1.2.Final
+[06.09.2014, 00:11:54,343] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Initializing ExecutorService  'timer'
+[06.09.2014, 00:11:54,524] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Initializing ExecutorService  'iconTimer'
+[06.09.2014, 00:11:54,539] [Thread-3] INFO  de.tbosch.tools.timetool.TimetoolThread  - running thread
+[06.09.2014, 00:11:54,754] [Thread-3] INFO  de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl  - No active timeslot found
+[06.09.2014, 00:11:54,841] [Thread-3] INFO  org.springframework.jdbc.datasource.init.ScriptUtils  - Executing SQL script from class path resource [hsqldb-init.sql]
+[06.09.2014, 00:11:54,843] [Thread-3] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - Checkpoint start
+[06.09.2014, 00:11:54,844] [Thread-3] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - checkpointClose start
+[06.09.2014, 00:11:54,854] [Thread-3] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - checkpointClose end
+[06.09.2014, 00:11:54,855] [Thread-3] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - Checkpoint end - txts: 119
+[06.09.2014, 00:11:54,855] [Thread-3] INFO  org.springframework.jdbc.datasource.init.ScriptUtils  - Executed SQL script from class path resource [hsqldb-init.sql] in 14 ms.
+[06.09.2014, 00:12:04,716] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl  - Delete timeslot for projectId = xxx and starttime = 2014-09-05 15:01:09.577
+[06.09.2014, 00:12:09,106] [AWT-EventQueue-0] ERROR de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl  - No active project found to start a timeslot
+[06.09.2014, 00:12:09,107] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.SwingExceptionHandler  - exception thrown - handle exception in AWTExceptioHandler
+[06.09.2014, 00:12:21,674] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.SwingExceptionHandler  - exception thrown - handle exception in AWTExceptioHandler
+[06.09.2014, 00:12:44,216] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.SwingExceptionHandler  - exception thrown - handle exception in AWTExceptioHandler
+[06.09.2014, 00:13:37,020] [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@58ee9368: startup date [Sat Sep 06 00:13:37 CEST 2014]; root of context hierarchy
+[06.09.2014, 00:13:37,076] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext.xml]
+[06.09.2014, 00:13:37,203] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/home/thomas/Entwicklung/git/timetool-fx/timetool-services/target/classes/applicationContext-services.xml]
+[06.09.2014, 00:13:37,433] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/home/thomas/Entwicklung/git/timetool-fx/timetool-jira/target/classes/applicationContext-jira.xml]
+[06.09.2014, 00:13:37,662] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool-services.properties]
+[06.09.2014, 00:13:37,669] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool.properties]
+[06.09.2014, 00:13:37,877] [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean  - Building JPA container EntityManagerFactory for persistence unit 'default'
+[06.09.2014, 00:13:37,903] [main] INFO  org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[06.09.2014, 00:13:38,004] [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.6.Final}
+[06.09.2014, 00:13:38,005] [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+[06.09.2014, 00:13:38,007] [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+[06.09.2014, 00:13:38,207] [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[06.09.2014, 00:13:38,525] [main] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - checkpointClose start
+[06.09.2014, 00:13:38,540] [main] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - checkpointClose end
+[06.09.2014, 00:13:38,568] [main] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - Database closed
+[06.09.2014, 00:13:38,776] [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+[06.09.2014, 00:13:38,944] [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+[06.09.2014, 00:13:38,990] [main] INFO  org.hibernate.validator.internal.util.Version  - HV000001: Hibernate Validator 5.1.2.Final
+[06.09.2014, 00:13:39,704] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Initializing ExecutorService  'timer'
+[06.09.2014, 00:13:39,907] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Initializing ExecutorService  'iconTimer'
+[06.09.2014, 00:13:39,924] [Thread-3] INFO  de.tbosch.tools.timetool.TimetoolThread  - running thread
+[06.09.2014, 00:13:40,221] [Thread-3] INFO  de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl  - No active timeslot found
+[06.09.2014, 00:13:40,257] [Thread-3] INFO  org.springframework.jdbc.datasource.init.ScriptUtils  - Executing SQL script from class path resource [hsqldb-init.sql]
+[06.09.2014, 00:13:40,264] [Thread-3] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - Checkpoint start
+[06.09.2014, 00:13:40,264] [Thread-3] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - checkpointClose start
+[06.09.2014, 00:13:40,287] [Thread-3] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - checkpointClose end
+[06.09.2014, 00:13:40,287] [Thread-3] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - Checkpoint end - txts: 111
+[06.09.2014, 00:13:40,288] [Thread-3] INFO  org.springframework.jdbc.datasource.init.ScriptUtils  - Executed SQL script from class path resource [hsqldb-init.sql] in 31 ms.
+[06.09.2014, 00:13:41,672] [AWT-EventQueue-0] ERROR de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl  - No active project found to start a timeslot
+[06.09.2014, 00:13:41,672] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.SwingExceptionHandler  - exception thrown - handle exception in AWTExceptioHandler
+[06.09.2014, 00:14:11,724] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.SwingExceptionHandler  - exception thrown - handle exception in AWTExceptioHandler
+[06.09.2014, 00:22:16,334] [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@58ee9368: startup date [Sat Sep 06 00:22:16 CEST 2014]; root of context hierarchy
+[06.09.2014, 00:22:16,396] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext.xml]
+[06.09.2014, 00:22:16,525] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/home/thomas/Entwicklung/git/timetool-fx/timetool-services/target/classes/applicationContext-services.xml]
+[06.09.2014, 00:22:16,758] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/home/thomas/Entwicklung/git/timetool-fx/timetool-jira/target/classes/applicationContext-jira.xml]
+[06.09.2014, 00:22:16,979] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool-services.properties]
+[06.09.2014, 00:22:16,990] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool.properties]
+[06.09.2014, 00:22:17,241] [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean  - Building JPA container EntityManagerFactory for persistence unit 'default'
+[06.09.2014, 00:22:17,272] [main] INFO  org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[06.09.2014, 00:22:17,353] [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.6.Final}
+[06.09.2014, 00:22:17,354] [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+[06.09.2014, 00:22:17,356] [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+[06.09.2014, 00:22:17,567] [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[06.09.2014, 00:22:17,939] [main] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - Database closed
+[06.09.2014, 00:22:18,128] [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+[06.09.2014, 00:22:18,281] [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+[06.09.2014, 00:22:18,325] [main] INFO  org.hibernate.validator.internal.util.Version  - HV000001: Hibernate Validator 5.1.2.Final
+[06.09.2014, 00:22:19,089] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Initializing ExecutorService  'timer'
+[06.09.2014, 00:22:19,325] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Initializing ExecutorService  'iconTimer'
+[06.09.2014, 00:22:19,343] [Thread-3] INFO  de.tbosch.tools.timetool.TimetoolThread  - running thread
+[06.09.2014, 00:22:19,562] [Thread-3] INFO  de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl  - No active timeslot found
+[06.09.2014, 00:22:19,599] [Thread-3] INFO  org.springframework.jdbc.datasource.init.ScriptUtils  - Executing SQL script from class path resource [hsqldb-init.sql]
+[06.09.2014, 00:22:19,602] [Thread-3] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - Checkpoint start
+[06.09.2014, 00:22:19,602] [Thread-3] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - checkpointClose start
+[06.09.2014, 00:22:19,617] [Thread-3] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - checkpointClose end
+[06.09.2014, 00:22:19,618] [Thread-3] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - Checkpoint end - txts: 111
+[06.09.2014, 00:22:19,619] [Thread-3] INFO  org.springframework.jdbc.datasource.init.ScriptUtils  - Executed SQL script from class path resource [hsqldb-init.sql] in 20 ms.
+[06.09.2014, 00:22:27,264] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.SwingExceptionHandler  - exception thrown - handle exception in AWTExceptioHandler
+[06.09.2014, 00:23:21,351] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.service.impl.CustomerServiceImpl  - Create a new customer with name ''
+[06.09.2014, 00:23:21,397] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.SwingExceptionHandler  - exception thrown - handle exception in AWTExceptioHandler
+[06.09.2014, 00:23:35,737] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.service.impl.CustomerServiceImpl  - Create a new customer with name 'dd'
+[06.09.2014, 00:23:38,707] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.service.impl.ProjectServiceImpl  - Creates a new project with name 'ss'
+[06.09.2014, 00:23:42,535] [Thread-3] INFO  de.tbosch.tools.timetool.TimetoolThread  - exiting thread
+[06.09.2014, 00:23:42,536] [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Closing org.springframework.context.support.ClassPathXmlApplicationContext@58ee9368: startup date [Sat Sep 06 00:22:16 CEST 2014]; root of context hierarchy
+[06.09.2014, 00:23:42,537] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Shutting down ExecutorService 'iconTimer'
+[06.09.2014, 00:23:42,550] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Shutting down ExecutorService 'timer'
+[06.09.2014, 00:23:42,552] [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean  - Closing JPA EntityManagerFactory for persistence unit 'default'
+[06.09.2014, 00:23:46,024] [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@170fbe75: startup date [Sat Sep 06 00:23:46 CEST 2014]; root of context hierarchy
+[06.09.2014, 00:23:46,070] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext.xml]
+[06.09.2014, 00:23:46,379] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/home/thomas/Entwicklung/git/timetool-fx/timetool-services/target/classes/applicationContext-services.xml]
+[06.09.2014, 00:23:46,614] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/home/thomas/Entwicklung/git/timetool-fx/timetool-jira/target/classes/applicationContext-jira.xml]
+[06.09.2014, 00:23:46,839] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool-services.properties]
+[06.09.2014, 00:23:46,849] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool.properties]
+[06.09.2014, 00:23:47,097] [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean  - Building JPA container EntityManagerFactory for persistence unit 'default'
+[06.09.2014, 00:23:47,128] [main] INFO  org.hibernate.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[06.09.2014, 00:23:47,220] [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.6.Final}
+[06.09.2014, 00:23:47,221] [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+[06.09.2014, 00:23:47,222] [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+[06.09.2014, 00:23:47,421] [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[06.09.2014, 00:23:47,752] [main] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - checkpointClose start
+[06.09.2014, 00:23:47,767] [main] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - checkpointClose end
+[06.09.2014, 00:23:47,788] [main] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - Database closed
+[06.09.2014, 00:23:47,981] [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+[06.09.2014, 00:23:48,144] [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+[06.09.2014, 00:23:48,190] [main] INFO  org.hibernate.validator.internal.util.Version  - HV000001: Hibernate Validator 5.1.2.Final
+[06.09.2014, 00:23:48,908] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Initializing ExecutorService  'timer'
+[06.09.2014, 00:23:49,132] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Initializing ExecutorService  'iconTimer'
+[06.09.2014, 00:23:49,148] [Thread-3] INFO  de.tbosch.tools.timetool.TimetoolThread  - running thread
+[06.09.2014, 00:23:49,398] [Thread-3] INFO  de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl  - No active timeslot found
+[06.09.2014, 00:23:49,475] [Thread-3] INFO  org.springframework.jdbc.datasource.init.ScriptUtils  - Executing SQL script from class path resource [hsqldb-init.sql]
+[06.09.2014, 00:23:49,479] [Thread-3] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - Checkpoint start
+[06.09.2014, 00:23:49,479] [Thread-3] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - checkpointClose start
+[06.09.2014, 00:23:49,502] [Thread-3] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - checkpointClose end
+[06.09.2014, 00:23:49,502] [Thread-3] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - Checkpoint end - txts: 114
+[06.09.2014, 00:23:49,502] [Thread-3] INFO  org.springframework.jdbc.datasource.init.ScriptUtils  - Executed SQL script from class path resource [hsqldb-init.sql] in 27 ms.
+[06.09.2014, 00:23:57,465] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.service.impl.ProjectServiceImpl  - Set the project with name = ss as active
+[06.09.2014, 00:23:58,249] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl  - Create new timeslot for projectId = 2
+[06.09.2014, 00:23:59,627] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl  - Update endtime for timeslot, timeslotId = 2
+[06.09.2014, 00:24:01,095] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl  - Create new timeslot for projectId = 2
+[06.09.2014, 00:24:03,172] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl  - Update endtime for timeslot, timeslotId = 3
+[06.09.2014, 00:24:11,052] [Thread-3] INFO  de.tbosch.tools.timetool.TimetoolThread  - exiting thread
+[06.09.2014, 00:24:11,053] [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Closing org.springframework.context.support.ClassPathXmlApplicationContext@170fbe75: startup date [Sat Sep 06 00:23:46 CEST 2014]; root of context hierarchy
+[06.09.2014, 00:24:11,057] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Shutting down ExecutorService 'iconTimer'
+[06.09.2014, 00:24:11,068] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Shutting down ExecutorService 'timer'
+[06.09.2014, 00:24:11,073] [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean  - Closing JPA EntityManagerFactory for persistence unit 'default'

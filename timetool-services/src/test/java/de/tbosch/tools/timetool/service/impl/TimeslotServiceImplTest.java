@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
 
-import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -32,7 +31,7 @@ public class TimeslotServiceImplTest extends AbstractSpringDbTest {
 	private TimeslotService timeslotService;
 
 	@Before
-	public void before() throws IOException {
+	public void before() throws Exception {
 		executeSql("database/delete-tables.sql");
 		executeSql("database/service/TimeslotServiceImplTest.sql");
 	}

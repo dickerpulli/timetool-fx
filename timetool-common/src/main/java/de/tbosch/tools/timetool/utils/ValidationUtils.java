@@ -1,5 +1,13 @@
 package de.tbosch.tools.timetool.utils;
 
+import java.awt.Color;
+import java.util.Map;
+import java.util.Set;
+
+import javax.swing.JComponent;
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+import javax.validation.Path;
 
 /**
  * Utilities for field validation with hibernate validator.
@@ -18,13 +26,13 @@ public final class ValidationUtils {
 
 		private Class beanClass;
 
-		private String propertyPath;
+		private Path propertyPath;
 
 		/**
 		 * @param beanClass The type of the field data
 		 * @param propertyPath The path in the object tree
 		 */
-		public InputFieldData(Class beanClass, String propertyPath) {
+		public InputFieldData(Class beanClass, Path propertyPath) {
 			super();
 			this.beanClass = beanClass;
 			this.propertyPath = propertyPath;
@@ -47,14 +55,14 @@ public final class ValidationUtils {
 		/**
 		 * @return the propertyPath
 		 */
-		public String getPropertyPath() {
+		public Path getPropertyPath() {
 			return propertyPath;
 		}
 
 		/**
 		 * @param propertyPath the propertyPath to set
 		 */
-		public void setPropertyPath(String propertyPath) {
+		public void setPropertyPath(Path propertyPath) {
 			this.propertyPath = propertyPath;
 		}
 
@@ -67,27 +75,27 @@ public final class ValidationUtils {
 		// Utils
 	}
 
-	// /**
-	// * Notifies all input field on an error.
-	// *
-	// * @param exception The error
-	// * @param inputFields The map of all known input fields
-	// */
-	// @SuppressWarnings("rawtypes")
-	// public static void notifyInputFields(InvalidStateException exception, Map<InputFieldData, JComponent> inputFields) {
-	// InvalidValue[] invalidValues = exception.getInvalidValues();
-	// for (InvalidValue invalidValue : invalidValues) {
-	// String propertyPath = invalidValue.getPropertyPath();
-	// Class beanClass = invalidValue.getBeanClass();
-	// for (InputFieldData inputFieldData : inputFields.keySet()) {
-	// if (inputFieldData.getBeanClass().equals(beanClass) && inputFieldData.getPropertyPath().equals(propertyPath)) {
-	// JComponent component = inputFields.get(inputFieldData);
-	// component.setToolTipText(invalidValue.getMessage());
-	// component.grabFocus();
-	// component.setBackground(Color.RED);
-	// }
-	// }
-	// }
-	// }
+	/**
+	 * Notifies all input field on an error.
+	 *
+	 * @param exception The error
+	 * @param inputFields The map of all known input fields
+	 */
+	@SuppressWarnings("rawtypes")
+	public static void notifyInputFields(ConstraintViolationException exception, Map<InputFieldData, JComponent> inputFields) {
+		Set<ConstraintViolation<?>> invalidValues = exception.getConstraintViolations();
+		for (ConstraintViolation invalidValue : invalidValues) {
+			Path propertyPath = invalidValue.getPropertyPath();
+			Class beanClass = invalidValue.getRootBeanClass();
+			for (InputFieldData inputFieldData : inputFields.keySet()) {
+				if (inputFieldData.getBeanClass().equals(beanClass) && inputFieldData.getPropertyPath().equals(propertyPath)) {
+					JComponent component = inputFields.get(inputFieldData);
+					component.setToolTipText(invalidValue.getMessage());
+					component.grabFocus();
+					component.setBackground(Color.RED);
+				}
+			}
+		}
+	}
 
 }

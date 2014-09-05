@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.tbosch.tools.timetool.dao.CustomerDao;
 import de.tbosch.tools.timetool.model.Customer;
+import de.tbosch.tools.timetool.repository.CustomerRepository;
 import de.tbosch.tools.timetool.service.CustomerService;
 import de.tbosch.tools.timetool.utils.LogUtils;
 
@@ -27,14 +27,14 @@ public class CustomerServiceImpl implements CustomerService {
 	private static final Log LOG = LogFactory.getLog(CustomerServiceImpl.class);
 
 	@Autowired
-	private CustomerDao customerDao;
+	private CustomerRepository customerRepository;
 
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public Customer getCustomer(long customerId) {
-		return customerDao.read(customerId);
+		return customerRepository.findOne(customerId);
 	}
 
 	/**
@@ -43,7 +43,7 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public List<String> getAllCustomerNames() {
 		List<String> names = new ArrayList<String>();
-		List<Customer> customers = customerDao.findAll();
+		List<Customer> customers = customerRepository.findAll();
 		for (Customer customer : customers) {
 			names.add(customer.getName());
 		}
@@ -55,7 +55,7 @@ public class CustomerServiceImpl implements CustomerService {
 	 */
 	@Override
 	public List<Customer> getAllCustomers() {
-		return customerDao.findAll();
+		return customerRepository.findAll();
 	}
 
 	/**
@@ -66,7 +66,7 @@ public class CustomerServiceImpl implements CustomerService {
 		LogUtils.logInfo("Create a new customer with name '" + name + "'", LOG);
 		Customer customer = new Customer();
 		customer.setName(name);
-		return customerDao.create(customer);
+		return customerRepository.save(customer).getId();
 	}
 
 	/**
@@ -74,9 +74,9 @@ public class CustomerServiceImpl implements CustomerService {
 	 */
 	@Override
 	public void deleteCustomer(Customer customer) {
-		Customer customerEntity = customerDao.read(customer.getId());
+		Customer customerEntity = customerRepository.findOne(customer.getId());
 		LogUtils.logInfo("Delete customer with name '" + customerEntity.getName() + "'", LOG);
-		customerDao.delete(customerEntity);
+		customerRepository.delete(customerEntity);
 	}
 
 	/**
@@ -85,9 +85,9 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public void saveCustomer(long id, String name) {
 		LogUtils.logInfo("Save customer with new name '" + name + "'", LOG);
-		Customer customer = customerDao.read(id);
+		Customer customer = customerRepository.findOne(id);
 		customer.setName(name);
-		customerDao.update(customer);
+		customerRepository.save(customer);
 	}
 
 }

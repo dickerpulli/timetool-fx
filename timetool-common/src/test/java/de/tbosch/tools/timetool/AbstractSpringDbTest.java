@@ -1,16 +1,14 @@
 package de.tbosch.tools.timetool;
 
-
-import java.io.IOException;
+import java.sql.Connection;
 
 import javax.sql.DataSource;
 
-import org.junit.Before;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DataSourceUtils;
+import org.springframework.jdbc.datasource.init.ScriptUtils;
 import org.springframework.test.context.transaction.TransactionConfiguration;
-import org.springframework.test.jdbc.JdbcTestUtils;
 import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
@@ -20,15 +18,9 @@ public abstract class AbstractSpringDbTest extends AbstractSpringTest {
 	@Autowired
 	private DataSource dataSource;
 
-	private JdbcTemplate simpleJdbcTemplate;
-
-	@Before
-	public void beforeAbstractDb() {
-		simpleJdbcTemplate = new JdbcTemplate(dataSource);
-	}
-
-	public void executeSql(String filename) throws IOException {
-		JdbcTestUtils.executeSqlScript(simpleJdbcTemplate, new ClassPathResource(filename), false);
+	public void executeSql(String filename) throws Exception {
+		Connection connection = DataSourceUtils.getConnection(dataSource);
+		ScriptUtils.executeSqlScript(connection, new ClassPathResource(filename));
 	}
 
 }

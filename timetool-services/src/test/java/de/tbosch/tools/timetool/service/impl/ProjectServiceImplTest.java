@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
-import java.io.IOException;
+import javax.validation.ConstraintViolationException;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -24,11 +24,15 @@ public class ProjectServiceImplTest extends AbstractSpringDbTest {
 	private ProjectService projectService;
 
 	@Before
-	public void before() throws IOException {
+	public void before() throws Exception {
 		executeSql("database/delete-tables.sql");
 		executeSql("database/service/ProjectServiceImplTest.sql");
 	}
 
+	@Test(expected = ConstraintViolationException.class)
+	public void testNewProject() {
+		projectService.createProject(null, 1L);
+	}
 
 	@Test
 	public void testSetActiveProject() {

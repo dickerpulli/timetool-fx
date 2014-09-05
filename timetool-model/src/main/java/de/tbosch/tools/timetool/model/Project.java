@@ -33,7 +33,7 @@ public class Project {
 	@Column(unique = true)
 	private String name;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@NotNull
 	private Customer customer;
 

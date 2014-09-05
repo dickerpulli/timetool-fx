@@ -3,7 +3,6 @@ package de.tbosch.tools.timetool.service.impl;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -25,7 +24,7 @@ public class ConfigurationServiceImplTest extends AbstractSpringDbTest {
 	private ConfigurationService configurationService;
 
 	@Before
-	public void before() throws IOException {
+	public void before() throws Exception {
 		executeSql("database/delete-tables.sql");
 		executeSql("database/service/ConfigurationServiceImplTest.sql");
 	}

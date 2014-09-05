@@ -2,7 +2,6 @@ package de.tbosch.tools.timetool.service.impl;
 
 import static org.junit.Assert.assertEquals;
 
-import java.io.IOException;
 import java.util.List;
 
 import org.junit.Before;
@@ -22,7 +21,7 @@ public class CustomerServiceImplTest extends AbstractSpringDbTest {
 	private CustomerService customerService;
 
 	@Before
-	public void before() throws IOException {
+	public void before() throws Exception {
 		executeSql("database/delete-tables.sql");
 		executeSql("database/service/CustomerServiceImplTest.sql");
 	}

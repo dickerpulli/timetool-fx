@@ -2,6 +2,7 @@ package de.tbosch.tools.timetool.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -35,7 +36,7 @@ public class Timeslot implements Comparable<Timeslot> {
 	@NotNull
 	private Date endtime;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@NotNull
 	private Project project;
 

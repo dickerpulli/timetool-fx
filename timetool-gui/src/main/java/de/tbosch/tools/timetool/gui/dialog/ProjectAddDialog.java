@@ -18,10 +18,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+import javax.validation.ConstraintViolationException;
+
+import org.hibernate.validator.internal.engine.path.PathImpl;
 
 import de.tbosch.tools.timetool.controller.GuiController;
 import de.tbosch.tools.timetool.model.Customer;
 import de.tbosch.tools.timetool.model.Project;
+import de.tbosch.tools.timetool.utils.ValidationUtils;
 import de.tbosch.tools.timetool.utils.ValidationUtils.InputFieldData;
 import de.tbosch.tools.timetool.utils.context.MessageHelper;
 
@@ -70,7 +74,7 @@ public class ProjectAddDialog extends JDialog {
 		// Add text field for the name
 		constraints = new GridBagConstraints();
 		final JTextField textField = new JTextField();
-		inputFields.put(new InputFieldData(Project.class, "name"), textField);
+		inputFields.put(new InputFieldData(Project.class, PathImpl.createPathFromString("name")), textField);
 		textField.setPreferredSize(new Dimension(200, 24));
 		constraints.insets = new Insets(5, 5, 5, 5);
 		constraints.gridx = 1;
@@ -121,12 +125,12 @@ public class ProjectAddDialog extends JDialog {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// try {
-				guiController.createProject(textField.getText(), ((Customer) customersComboBox.getSelectedItem()).getId());
-				dispose();
-				// } catch (InvalidStateException e1) {
-				// ValidationUtils.notifyInputFields(e1, inputFields);
-				// }
+				try {
+					guiController.createProject(textField.getText(), ((Customer) customersComboBox.getSelectedItem()).getId());
+					dispose();
+				} catch (ConstraintViolationException e1) {
+					ValidationUtils.notifyInputFields(e1, inputFields);
+				}
 			}
 		});
 		JButton cancelButton = new JButton(MessageHelper.getMessage("button.cancel"));
@@ -150,5 +154,4 @@ public class ProjectAddDialog extends JDialog {
 		setResizable(false);
 		pack();
 	}
-
 }

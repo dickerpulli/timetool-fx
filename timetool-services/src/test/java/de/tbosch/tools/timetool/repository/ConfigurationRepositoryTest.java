@@ -1,56 +1,47 @@
-package de.tbosch.tools.timetool.dao.impl;
+package de.tbosch.tools.timetool.repository;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
-
-import java.io.IOException;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import de.tbosch.tools.timetool.AbstractSpringDbTest;
-import de.tbosch.tools.timetool.dao.ConfigurationDao;
 import de.tbosch.tools.timetool.model.Configuration;
 import de.tbosch.tools.timetool.model.Configuration.Key;
 
-public class ConfigurationDaoImplTest extends AbstractSpringDbTest {
+public class ConfigurationRepositoryTest extends AbstractSpringDbTest {
 
 	@Autowired
-	private ConfigurationDao configurationDao;
+	private ConfigurationRepository repository;
 
 	@Before
-	public void before() throws IOException {
+	public void before() throws Exception {
 		executeSql("database/delete-tables.sql");
 		executeSql("database/dao/ConfigurationDaoImplTest.sql");
 	}
 
 	@Test
 	public void testRead() {
-		Configuration config = configurationDao.read(1L);
+		Configuration config = repository.findOne(1L);
 		assertNotNull(config);
 	}
 
 	@Test
-	public void save() {
-		configurationDao.create(new Configuration());
-		configurationDao.flush();
-	}
-
-	@Test
 	public void findValue() {
-		String value = configurationDao.findValue(Key.LAST_USED_PASS);
+		String value = repository.findByKey(Key.LAST_USED_PASS).getValue();
 		assertNotNull(value);
 		assertEquals("value1", value);
 
-		value = configurationDao.findValue(Key.LAST_USED_TICKET);
-		assertNull(value);
+		Configuration config = repository.findByKey(Key.LAST_USED_TICKET);
+		assertNull(config);
 	}
 
 	@Test
 	public void findByKey() {
-		Configuration configuration = configurationDao.findByKey(Key.LAST_USED_PASS);
+		Configuration configuration = repository.findByKey(Key.LAST_USED_PASS);
 		assertNotNull(configuration);
 		assertEquals("value1", configuration.getValue());
 	}

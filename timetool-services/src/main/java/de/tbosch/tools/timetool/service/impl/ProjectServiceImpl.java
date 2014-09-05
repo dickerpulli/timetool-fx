@@ -8,10 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.tbosch.tools.timetool.dao.ProjectDao;
 import de.tbosch.tools.timetool.model.Customer;
 import de.tbosch.tools.timetool.model.Project;
 import de.tbosch.tools.timetool.model.Timeslot;
+import de.tbosch.tools.timetool.repository.ProjectRepository;
 import de.tbosch.tools.timetool.service.CustomerService;
 import de.tbosch.tools.timetool.service.ProjectService;
 import de.tbosch.tools.timetool.service.TimeslotService;
@@ -30,7 +30,7 @@ public class ProjectServiceImpl implements ProjectService {
 	private static final Log LOG = LogFactory.getLog(ProjectServiceImpl.class);
 
 	@Autowired
-	private ProjectDao projectDao;
+	private ProjectRepository projectRepository;
 
 	@Autowired
 	private CustomerService customerService;
@@ -43,7 +43,7 @@ public class ProjectServiceImpl implements ProjectService {
 	 */
 	@Override
 	public Project getProject(long projectId) {
-		return projectDao.read(projectId);
+		return projectRepository.findOne(projectId);
 	}
 
 	/**
@@ -51,7 +51,7 @@ public class ProjectServiceImpl implements ProjectService {
 	 */
 	@Override
 	public Project getActiveProject() {
-		return projectDao.findActive();
+		return projectRepository.findByActiveTrue();
 	}
 
 	/**
@@ -59,20 +59,20 @@ public class ProjectServiceImpl implements ProjectService {
 	 */
 	@Override
 	public void setActiveProject(long projectId) {
-		List<Project> projects = projectDao.findAll();
+		List<Project> projects = projectRepository.findAll();
 		for (Project project : projects) {
 			project.setActive(false);
-			projectDao.update(project);
+			projectRepository.save(project);
 		}
 		Timeslot activeTimeslot = timeslotService.getActiveTimeslot();
 		if (activeTimeslot != null) {
 			LogUtils.logInfo("Stop active timeslot with starttime = " + activeTimeslot.getStarttime(), LOG);
 			timeslotService.deactivateTimeslot(activeTimeslot.getId());
 		}
-		Project project = projectDao.read(projectId);
+		Project project = projectRepository.findOne(projectId);
 		project.setActive(true);
 		LogUtils.logInfo("Set the project with name = " + project.getName() + " as active", LOG);
-		projectDao.update(project);
+		projectRepository.save(project);
 	}
 
 	/**
@@ -80,7 +80,7 @@ public class ProjectServiceImpl implements ProjectService {
 	 */
 	@Override
 	public List<Project> getAllProjects() {
-		return projectDao.findAll();
+		return projectRepository.findAll();
 	}
 
 	/**
@@ -94,7 +94,7 @@ public class ProjectServiceImpl implements ProjectService {
 		project.setCustomer(customer);
 		project.setActive(false);
 		project.setName(name);
-		return projectDao.create(project);
+		return projectRepository.save(project).getId();
 	}
 
 	/**
@@ -102,8 +102,8 @@ public class ProjectServiceImpl implements ProjectService {
 	 */
 	@Override
 	public void deleteProject(Project project) {
-		Project projectEntity = projectDao.read(project.getId());
-		projectDao.delete(projectEntity);
+		Project projectEntity = projectRepository.findOne(project.getId());
+		projectRepository.delete(projectEntity);
 	}
 
 	/**
@@ -113,10 +113,10 @@ public class ProjectServiceImpl implements ProjectService {
 	public void saveProject(Project project, String name, long customerId) {
 		LogUtils.logInfo("Save project with new name '" + name + "' and customerId '" + customerId + "'", LOG);
 		Customer customer = customerService.getCustomer(customerId);
-		Project projectEntity = projectDao.read(project.getId());
+		Project projectEntity = projectRepository.findOne(project.getId());
 		projectEntity.setName(name);
 		projectEntity.setCustomer(customer);
-		projectDao.update(projectEntity);
+		projectRepository.save(projectEntity);
 	}
 
 	/**
@@ -124,7 +124,7 @@ public class ProjectServiceImpl implements ProjectService {
 	 */
 	@Override
 	public String getFullName(Project proj) {
-		Project project = projectDao.read(proj.getId());
+		Project project = projectRepository.findOne(proj.getId());
 		String name = project.getCustomer().getName() + " - " + project.getName();
 		return name;
 	}

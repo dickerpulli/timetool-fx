@@ -17,9 +17,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+import javax.validation.ConstraintViolationException;
+
+import org.hibernate.validator.internal.engine.path.PathImpl;
 
 import de.tbosch.tools.timetool.controller.GuiController;
 import de.tbosch.tools.timetool.model.Customer;
+import de.tbosch.tools.timetool.utils.ValidationUtils;
 import de.tbosch.tools.timetool.utils.ValidationUtils.InputFieldData;
 import de.tbosch.tools.timetool.utils.context.MessageHelper;
 
@@ -72,7 +76,7 @@ public class CustomerEditDialog extends JDialog {
 		// Add text field for the name
 		constraints = new GridBagConstraints();
 		final JTextField textField = new JTextField();
-		inputFields.put(new InputFieldData(Customer.class, "name"), textField);
+		inputFields.put(new InputFieldData(Customer.class, PathImpl.createPathFromString("name")), textField);
 		textField.setPreferredSize(new Dimension(200, 24));
 		textField.setText(customer.getName());
 		constraints.insets = new Insets(5, 5, 5, 5);
@@ -88,12 +92,12 @@ public class CustomerEditDialog extends JDialog {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// try {
-				guiController.saveCustomer(customer.getId(), textField.getText());
-				dispose();
-				// } catch (InvalidStateException e1) {
-				// ValidationUtils.notifyInputFields((InvalidStateException) e1, inputFields);
-				// }
+				try {
+					guiController.saveCustomer(customer.getId(), textField.getText());
+					dispose();
+				} catch (ConstraintViolationException e1) {
+					ValidationUtils.notifyInputFields(e1, inputFields);
+				}
 			}
 		});
 		JButton cancelButton = new JButton(MessageHelper.getMessage("button.cancel"));

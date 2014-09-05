@@ -1,7 +1,5 @@
 package de.tbosch.tools.timetool;
 
-
-import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,17 +16,9 @@ public abstract class AbstractSpringTest {
 	@Autowired
 	private ConfigurableApplicationContext context;
 
-	private static ConfigurableApplicationContext staticContext;
-
 	@Before
 	public void beforeAbstractSpring() {
-		staticContext = context;
 		TimetoolContext.load(context);
-	}
-
-	@AfterClass
-	public static void afterAllAbstractSpring() {
-		staticContext.close();
 	}
 
 }

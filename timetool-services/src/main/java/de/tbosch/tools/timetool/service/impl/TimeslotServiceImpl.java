@@ -19,11 +19,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.tbosch.tools.timetool.dao.TimeslotDao;
 import de.tbosch.tools.timetool.exception.ServiceBusinessException;
 import de.tbosch.tools.timetool.model.JiraSettings;
 import de.tbosch.tools.timetool.model.Project;
 import de.tbosch.tools.timetool.model.Timeslot;
+import de.tbosch.tools.timetool.repository.TimeslotRepository;
 import de.tbosch.tools.timetool.service.JiraService;
 import de.tbosch.tools.timetool.service.ProjectService;
 import de.tbosch.tools.timetool.service.TimeslotService;
@@ -44,7 +44,7 @@ public class TimeslotServiceImpl implements TimeslotService {
 	private static final Log LOG = LogFactory.getLog(TimeslotServiceImpl.class);
 
 	@Autowired
-	private TimeslotDao timeslotDao;
+	private TimeslotRepository timeslotRepository;
 
 	@Autowired
 	private ProjectService projectService;
@@ -57,7 +57,7 @@ public class TimeslotServiceImpl implements TimeslotService {
 	 */
 	@Override
 	public List<Timeslot> getAllTimeslots() {
-		return timeslotDao.findAll();
+		return timeslotRepository.findAll();
 	}
 
 	/**
@@ -76,7 +76,7 @@ public class TimeslotServiceImpl implements TimeslotService {
 			timeslot.setEndtime(new Date());
 			timeslot.setProject(projectService.getProject(projectId));
 			timeslot.setActive(true);
-			timeslotDao.create(timeslot);
+			timeslotRepository.save(timeslot);
 		}
 	}
 
@@ -85,11 +85,11 @@ public class TimeslotServiceImpl implements TimeslotService {
 	 */
 	@Override
 	public void deactivateTimeslot(long timeslotId) {
-		Timeslot timeslot = timeslotDao.read(timeslotId);
+		Timeslot timeslot = timeslotRepository.findOne(timeslotId);
 		if (timeslot != null) {
 			LogUtils.logInfo("Update endtime for timeslot, timeslotId = " + timeslotId, LOG);
 			timeslot.setActive(false);
-			timeslotDao.update(timeslot);
+			timeslotRepository.save(timeslot);
 		} else {
 			LogUtils.logError("Timeslot could not be ended", LOG);
 		}
@@ -100,7 +100,7 @@ public class TimeslotServiceImpl implements TimeslotService {
 	 */
 	@Override
 	public Timeslot getTimeslot(long timeslotId) {
-		return timeslotDao.read(timeslotId);
+		return timeslotRepository.findOne(timeslotId);
 	}
 
 	/**
@@ -108,7 +108,7 @@ public class TimeslotServiceImpl implements TimeslotService {
 	 */
 	@Override
 	public Timeslot getActiveTimeslot() {
-		return timeslotDao.findActive();
+		return timeslotRepository.findByActiveTrue();
 	}
 
 	/**
@@ -135,7 +135,7 @@ public class TimeslotServiceImpl implements TimeslotService {
 	 */
 	@Override
 	public Timeslot updateEndtime(Timeslot ts) {
-		Timeslot timeslot = timeslotDao.read(ts.getId());
+		Timeslot timeslot = timeslotRepository.findOne(ts.getId());
 		Date now = new Date();
 		if (now.after(timeslot.getEndtime())) {
 			// Test difference, if the difference is bigger than 5 minutes
@@ -145,7 +145,7 @@ public class TimeslotServiceImpl implements TimeslotService {
 				return null;
 			}
 			timeslot.setEndtime(now);
-			return timeslotDao.update(timeslot);
+			return timeslotRepository.save(timeslot);
 		} else {
 			LogUtils.logError("Endtime is changed to a time in the past - last endtime = " + timeslot.getEndtime() + ", now = " + now, LOG);
 			return null;
@@ -161,7 +161,7 @@ public class TimeslotServiceImpl implements TimeslotService {
 		if (timeslot != null) {
 			LogUtils.logInfo("Deactivate active timeslot - timeslot starttime=" + timeslot.getStarttime(), LOG);
 			timeslot.setActive(false);
-			timeslotDao.update(timeslot);
+			timeslotRepository.save(timeslot);
 		} else {
 			LogUtils.logInfo("No active timeslot found", LOG);
 		}
@@ -173,8 +173,8 @@ public class TimeslotServiceImpl implements TimeslotService {
 	@Override
 	public void deleteTimeslot(Timeslot ts) {
 		LogUtils.logInfo("Delete timeslot for projectId = " + ts.getProject() + " and starttime = " + ts.getStarttime(), LOG);
-		Timeslot timeslot = timeslotDao.read(ts.getId());
-		timeslotDao.delete(timeslot);
+		Timeslot timeslot = timeslotRepository.findOne(ts.getId());
+		timeslotRepository.delete(timeslot);
 	}
 
 	/**
@@ -189,9 +189,9 @@ public class TimeslotServiceImpl implements TimeslotService {
 		LogUtils.logInfo(
 				"Set new endtime for timeslot, old = " + DateUtils.toDateTimeString(timeslot.getEndtime()) + ", new = " + DateUtils.toDateTimeString(endtime),
 				LOG);
-		timeslot = timeslotDao.read(timeslot.getId());
+		timeslot = timeslotRepository.findOne(timeslot.getId());
 		timeslot.setEndtime(endtime);
-		timeslotDao.update(timeslot);
+		timeslotRepository.save(timeslot);
 	}
 
 	/**
@@ -206,9 +206,9 @@ public class TimeslotServiceImpl implements TimeslotService {
 		LogUtils.logInfo(
 				"Set new starttime for timeslot, old = " + DateUtils.toDateTimeString(timeslot.getStarttime()) + ", new = "
 						+ DateUtils.toDateTimeString(starttime), LOG);
-		timeslot = timeslotDao.read(timeslot.getId());
+		timeslot = timeslotRepository.findOne(timeslot.getId());
 		timeslot.setStarttime(starttime);
-		timeslotDao.update(timeslot);
+		timeslotRepository.save(timeslot);
 	}
 
 	/**
@@ -223,10 +223,10 @@ public class TimeslotServiceImpl implements TimeslotService {
 		LogUtils.logInfo(
 				"Set new starttime for timeslot, old = " + DateUtils.toDateTimeString(timeslot.getStarttime()) + ", new = "
 						+ DateUtils.toDateTimeString(starttime), LOG);
-		timeslot = timeslotDao.read(timeslot.getId());
+		timeslot = timeslotRepository.findOne(timeslot.getId());
 		timeslot.setStarttime(starttime);
 		timeslot.setEndtime(endtime);
-		timeslotDao.update(timeslot);
+		timeslotRepository.save(timeslot);
 	}
 
 	/**
@@ -270,9 +270,9 @@ public class TimeslotServiceImpl implements TimeslotService {
 	 */
 	private void markTimeslot(Timeslot timeslot, boolean marked) {
 		timeslot.setMarked(marked);
-		Timeslot read = timeslotDao.read(timeslot.getId());
+		Timeslot read = timeslotRepository.findOne(timeslot.getId());
 		read.setMarked(marked);
-		timeslotDao.update(read);
+		timeslotRepository.save(read);
 	}
 
 	/**
