@@ -1138,3 +1138,639 @@ Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: Inval
 [05.09.2014, 14:18:44,592] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_10087, sys_idx_sys_pk_10083_10084]
 [05.09.2014, 14:18:44,796] [main] INFO  org.springframework.orm.hibernate3.HibernateTransactionManager  - Using DataSource [org.apache.commons.dbcp.BasicDataSource@3b71e462] of Hibernate SessionFactory for HibernateTransactionManager
 [05.09.2014, 14:18:44,798] [main] INFO  de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl  - No active timeslot found
+[05.09.2014, 14:28:14,571] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext-test.xml]
+[05.09.2014, 14:28:14,721] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext.xml]
+[05.09.2014, 14:28:14,779] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext-services.xml]
+[05.09.2014, 14:28:14,861] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext-jira.xml]
+[05.09.2014, 14:28:14,986] [main] INFO  org.springframework.context.support.GenericApplicationContext  - Refreshing org.springframework.context.support.GenericApplicationContext@3edfb094: startup date [Fri Sep 05 14:28:14 CEST 2014]; root of context hierarchy
+[05.09.2014, 14:28:15,157] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool.properties]
+[05.09.2014, 14:28:15,157] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool-services.properties]
+[05.09.2014, 14:28:15,157] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool-test.properties]
+[05.09.2014, 14:28:15,166] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool-services.properties]
+[05.09.2014, 14:28:15,169] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool.properties]
+[05.09.2014, 14:28:15,276] [main] INFO  org.springframework.context.support.GenericApplicationContext  - Bean 'dataSource' of type [class org.apache.commons.dbcp.BasicDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[05.09.2014, 14:28:15,314] [main] INFO  org.hibernate.cfg.annotations.Version  - Hibernate Annotations 3.3.1.GA
+[05.09.2014, 14:28:15,327] [main] INFO  org.hibernate.cfg.Environment  - Hibernate 3.2.6
+[05.09.2014, 14:28:15,331] [main] INFO  org.hibernate.cfg.Environment  - hibernate.properties not found
+[05.09.2014, 14:28:15,334] [main] INFO  org.hibernate.cfg.Environment  - Bytecode provider name : cglib
+[05.09.2014, 14:28:15,338] [main] INFO  org.hibernate.cfg.Environment  - using JDK 1.4 java.sql.Timestamp handling
+[05.09.2014, 14:28:15,436] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Timeslot
+[05.09.2014, 14:28:15,462] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Timeslot on table Timeslot
+[05.09.2014, 14:28:15,513] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Project
+[05.09.2014, 14:28:15,513] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Project on table Project
+[05.09.2014, 14:28:15,550] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Configuration
+[05.09.2014, 14:28:15,551] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Configuration on table Configuration
+[05.09.2014, 14:28:15,556] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Customer
+[05.09.2014, 14:28:15,556] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Customer on table Customer
+[05.09.2014, 14:28:15,601] [main] INFO  org.hibernate.cfg.annotations.CollectionBinder  - Mapping collection: de.tbosch.tools.timetool.model.Project.timeslots -> Timeslot
+[05.09.2014, 14:28:15,602] [main] INFO  org.hibernate.cfg.annotations.CollectionBinder  - Mapping collection: de.tbosch.tools.timetool.model.Customer.projects -> Project
+[05.09.2014, 14:28:15,611] [main] INFO  org.hibernate.validator.Version  - Hibernate Validator 3.0.0.GA
+[05.09.2014, 14:28:15,624] [main] INFO  org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean  - Building new Hibernate SessionFactory
+[05.09.2014, 14:28:15,637] [main] INFO  org.hibernate.connection.ConnectionProviderFactory  - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+[05.09.2014, 14:28:15,943] [main] INFO  org.hibernate.cfg.SettingsFactory  - RDBMS: HSQL Database Engine, version: 2.0.0
+[05.09.2014, 14:28:15,944] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC driver: HSQL Database Engine Driver, version: 2.0.0
+[05.09.2014, 14:28:15,954] [main] INFO  org.hibernate.dialect.Dialect  - Using dialect: org.hibernate.dialect.HSQLDialect
+[05.09.2014, 14:28:15,957] [main] INFO  org.hibernate.transaction.TransactionFactoryFactory  - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+[05.09.2014, 14:28:15,959] [main] INFO  org.hibernate.transaction.TransactionManagerLookupFactory  - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+[05.09.2014, 14:28:15,959] [main] INFO  org.hibernate.cfg.SettingsFactory  - Automatic flush during beforeCompletion(): disabled
+[05.09.2014, 14:28:15,959] [main] INFO  org.hibernate.cfg.SettingsFactory  - Automatic session close at end of transaction: disabled
+[05.09.2014, 14:28:15,959] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC batch size: 15
+[05.09.2014, 14:28:15,959] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC batch updates for versioned data: disabled
+[05.09.2014, 14:28:15,960] [main] INFO  org.hibernate.cfg.SettingsFactory  - Scrollable result sets: enabled
+[05.09.2014, 14:28:15,960] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC3 getGeneratedKeys(): enabled
+[05.09.2014, 14:28:15,960] [main] INFO  org.hibernate.cfg.SettingsFactory  - Connection release mode: on_close
+[05.09.2014, 14:28:15,961] [main] INFO  org.hibernate.cfg.SettingsFactory  - Default batch fetch size: 1
+[05.09.2014, 14:28:15,961] [main] INFO  org.hibernate.cfg.SettingsFactory  - Generate SQL with comments: disabled
+[05.09.2014, 14:28:15,961] [main] INFO  org.hibernate.cfg.SettingsFactory  - Order SQL updates by primary key: disabled
+[05.09.2014, 14:28:15,961] [main] INFO  org.hibernate.cfg.SettingsFactory  - Order SQL inserts for batching: disabled
+[05.09.2014, 14:28:15,962] [main] INFO  org.hibernate.cfg.SettingsFactory  - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+[05.09.2014, 14:28:15,963] [main] INFO  org.hibernate.hql.ast.ASTQueryTranslatorFactory  - Using ASTQueryTranslatorFactory
+[05.09.2014, 14:28:15,963] [main] INFO  org.hibernate.cfg.SettingsFactory  - Query language substitutions: {}
+[05.09.2014, 14:28:15,963] [main] INFO  org.hibernate.cfg.SettingsFactory  - JPA-QL strict compliance: disabled
+[05.09.2014, 14:28:15,963] [main] INFO  org.hibernate.cfg.SettingsFactory  - Second-level cache: enabled
+[05.09.2014, 14:28:15,964] [main] INFO  org.hibernate.cfg.SettingsFactory  - Query cache: disabled
+[05.09.2014, 14:28:15,964] [main] INFO  org.hibernate.cfg.SettingsFactory  - Cache provider: org.hibernate.cache.NoCacheProvider
+[05.09.2014, 14:28:15,964] [main] INFO  org.hibernate.cfg.SettingsFactory  - Optimize cache for minimal puts: disabled
+[05.09.2014, 14:28:15,964] [main] INFO  org.hibernate.cfg.SettingsFactory  - Structured second-level cache entries: disabled
+[05.09.2014, 14:28:15,967] [main] INFO  org.hibernate.cfg.SettingsFactory  - Statistics: disabled
+[05.09.2014, 14:28:15,967] [main] INFO  org.hibernate.cfg.SettingsFactory  - Deleted entity synthetic identifier rollback: disabled
+[05.09.2014, 14:28:15,967] [main] INFO  org.hibernate.cfg.SettingsFactory  - Default entity-mode: pojo
+[05.09.2014, 14:28:15,967] [main] INFO  org.hibernate.cfg.SettingsFactory  - Named query checking : enabled
+[05.09.2014, 14:28:16,000] [main] INFO  org.hibernate.impl.SessionFactoryImpl  - building session factory
+[05.09.2014, 14:28:16,145] [main] INFO  org.hibernate.impl.SessionFactoryObjectFactory  - Not binding factory to JNDI, no JNDI name configured
+[05.09.2014, 14:28:16,153] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - Running hbm2ddl schema export
+[05.09.2014, 14:28:16,154] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - exporting generated schema to database
+[05.09.2014, 14:28:16,164] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - schema export complete
+[05.09.2014, 14:28:16,178] [main] INFO  org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean  - Updating database schema for Hibernate SessionFactory
+[05.09.2014, 14:28:16,311] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.CONFIGURATION
+[05.09.2014, 14:28:16,311] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [id, value, key]
+[05.09.2014, 14:28:16,312] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: []
+[05.09.2014, 14:28:16,312] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_sys_pk_10028_10030, sys_idx_sys_ct_10029_10031]
+[05.09.2014, 14:28:16,314] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.CUSTOMER
+[05.09.2014, 14:28:16,314] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [id, name]
+[05.09.2014, 14:28:16,314] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: []
+[05.09.2014, 14:28:16,314] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_sys_pk_10033_10035, sys_idx_sys_ct_10034_10036]
+[05.09.2014, 14:28:16,329] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.PROJECT
+[05.09.2014, 14:28:16,329] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [id, name, active, customer_id]
+[05.09.2014, 14:28:16,330] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: [fk50c8e2f9453744ab]
+[05.09.2014, 14:28:16,330] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_10051, sys_idx_sys_pk_10040_10042, sys_idx_sys_ct_10041_10043]
+[05.09.2014, 14:28:16,334] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.TIMESLOT
+[05.09.2014, 14:28:16,334] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [endtime, id, marked, starttime, project_id, active]
+[05.09.2014, 14:28:16,335] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: [fk8816726bbf6d49]
+[05.09.2014, 14:28:16,335] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_sys_pk_10049_10050, sys_idx_10053]
+[05.09.2014, 14:28:16,337] [main] INFO  org.springframework.context.support.GenericApplicationContext  - Bean 'sessionFactory' of type [class org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[05.09.2014, 14:28:16,353] [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@51eab608: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#1,de.tbosch.tools.timetool.service.impl.ConfigurationServiceImpl#0,de.tbosch.tools.timetool.service.impl.CustomerServiceImpl#0,de.tbosch.tools.timetool.service.impl.ProjectServiceImpl#0,de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl#0,de.tbosch.tools.timetool.dao.impl.ConfigurationDaoImpl#0,de.tbosch.tools.timetool.dao.impl.CustomerDaoImpl#0,de.tbosch.tools.timetool.dao.impl.ProjectDaoImpl#0,de.tbosch.tools.timetool.dao.impl.TimeslotDaoImpl#0,timer,dataSource,sessionFactory,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,transactionManager,org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor#0,de.tbosch.tools.timetool.service.impl.JiraServiceImpl#0,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#2,guiController,trayiconController,timetoolThread,imageIconAktiv,imageIconInaktiv,imageAktiv,imageInaktiv,trayIcon,iconTimer,resourceBundleMessageSource,testGetBeansByType1,testGetBeansByType2,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[05.09.2014, 14:28:16,472] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Initializing ExecutorService  'timer'
+[05.09.2014, 14:28:16,493] [main] INFO  org.springframework.orm.hibernate3.HibernateTransactionManager  - Using DataSource [org.apache.commons.dbcp.BasicDataSource@106a5924] of Hibernate SessionFactory for HibernateTransactionManager
+[05.09.2014, 14:28:16,679] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Initializing ExecutorService  'iconTimer'
+[05.09.2014, 14:28:16,794] [main] INFO  org.springframework.context.support.GenericApplicationContext  - Closing org.springframework.context.support.GenericApplicationContext@3edfb094: startup date [Fri Sep 05 14:28:14 CEST 2014]; root of context hierarchy
+[05.09.2014, 14:28:16,795] [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@51eab608: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#1,de.tbosch.tools.timetool.service.impl.ConfigurationServiceImpl#0,de.tbosch.tools.timetool.service.impl.CustomerServiceImpl#0,de.tbosch.tools.timetool.service.impl.ProjectServiceImpl#0,de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl#0,de.tbosch.tools.timetool.dao.impl.ConfigurationDaoImpl#0,de.tbosch.tools.timetool.dao.impl.CustomerDaoImpl#0,de.tbosch.tools.timetool.dao.impl.ProjectDaoImpl#0,de.tbosch.tools.timetool.dao.impl.TimeslotDaoImpl#0,timer,dataSource,sessionFactory,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,transactionManager,org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor#0,de.tbosch.tools.timetool.service.impl.JiraServiceImpl#0,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#2,guiController,trayiconController,timetoolThread,imageIconAktiv,imageIconInaktiv,imageAktiv,imageInaktiv,trayIcon,iconTimer,resourceBundleMessageSource,testGetBeansByType1,testGetBeansByType2,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[05.09.2014, 14:28:16,798] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Shutting down ExecutorService 'iconTimer'
+[05.09.2014, 14:28:16,804] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Shutting down ExecutorService 'timer'
+[05.09.2014, 14:28:16,806] [main] INFO  org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean  - Closing Hibernate SessionFactory
+[05.09.2014, 14:28:16,806] [main] INFO  org.hibernate.impl.SessionFactoryImpl  - closing
+[05.09.2014, 14:28:16,806] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - Running hbm2ddl schema export
+[05.09.2014, 14:28:16,806] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - exporting generated schema to database
+[05.09.2014, 14:28:16,809] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - schema export complete
+[05.09.2014, 14:28:16,828] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Timeslot
+[05.09.2014, 14:28:16,829] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Timeslot on table Timeslot
+[05.09.2014, 14:28:16,831] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Project
+[05.09.2014, 14:28:16,832] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Project on table Project
+[05.09.2014, 14:28:16,835] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Configuration
+[05.09.2014, 14:28:16,836] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Configuration on table Configuration
+[05.09.2014, 14:28:16,837] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Customer
+[05.09.2014, 14:28:16,838] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Customer on table Customer
+[05.09.2014, 14:28:16,840] [main] INFO  org.hibernate.cfg.annotations.CollectionBinder  - Mapping collection: de.tbosch.tools.timetool.model.Project.timeslots -> Timeslot
+[05.09.2014, 14:28:16,840] [main] INFO  org.hibernate.cfg.annotations.CollectionBinder  - Mapping collection: de.tbosch.tools.timetool.model.Customer.projects -> Project
+[05.09.2014, 14:28:16,844] [main] INFO  org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean  - Building new Hibernate SessionFactory
+[05.09.2014, 14:28:16,850] [main] INFO  org.hibernate.connection.ConnectionProviderFactory  - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+[05.09.2014, 14:28:16,851] [main] INFO  org.hibernate.cfg.SettingsFactory  - RDBMS: HSQL Database Engine, version: 2.0.0
+[05.09.2014, 14:28:16,851] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC driver: HSQL Database Engine Driver, version: 2.0.0
+[05.09.2014, 14:28:16,851] [main] INFO  org.hibernate.dialect.Dialect  - Using dialect: org.hibernate.dialect.HSQLDialect
+[05.09.2014, 14:28:16,851] [main] INFO  org.hibernate.transaction.TransactionFactoryFactory  - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+[05.09.2014, 14:28:16,852] [main] INFO  org.hibernate.transaction.TransactionManagerLookupFactory  - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+[05.09.2014, 14:28:16,852] [main] INFO  org.hibernate.cfg.SettingsFactory  - Automatic flush during beforeCompletion(): disabled
+[05.09.2014, 14:28:16,852] [main] INFO  org.hibernate.cfg.SettingsFactory  - Automatic session close at end of transaction: disabled
+[05.09.2014, 14:28:16,852] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC batch size: 15
+[05.09.2014, 14:28:16,852] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC batch updates for versioned data: disabled
+[05.09.2014, 14:28:16,852] [main] INFO  org.hibernate.cfg.SettingsFactory  - Scrollable result sets: enabled
+[05.09.2014, 14:28:16,852] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC3 getGeneratedKeys(): enabled
+[05.09.2014, 14:28:16,852] [main] INFO  org.hibernate.cfg.SettingsFactory  - Connection release mode: on_close
+[05.09.2014, 14:28:16,852] [main] INFO  org.hibernate.cfg.SettingsFactory  - Default batch fetch size: 1
+[05.09.2014, 14:28:16,852] [main] INFO  org.hibernate.cfg.SettingsFactory  - Generate SQL with comments: disabled
+[05.09.2014, 14:28:16,853] [main] INFO  org.hibernate.cfg.SettingsFactory  - Order SQL updates by primary key: disabled
+[05.09.2014, 14:28:16,853] [main] INFO  org.hibernate.cfg.SettingsFactory  - Order SQL inserts for batching: disabled
+[05.09.2014, 14:28:16,853] [main] INFO  org.hibernate.cfg.SettingsFactory  - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+[05.09.2014, 14:28:16,853] [main] INFO  org.hibernate.hql.ast.ASTQueryTranslatorFactory  - Using ASTQueryTranslatorFactory
+[05.09.2014, 14:28:16,853] [main] INFO  org.hibernate.cfg.SettingsFactory  - Query language substitutions: {}
+[05.09.2014, 14:28:16,853] [main] INFO  org.hibernate.cfg.SettingsFactory  - JPA-QL strict compliance: disabled
+[05.09.2014, 14:28:16,853] [main] INFO  org.hibernate.cfg.SettingsFactory  - Second-level cache: enabled
+[05.09.2014, 14:28:16,853] [main] INFO  org.hibernate.cfg.SettingsFactory  - Query cache: disabled
+[05.09.2014, 14:28:16,853] [main] INFO  org.hibernate.cfg.SettingsFactory  - Cache provider: org.hibernate.cache.NoCacheProvider
+[05.09.2014, 14:28:16,853] [main] INFO  org.hibernate.cfg.SettingsFactory  - Optimize cache for minimal puts: disabled
+[05.09.2014, 14:28:16,854] [main] INFO  org.hibernate.cfg.SettingsFactory  - Structured second-level cache entries: disabled
+[05.09.2014, 14:28:16,854] [main] INFO  org.hibernate.cfg.SettingsFactory  - Statistics: disabled
+[05.09.2014, 14:28:16,854] [main] INFO  org.hibernate.cfg.SettingsFactory  - Deleted entity synthetic identifier rollback: disabled
+[05.09.2014, 14:28:16,854] [main] INFO  org.hibernate.cfg.SettingsFactory  - Default entity-mode: pojo
+[05.09.2014, 14:28:16,854] [main] INFO  org.hibernate.cfg.SettingsFactory  - Named query checking : enabled
+[05.09.2014, 14:28:16,862] [main] INFO  org.hibernate.impl.SessionFactoryImpl  - building session factory
+[05.09.2014, 14:28:16,873] [main] INFO  org.hibernate.impl.SessionFactoryObjectFactory  - Not binding factory to JNDI, no JNDI name configured
+[05.09.2014, 14:28:16,880] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - Running hbm2ddl schema export
+[05.09.2014, 14:28:16,881] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - exporting generated schema to database
+[05.09.2014, 14:28:16,887] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - schema export complete
+[05.09.2014, 14:28:16,894] [main] INFO  org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean  - Updating database schema for Hibernate SessionFactory
+[05.09.2014, 14:28:16,934] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.CONFIGURATION
+[05.09.2014, 14:28:16,934] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [id, value, key]
+[05.09.2014, 14:28:16,935] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: []
+[05.09.2014, 14:28:16,935] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_sys_ct_10063_10065, sys_idx_sys_pk_10062_10064]
+[05.09.2014, 14:28:16,938] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.CUSTOMER
+[05.09.2014, 14:28:16,938] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [id, name]
+[05.09.2014, 14:28:16,939] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: []
+[05.09.2014, 14:28:16,939] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_sys_pk_10067_10069, sys_idx_sys_ct_10068_10070]
+[05.09.2014, 14:28:16,943] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.PROJECT
+[05.09.2014, 14:28:16,943] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [id, name, active, customer_id]
+[05.09.2014, 14:28:16,943] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: [fk50c8e2f9453744ab]
+[05.09.2014, 14:28:16,943] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_sys_pk_10074_10076, sys_idx_10085, sys_idx_sys_ct_10075_10077]
+[05.09.2014, 14:28:16,947] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.TIMESLOT
+[05.09.2014, 14:28:16,947] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [endtime, id, marked, starttime, project_id, active]
+[05.09.2014, 14:28:16,947] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: [fk8816726bbf6d49]
+[05.09.2014, 14:28:16,948] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_10087, sys_idx_sys_pk_10083_10084]
+[05.09.2014, 14:28:17,204] [main] INFO  org.springframework.orm.hibernate3.HibernateTransactionManager  - Using DataSource [org.apache.commons.dbcp.BasicDataSource@543d8398] of Hibernate SessionFactory for HibernateTransactionManager
+[05.09.2014, 14:28:17,207] [main] INFO  de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl  - No active timeslot found
+[05.09.2014, 14:29:23,826] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext-test.xml]
+[05.09.2014, 14:29:23,975] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext.xml]
+[05.09.2014, 14:29:24,033] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext-services.xml]
+[05.09.2014, 14:29:24,119] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext-jira.xml]
+[05.09.2014, 14:29:24,243] [main] INFO  org.springframework.context.support.GenericApplicationContext  - Refreshing org.springframework.context.support.GenericApplicationContext@3edfb094: startup date [Fri Sep 05 14:29:24 CEST 2014]; root of context hierarchy
+[05.09.2014, 14:29:24,395] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool.properties]
+[05.09.2014, 14:29:24,395] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool-services.properties]
+[05.09.2014, 14:29:24,396] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool-test.properties]
+[05.09.2014, 14:29:24,404] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool-services.properties]
+[05.09.2014, 14:29:24,406] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool.properties]
+[05.09.2014, 14:29:24,512] [main] INFO  org.springframework.context.support.GenericApplicationContext  - Bean 'dataSource' of type [class org.apache.commons.dbcp.BasicDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[05.09.2014, 14:29:24,543] [main] INFO  org.hibernate.cfg.annotations.Version  - Hibernate Annotations 3.3.1.GA
+[05.09.2014, 14:29:24,549] [main] INFO  org.hibernate.cfg.Environment  - Hibernate 3.2.6
+[05.09.2014, 14:29:24,553] [main] INFO  org.hibernate.cfg.Environment  - hibernate.properties not found
+[05.09.2014, 14:29:24,556] [main] INFO  org.hibernate.cfg.Environment  - Bytecode provider name : cglib
+[05.09.2014, 14:29:24,559] [main] INFO  org.hibernate.cfg.Environment  - using JDK 1.4 java.sql.Timestamp handling
+[05.09.2014, 14:29:24,639] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Timeslot
+[05.09.2014, 14:29:24,664] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Timeslot on table Timeslot
+[05.09.2014, 14:29:24,717] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Project
+[05.09.2014, 14:29:24,717] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Project on table Project
+[05.09.2014, 14:29:24,742] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Configuration
+[05.09.2014, 14:29:24,743] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Configuration on table Configuration
+[05.09.2014, 14:29:24,748] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Customer
+[05.09.2014, 14:29:24,748] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Customer on table Customer
+[05.09.2014, 14:29:24,787] [main] INFO  org.hibernate.cfg.annotations.CollectionBinder  - Mapping collection: de.tbosch.tools.timetool.model.Project.timeslots -> Timeslot
+[05.09.2014, 14:29:24,788] [main] INFO  org.hibernate.cfg.annotations.CollectionBinder  - Mapping collection: de.tbosch.tools.timetool.model.Customer.projects -> Project
+[05.09.2014, 14:29:24,793] [main] INFO  org.hibernate.validator.Version  - Hibernate Validator 3.0.0.GA
+[05.09.2014, 14:29:24,805] [main] INFO  org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean  - Building new Hibernate SessionFactory
+[05.09.2014, 14:29:24,822] [main] INFO  org.hibernate.connection.ConnectionProviderFactory  - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+[05.09.2014, 14:29:25,093] [main] INFO  org.hibernate.cfg.SettingsFactory  - RDBMS: HSQL Database Engine, version: 2.0.0
+[05.09.2014, 14:29:25,093] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC driver: HSQL Database Engine Driver, version: 2.0.0
+[05.09.2014, 14:29:25,364] [main] INFO  org.hibernate.dialect.Dialect  - Using dialect: org.hibernate.dialect.HSQLDialect
+[05.09.2014, 14:29:25,367] [main] INFO  org.hibernate.transaction.TransactionFactoryFactory  - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+[05.09.2014, 14:29:25,368] [main] INFO  org.hibernate.transaction.TransactionManagerLookupFactory  - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+[05.09.2014, 14:29:25,369] [main] INFO  org.hibernate.cfg.SettingsFactory  - Automatic flush during beforeCompletion(): disabled
+[05.09.2014, 14:29:25,369] [main] INFO  org.hibernate.cfg.SettingsFactory  - Automatic session close at end of transaction: disabled
+[05.09.2014, 14:29:25,369] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC batch size: 15
+[05.09.2014, 14:29:25,369] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC batch updates for versioned data: disabled
+[05.09.2014, 14:29:25,370] [main] INFO  org.hibernate.cfg.SettingsFactory  - Scrollable result sets: enabled
+[05.09.2014, 14:29:25,370] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC3 getGeneratedKeys(): enabled
+[05.09.2014, 14:29:25,370] [main] INFO  org.hibernate.cfg.SettingsFactory  - Connection release mode: on_close
+[05.09.2014, 14:29:25,371] [main] INFO  org.hibernate.cfg.SettingsFactory  - Default batch fetch size: 1
+[05.09.2014, 14:29:25,371] [main] INFO  org.hibernate.cfg.SettingsFactory  - Generate SQL with comments: disabled
+[05.09.2014, 14:29:25,371] [main] INFO  org.hibernate.cfg.SettingsFactory  - Order SQL updates by primary key: disabled
+[05.09.2014, 14:29:25,371] [main] INFO  org.hibernate.cfg.SettingsFactory  - Order SQL inserts for batching: disabled
+[05.09.2014, 14:29:25,371] [main] INFO  org.hibernate.cfg.SettingsFactory  - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+[05.09.2014, 14:29:25,373] [main] INFO  org.hibernate.hql.ast.ASTQueryTranslatorFactory  - Using ASTQueryTranslatorFactory
+[05.09.2014, 14:29:25,373] [main] INFO  org.hibernate.cfg.SettingsFactory  - Query language substitutions: {}
+[05.09.2014, 14:29:25,373] [main] INFO  org.hibernate.cfg.SettingsFactory  - JPA-QL strict compliance: disabled
+[05.09.2014, 14:29:25,373] [main] INFO  org.hibernate.cfg.SettingsFactory  - Second-level cache: enabled
+[05.09.2014, 14:29:25,373] [main] INFO  org.hibernate.cfg.SettingsFactory  - Query cache: disabled
+[05.09.2014, 14:29:25,373] [main] INFO  org.hibernate.cfg.SettingsFactory  - Cache provider: org.hibernate.cache.NoCacheProvider
+[05.09.2014, 14:29:25,373] [main] INFO  org.hibernate.cfg.SettingsFactory  - Optimize cache for minimal puts: disabled
+[05.09.2014, 14:29:25,374] [main] INFO  org.hibernate.cfg.SettingsFactory  - Structured second-level cache entries: disabled
+[05.09.2014, 14:29:25,377] [main] INFO  org.hibernate.cfg.SettingsFactory  - Statistics: disabled
+[05.09.2014, 14:29:25,377] [main] INFO  org.hibernate.cfg.SettingsFactory  - Deleted entity synthetic identifier rollback: disabled
+[05.09.2014, 14:29:25,378] [main] INFO  org.hibernate.cfg.SettingsFactory  - Default entity-mode: pojo
+[05.09.2014, 14:29:25,378] [main] INFO  org.hibernate.cfg.SettingsFactory  - Named query checking : enabled
+[05.09.2014, 14:29:25,413] [main] INFO  org.hibernate.impl.SessionFactoryImpl  - building session factory
+[05.09.2014, 14:29:25,607] [main] INFO  org.hibernate.impl.SessionFactoryObjectFactory  - Not binding factory to JNDI, no JNDI name configured
+[05.09.2014, 14:29:25,615] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - Running hbm2ddl schema export
+[05.09.2014, 14:29:25,616] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - exporting generated schema to database
+[05.09.2014, 14:29:25,626] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - schema export complete
+[05.09.2014, 14:29:25,640] [main] INFO  org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean  - Updating database schema for Hibernate SessionFactory
+[05.09.2014, 14:29:25,774] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.CONFIGURATION
+[05.09.2014, 14:29:25,774] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [id, value, key]
+[05.09.2014, 14:29:25,775] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: []
+[05.09.2014, 14:29:25,775] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_sys_pk_10028_10030, sys_idx_sys_ct_10029_10031]
+[05.09.2014, 14:29:25,777] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.CUSTOMER
+[05.09.2014, 14:29:25,777] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [id, name]
+[05.09.2014, 14:29:25,777] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: []
+[05.09.2014, 14:29:25,777] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_sys_pk_10033_10035, sys_idx_sys_ct_10034_10036]
+[05.09.2014, 14:29:25,781] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.PROJECT
+[05.09.2014, 14:29:25,781] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [id, name, active, customer_id]
+[05.09.2014, 14:29:25,781] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: [fk50c8e2f9453744ab]
+[05.09.2014, 14:29:25,782] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_10051, sys_idx_sys_pk_10040_10042, sys_idx_sys_ct_10041_10043]
+[05.09.2014, 14:29:25,799] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.TIMESLOT
+[05.09.2014, 14:29:25,799] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [endtime, id, marked, starttime, project_id, active]
+[05.09.2014, 14:29:25,799] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: [fk8816726bbf6d49]
+[05.09.2014, 14:29:25,799] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_sys_pk_10049_10050, sys_idx_10053]
+[05.09.2014, 14:29:25,801] [main] INFO  org.springframework.context.support.GenericApplicationContext  - Bean 'sessionFactory' of type [class org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[05.09.2014, 14:29:25,814] [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@854f13c: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#1,de.tbosch.tools.timetool.service.impl.ConfigurationServiceImpl#0,de.tbosch.tools.timetool.service.impl.CustomerServiceImpl#0,de.tbosch.tools.timetool.service.impl.ProjectServiceImpl#0,de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl#0,de.tbosch.tools.timetool.dao.impl.ConfigurationDaoImpl#0,de.tbosch.tools.timetool.dao.impl.CustomerDaoImpl#0,de.tbosch.tools.timetool.dao.impl.ProjectDaoImpl#0,de.tbosch.tools.timetool.dao.impl.TimeslotDaoImpl#0,timer,dataSource,sessionFactory,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,transactionManager,org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor#0,de.tbosch.tools.timetool.service.impl.JiraServiceImpl#0,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#2,guiController,trayiconController,timetoolThread,imageIconAktiv,imageIconInaktiv,imageAktiv,imageInaktiv,trayIcon,iconTimer,resourceBundleMessageSource,testGetBeansByType1,testGetBeansByType2,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[05.09.2014, 14:29:25,960] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Initializing ExecutorService  'timer'
+[05.09.2014, 14:29:25,984] [main] INFO  org.springframework.orm.hibernate3.HibernateTransactionManager  - Using DataSource [org.apache.commons.dbcp.BasicDataSource@6da6e106] of Hibernate SessionFactory for HibernateTransactionManager
+[05.09.2014, 14:29:26,198] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Initializing ExecutorService  'iconTimer'
+[05.09.2014, 14:29:26,311] [main] INFO  org.springframework.context.support.GenericApplicationContext  - Closing org.springframework.context.support.GenericApplicationContext@3edfb094: startup date [Fri Sep 05 14:29:24 CEST 2014]; root of context hierarchy
+[05.09.2014, 14:29:26,312] [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@854f13c: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#1,de.tbosch.tools.timetool.service.impl.ConfigurationServiceImpl#0,de.tbosch.tools.timetool.service.impl.CustomerServiceImpl#0,de.tbosch.tools.timetool.service.impl.ProjectServiceImpl#0,de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl#0,de.tbosch.tools.timetool.dao.impl.ConfigurationDaoImpl#0,de.tbosch.tools.timetool.dao.impl.CustomerDaoImpl#0,de.tbosch.tools.timetool.dao.impl.ProjectDaoImpl#0,de.tbosch.tools.timetool.dao.impl.TimeslotDaoImpl#0,timer,dataSource,sessionFactory,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,transactionManager,org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor#0,de.tbosch.tools.timetool.service.impl.JiraServiceImpl#0,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#2,guiController,trayiconController,timetoolThread,imageIconAktiv,imageIconInaktiv,imageAktiv,imageInaktiv,trayIcon,iconTimer,resourceBundleMessageSource,testGetBeansByType1,testGetBeansByType2,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[05.09.2014, 14:29:26,315] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Shutting down ExecutorService 'iconTimer'
+[05.09.2014, 14:29:26,321] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Shutting down ExecutorService 'timer'
+[05.09.2014, 14:29:26,323] [main] INFO  org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean  - Closing Hibernate SessionFactory
+[05.09.2014, 14:29:26,323] [main] INFO  org.hibernate.impl.SessionFactoryImpl  - closing
+[05.09.2014, 14:29:26,324] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - Running hbm2ddl schema export
+[05.09.2014, 14:29:26,324] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - exporting generated schema to database
+[05.09.2014, 14:29:26,327] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - schema export complete
+[05.09.2014, 14:29:26,347] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Timeslot
+[05.09.2014, 14:29:26,348] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Timeslot on table Timeslot
+[05.09.2014, 14:29:26,350] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Project
+[05.09.2014, 14:29:26,350] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Project on table Project
+[05.09.2014, 14:29:26,353] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Configuration
+[05.09.2014, 14:29:26,354] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Configuration on table Configuration
+[05.09.2014, 14:29:26,355] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Customer
+[05.09.2014, 14:29:26,356] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Customer on table Customer
+[05.09.2014, 14:29:26,359] [main] INFO  org.hibernate.cfg.annotations.CollectionBinder  - Mapping collection: de.tbosch.tools.timetool.model.Project.timeslots -> Timeslot
+[05.09.2014, 14:29:26,360] [main] INFO  org.hibernate.cfg.annotations.CollectionBinder  - Mapping collection: de.tbosch.tools.timetool.model.Customer.projects -> Project
+[05.09.2014, 14:29:26,365] [main] INFO  org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean  - Building new Hibernate SessionFactory
+[05.09.2014, 14:29:26,369] [main] INFO  org.hibernate.connection.ConnectionProviderFactory  - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+[05.09.2014, 14:29:26,370] [main] INFO  org.hibernate.cfg.SettingsFactory  - RDBMS: HSQL Database Engine, version: 2.0.0
+[05.09.2014, 14:29:26,370] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC driver: HSQL Database Engine Driver, version: 2.0.0
+[05.09.2014, 14:29:26,370] [main] INFO  org.hibernate.dialect.Dialect  - Using dialect: org.hibernate.dialect.HSQLDialect
+[05.09.2014, 14:29:26,371] [main] INFO  org.hibernate.transaction.TransactionFactoryFactory  - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+[05.09.2014, 14:29:26,371] [main] INFO  org.hibernate.transaction.TransactionManagerLookupFactory  - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+[05.09.2014, 14:29:26,371] [main] INFO  org.hibernate.cfg.SettingsFactory  - Automatic flush during beforeCompletion(): disabled
+[05.09.2014, 14:29:26,371] [main] INFO  org.hibernate.cfg.SettingsFactory  - Automatic session close at end of transaction: disabled
+[05.09.2014, 14:29:26,372] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC batch size: 15
+[05.09.2014, 14:29:26,372] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC batch updates for versioned data: disabled
+[05.09.2014, 14:29:26,372] [main] INFO  org.hibernate.cfg.SettingsFactory  - Scrollable result sets: enabled
+[05.09.2014, 14:29:26,372] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC3 getGeneratedKeys(): enabled
+[05.09.2014, 14:29:26,372] [main] INFO  org.hibernate.cfg.SettingsFactory  - Connection release mode: on_close
+[05.09.2014, 14:29:26,372] [main] INFO  org.hibernate.cfg.SettingsFactory  - Default batch fetch size: 1
+[05.09.2014, 14:29:26,372] [main] INFO  org.hibernate.cfg.SettingsFactory  - Generate SQL with comments: disabled
+[05.09.2014, 14:29:26,373] [main] INFO  org.hibernate.cfg.SettingsFactory  - Order SQL updates by primary key: disabled
+[05.09.2014, 14:29:26,373] [main] INFO  org.hibernate.cfg.SettingsFactory  - Order SQL inserts for batching: disabled
+[05.09.2014, 14:29:26,373] [main] INFO  org.hibernate.cfg.SettingsFactory  - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+[05.09.2014, 14:29:26,373] [main] INFO  org.hibernate.hql.ast.ASTQueryTranslatorFactory  - Using ASTQueryTranslatorFactory
+[05.09.2014, 14:29:26,373] [main] INFO  org.hibernate.cfg.SettingsFactory  - Query language substitutions: {}
+[05.09.2014, 14:29:26,373] [main] INFO  org.hibernate.cfg.SettingsFactory  - JPA-QL strict compliance: disabled
+[05.09.2014, 14:29:26,373] [main] INFO  org.hibernate.cfg.SettingsFactory  - Second-level cache: enabled
+[05.09.2014, 14:29:26,373] [main] INFO  org.hibernate.cfg.SettingsFactory  - Query cache: disabled
+[05.09.2014, 14:29:26,373] [main] INFO  org.hibernate.cfg.SettingsFactory  - Cache provider: org.hibernate.cache.NoCacheProvider
+[05.09.2014, 14:29:26,374] [main] INFO  org.hibernate.cfg.SettingsFactory  - Optimize cache for minimal puts: disabled
+[05.09.2014, 14:29:26,374] [main] INFO  org.hibernate.cfg.SettingsFactory  - Structured second-level cache entries: disabled
+[05.09.2014, 14:29:26,374] [main] INFO  org.hibernate.cfg.SettingsFactory  - Statistics: disabled
+[05.09.2014, 14:29:26,374] [main] INFO  org.hibernate.cfg.SettingsFactory  - Deleted entity synthetic identifier rollback: disabled
+[05.09.2014, 14:29:26,374] [main] INFO  org.hibernate.cfg.SettingsFactory  - Default entity-mode: pojo
+[05.09.2014, 14:29:26,374] [main] INFO  org.hibernate.cfg.SettingsFactory  - Named query checking : enabled
+[05.09.2014, 14:29:26,381] [main] INFO  org.hibernate.impl.SessionFactoryImpl  - building session factory
+[05.09.2014, 14:29:26,392] [main] INFO  org.hibernate.impl.SessionFactoryObjectFactory  - Not binding factory to JNDI, no JNDI name configured
+[05.09.2014, 14:29:26,400] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - Running hbm2ddl schema export
+[05.09.2014, 14:29:26,400] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - exporting generated schema to database
+[05.09.2014, 14:29:26,406] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - schema export complete
+[05.09.2014, 14:29:26,413] [main] INFO  org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean  - Updating database schema for Hibernate SessionFactory
+[05.09.2014, 14:29:26,451] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.CONFIGURATION
+[05.09.2014, 14:29:26,452] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [id, value, key]
+[05.09.2014, 14:29:26,452] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: []
+[05.09.2014, 14:29:26,452] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_sys_ct_10063_10065, sys_idx_sys_pk_10062_10064]
+[05.09.2014, 14:29:26,456] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.CUSTOMER
+[05.09.2014, 14:29:26,457] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [id, name]
+[05.09.2014, 14:29:26,457] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: []
+[05.09.2014, 14:29:26,457] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_sys_pk_10067_10069, sys_idx_sys_ct_10068_10070]
+[05.09.2014, 14:29:26,460] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.PROJECT
+[05.09.2014, 14:29:26,461] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [id, name, active, customer_id]
+[05.09.2014, 14:29:26,461] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: [fk50c8e2f9453744ab]
+[05.09.2014, 14:29:26,461] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_sys_pk_10074_10076, sys_idx_10085, sys_idx_sys_ct_10075_10077]
+[05.09.2014, 14:29:26,464] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.TIMESLOT
+[05.09.2014, 14:29:26,465] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [endtime, id, marked, starttime, project_id, active]
+[05.09.2014, 14:29:26,465] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: [fk8816726bbf6d49]
+[05.09.2014, 14:29:26,465] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_10087, sys_idx_sys_pk_10083_10084]
+[05.09.2014, 14:29:26,672] [main] INFO  org.springframework.orm.hibernate3.HibernateTransactionManager  - Using DataSource [org.apache.commons.dbcp.BasicDataSource@ea0732c] of Hibernate SessionFactory for HibernateTransactionManager
+[05.09.2014, 14:29:26,675] [main] INFO  de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl  - No active timeslot found
+[05.09.2014, 14:30:44,615] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext-test.xml]
+[05.09.2014, 14:30:44,761] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext.xml]
+[05.09.2014, 14:30:44,818] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext-services.xml]
+[05.09.2014, 14:30:44,898] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext-jira.xml]
+[05.09.2014, 14:30:45,024] [main] INFO  org.springframework.context.support.GenericApplicationContext  - Refreshing org.springframework.context.support.GenericApplicationContext@3edfb094: startup date [Fri Sep 05 14:30:45 CEST 2014]; root of context hierarchy
+[05.09.2014, 14:30:45,204] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool.properties]
+[05.09.2014, 14:30:45,204] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool-services.properties]
+[05.09.2014, 14:30:45,205] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool-test.properties]
+[05.09.2014, 14:30:45,213] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool-services.properties]
+[05.09.2014, 14:30:45,216] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool.properties]
+[05.09.2014, 14:30:45,326] [main] INFO  org.springframework.context.support.GenericApplicationContext  - Bean 'dataSource' of type [class org.apache.commons.dbcp.BasicDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[05.09.2014, 14:30:45,362] [main] INFO  org.hibernate.cfg.annotations.Version  - Hibernate Annotations 3.3.1.GA
+[05.09.2014, 14:30:45,373] [main] INFO  org.hibernate.cfg.Environment  - Hibernate 3.2.6
+[05.09.2014, 14:30:45,377] [main] INFO  org.hibernate.cfg.Environment  - hibernate.properties not found
+[05.09.2014, 14:30:45,381] [main] INFO  org.hibernate.cfg.Environment  - Bytecode provider name : cglib
+[05.09.2014, 14:30:45,384] [main] INFO  org.hibernate.cfg.Environment  - using JDK 1.4 java.sql.Timestamp handling
+[05.09.2014, 14:30:45,478] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Timeslot
+[05.09.2014, 14:30:45,504] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Timeslot on table Timeslot
+[05.09.2014, 14:30:45,553] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Project
+[05.09.2014, 14:30:45,553] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Project on table Project
+[05.09.2014, 14:30:45,591] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Configuration
+[05.09.2014, 14:30:45,591] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Configuration on table Configuration
+[05.09.2014, 14:30:45,596] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Customer
+[05.09.2014, 14:30:45,596] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Customer on table Customer
+[05.09.2014, 14:30:45,637] [main] INFO  org.hibernate.cfg.annotations.CollectionBinder  - Mapping collection: de.tbosch.tools.timetool.model.Project.timeslots -> Timeslot
+[05.09.2014, 14:30:45,638] [main] INFO  org.hibernate.cfg.annotations.CollectionBinder  - Mapping collection: de.tbosch.tools.timetool.model.Customer.projects -> Project
+[05.09.2014, 14:30:45,644] [main] INFO  org.hibernate.validator.Version  - Hibernate Validator 3.0.0.GA
+[05.09.2014, 14:30:45,658] [main] INFO  org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean  - Building new Hibernate SessionFactory
+[05.09.2014, 14:30:45,670] [main] INFO  org.hibernate.connection.ConnectionProviderFactory  - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+[05.09.2014, 14:30:45,977] [main] INFO  org.hibernate.cfg.SettingsFactory  - RDBMS: HSQL Database Engine, version: 2.0.0
+[05.09.2014, 14:30:45,977] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC driver: HSQL Database Engine Driver, version: 2.0.0
+[05.09.2014, 14:30:45,988] [main] INFO  org.hibernate.dialect.Dialect  - Using dialect: org.hibernate.dialect.HSQLDialect
+[05.09.2014, 14:30:45,991] [main] INFO  org.hibernate.transaction.TransactionFactoryFactory  - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+[05.09.2014, 14:30:45,992] [main] INFO  org.hibernate.transaction.TransactionManagerLookupFactory  - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+[05.09.2014, 14:30:45,992] [main] INFO  org.hibernate.cfg.SettingsFactory  - Automatic flush during beforeCompletion(): disabled
+[05.09.2014, 14:30:45,992] [main] INFO  org.hibernate.cfg.SettingsFactory  - Automatic session close at end of transaction: disabled
+[05.09.2014, 14:30:45,993] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC batch size: 15
+[05.09.2014, 14:30:45,993] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC batch updates for versioned data: disabled
+[05.09.2014, 14:30:45,993] [main] INFO  org.hibernate.cfg.SettingsFactory  - Scrollable result sets: enabled
+[05.09.2014, 14:30:45,993] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC3 getGeneratedKeys(): enabled
+[05.09.2014, 14:30:45,994] [main] INFO  org.hibernate.cfg.SettingsFactory  - Connection release mode: on_close
+[05.09.2014, 14:30:45,994] [main] INFO  org.hibernate.cfg.SettingsFactory  - Default batch fetch size: 1
+[05.09.2014, 14:30:45,994] [main] INFO  org.hibernate.cfg.SettingsFactory  - Generate SQL with comments: disabled
+[05.09.2014, 14:30:45,995] [main] INFO  org.hibernate.cfg.SettingsFactory  - Order SQL updates by primary key: disabled
+[05.09.2014, 14:30:45,995] [main] INFO  org.hibernate.cfg.SettingsFactory  - Order SQL inserts for batching: disabled
+[05.09.2014, 14:30:45,995] [main] INFO  org.hibernate.cfg.SettingsFactory  - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+[05.09.2014, 14:30:45,996] [main] INFO  org.hibernate.hql.ast.ASTQueryTranslatorFactory  - Using ASTQueryTranslatorFactory
+[05.09.2014, 14:30:45,996] [main] INFO  org.hibernate.cfg.SettingsFactory  - Query language substitutions: {}
+[05.09.2014, 14:30:45,996] [main] INFO  org.hibernate.cfg.SettingsFactory  - JPA-QL strict compliance: disabled
+[05.09.2014, 14:30:45,997] [main] INFO  org.hibernate.cfg.SettingsFactory  - Second-level cache: enabled
+[05.09.2014, 14:30:45,997] [main] INFO  org.hibernate.cfg.SettingsFactory  - Query cache: disabled
+[05.09.2014, 14:30:45,997] [main] INFO  org.hibernate.cfg.SettingsFactory  - Cache provider: org.hibernate.cache.NoCacheProvider
+[05.09.2014, 14:30:45,997] [main] INFO  org.hibernate.cfg.SettingsFactory  - Optimize cache for minimal puts: disabled
+[05.09.2014, 14:30:45,997] [main] INFO  org.hibernate.cfg.SettingsFactory  - Structured second-level cache entries: disabled
+[05.09.2014, 14:30:46,000] [main] INFO  org.hibernate.cfg.SettingsFactory  - Statistics: disabled
+[05.09.2014, 14:30:46,000] [main] INFO  org.hibernate.cfg.SettingsFactory  - Deleted entity synthetic identifier rollback: disabled
+[05.09.2014, 14:30:46,000] [main] INFO  org.hibernate.cfg.SettingsFactory  - Default entity-mode: pojo
+[05.09.2014, 14:30:46,000] [main] INFO  org.hibernate.cfg.SettingsFactory  - Named query checking : enabled
+[05.09.2014, 14:30:46,035] [main] INFO  org.hibernate.impl.SessionFactoryImpl  - building session factory
+[05.09.2014, 14:30:46,182] [main] INFO  org.hibernate.impl.SessionFactoryObjectFactory  - Not binding factory to JNDI, no JNDI name configured
+[05.09.2014, 14:30:46,191] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - Running hbm2ddl schema export
+[05.09.2014, 14:30:46,192] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - exporting generated schema to database
+[05.09.2014, 14:30:46,202] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - schema export complete
+[05.09.2014, 14:30:46,212] [main] INFO  org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean  - Updating database schema for Hibernate SessionFactory
+[05.09.2014, 14:30:46,350] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.CONFIGURATION
+[05.09.2014, 14:30:46,350] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [id, value, key]
+[05.09.2014, 14:30:46,350] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: []
+[05.09.2014, 14:30:46,350] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_sys_pk_10028_10030, sys_idx_sys_ct_10029_10031]
+[05.09.2014, 14:30:46,353] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.CUSTOMER
+[05.09.2014, 14:30:46,353] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [id, name]
+[05.09.2014, 14:30:46,353] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: []
+[05.09.2014, 14:30:46,353] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_sys_pk_10033_10035, sys_idx_sys_ct_10034_10036]
+[05.09.2014, 14:30:46,369] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.PROJECT
+[05.09.2014, 14:30:46,369] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [id, name, active, customer_id]
+[05.09.2014, 14:30:46,369] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: [fk50c8e2f9453744ab]
+[05.09.2014, 14:30:46,370] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_10051, sys_idx_sys_pk_10040_10042, sys_idx_sys_ct_10041_10043]
+[05.09.2014, 14:30:46,373] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.TIMESLOT
+[05.09.2014, 14:30:46,374] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [endtime, id, marked, starttime, project_id, active]
+[05.09.2014, 14:30:46,374] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: [fk8816726bbf6d49]
+[05.09.2014, 14:30:46,374] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_sys_pk_10049_10050, sys_idx_10053]
+[05.09.2014, 14:30:46,377] [main] INFO  org.springframework.context.support.GenericApplicationContext  - Bean 'sessionFactory' of type [class org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[05.09.2014, 14:30:46,391] [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a99e6a: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#1,de.tbosch.tools.timetool.service.impl.ConfigurationServiceImpl#0,de.tbosch.tools.timetool.service.impl.CustomerServiceImpl#0,de.tbosch.tools.timetool.service.impl.ProjectServiceImpl#0,de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl#0,de.tbosch.tools.timetool.dao.impl.ConfigurationDaoImpl#0,de.tbosch.tools.timetool.dao.impl.CustomerDaoImpl#0,de.tbosch.tools.timetool.dao.impl.ProjectDaoImpl#0,de.tbosch.tools.timetool.dao.impl.TimeslotDaoImpl#0,timer,dataSource,sessionFactory,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,transactionManager,org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor#0,de.tbosch.tools.timetool.service.impl.JiraServiceImpl#0,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#2,guiController,trayiconController,timetoolThread,imageIconAktiv,imageIconInaktiv,imageAktiv,imageInaktiv,trayIcon,iconTimer,resourceBundleMessageSource,testGetBeansByType1,testGetBeansByType2,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[05.09.2014, 14:30:46,509] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Initializing ExecutorService  'timer'
+[05.09.2014, 14:30:46,529] [main] INFO  org.springframework.orm.hibernate3.HibernateTransactionManager  - Using DataSource [org.apache.commons.dbcp.BasicDataSource@66ff8927] of Hibernate SessionFactory for HibernateTransactionManager
+[05.09.2014, 14:30:46,732] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Initializing ExecutorService  'iconTimer'
+[05.09.2014, 14:30:46,830] [main] INFO  org.springframework.context.support.GenericApplicationContext  - Closing org.springframework.context.support.GenericApplicationContext@3edfb094: startup date [Fri Sep 05 14:30:45 CEST 2014]; root of context hierarchy
+[05.09.2014, 14:30:46,831] [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a99e6a: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#1,de.tbosch.tools.timetool.service.impl.ConfigurationServiceImpl#0,de.tbosch.tools.timetool.service.impl.CustomerServiceImpl#0,de.tbosch.tools.timetool.service.impl.ProjectServiceImpl#0,de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl#0,de.tbosch.tools.timetool.dao.impl.ConfigurationDaoImpl#0,de.tbosch.tools.timetool.dao.impl.CustomerDaoImpl#0,de.tbosch.tools.timetool.dao.impl.ProjectDaoImpl#0,de.tbosch.tools.timetool.dao.impl.TimeslotDaoImpl#0,timer,dataSource,sessionFactory,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,transactionManager,org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor#0,de.tbosch.tools.timetool.service.impl.JiraServiceImpl#0,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#2,guiController,trayiconController,timetoolThread,imageIconAktiv,imageIconInaktiv,imageAktiv,imageInaktiv,trayIcon,iconTimer,resourceBundleMessageSource,testGetBeansByType1,testGetBeansByType2,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[05.09.2014, 14:30:46,833] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Shutting down ExecutorService 'iconTimer'
+[05.09.2014, 14:30:46,839] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Shutting down ExecutorService 'timer'
+[05.09.2014, 14:30:46,840] [main] INFO  org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean  - Closing Hibernate SessionFactory
+[05.09.2014, 14:30:46,840] [main] INFO  org.hibernate.impl.SessionFactoryImpl  - closing
+[05.09.2014, 14:30:46,840] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - Running hbm2ddl schema export
+[05.09.2014, 14:30:46,841] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - exporting generated schema to database
+[05.09.2014, 14:30:46,843] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - schema export complete
+[05.09.2014, 14:30:46,857] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Timeslot
+[05.09.2014, 14:30:46,858] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Timeslot on table Timeslot
+[05.09.2014, 14:30:46,860] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Project
+[05.09.2014, 14:30:46,860] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Project on table Project
+[05.09.2014, 14:30:46,862] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Configuration
+[05.09.2014, 14:30:46,862] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Configuration on table Configuration
+[05.09.2014, 14:30:46,863] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Customer
+[05.09.2014, 14:30:46,864] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Customer on table Customer
+[05.09.2014, 14:30:46,865] [main] INFO  org.hibernate.cfg.annotations.CollectionBinder  - Mapping collection: de.tbosch.tools.timetool.model.Project.timeslots -> Timeslot
+[05.09.2014, 14:30:46,866] [main] INFO  org.hibernate.cfg.annotations.CollectionBinder  - Mapping collection: de.tbosch.tools.timetool.model.Customer.projects -> Project
+[05.09.2014, 14:30:46,869] [main] INFO  org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean  - Building new Hibernate SessionFactory
+[05.09.2014, 14:30:46,874] [main] INFO  org.hibernate.connection.ConnectionProviderFactory  - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+[05.09.2014, 14:30:46,875] [main] INFO  org.hibernate.cfg.SettingsFactory  - RDBMS: HSQL Database Engine, version: 2.0.0
+[05.09.2014, 14:30:46,875] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC driver: HSQL Database Engine Driver, version: 2.0.0
+[05.09.2014, 14:30:46,875] [main] INFO  org.hibernate.dialect.Dialect  - Using dialect: org.hibernate.dialect.HSQLDialect
+[05.09.2014, 14:30:46,876] [main] INFO  org.hibernate.transaction.TransactionFactoryFactory  - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+[05.09.2014, 14:30:46,876] [main] INFO  org.hibernate.transaction.TransactionManagerLookupFactory  - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+[05.09.2014, 14:30:46,876] [main] INFO  org.hibernate.cfg.SettingsFactory  - Automatic flush during beforeCompletion(): disabled
+[05.09.2014, 14:30:46,877] [main] INFO  org.hibernate.cfg.SettingsFactory  - Automatic session close at end of transaction: disabled
+[05.09.2014, 14:30:46,877] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC batch size: 15
+[05.09.2014, 14:30:46,877] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC batch updates for versioned data: disabled
+[05.09.2014, 14:30:46,877] [main] INFO  org.hibernate.cfg.SettingsFactory  - Scrollable result sets: enabled
+[05.09.2014, 14:30:46,877] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC3 getGeneratedKeys(): enabled
+[05.09.2014, 14:30:46,877] [main] INFO  org.hibernate.cfg.SettingsFactory  - Connection release mode: on_close
+[05.09.2014, 14:30:46,878] [main] INFO  org.hibernate.cfg.SettingsFactory  - Default batch fetch size: 1
+[05.09.2014, 14:30:46,878] [main] INFO  org.hibernate.cfg.SettingsFactory  - Generate SQL with comments: disabled
+[05.09.2014, 14:30:46,878] [main] INFO  org.hibernate.cfg.SettingsFactory  - Order SQL updates by primary key: disabled
+[05.09.2014, 14:30:46,878] [main] INFO  org.hibernate.cfg.SettingsFactory  - Order SQL inserts for batching: disabled
+[05.09.2014, 14:30:46,878] [main] INFO  org.hibernate.cfg.SettingsFactory  - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+[05.09.2014, 14:30:46,878] [main] INFO  org.hibernate.hql.ast.ASTQueryTranslatorFactory  - Using ASTQueryTranslatorFactory
+[05.09.2014, 14:30:46,879] [main] INFO  org.hibernate.cfg.SettingsFactory  - Query language substitutions: {}
+[05.09.2014, 14:30:46,879] [main] INFO  org.hibernate.cfg.SettingsFactory  - JPA-QL strict compliance: disabled
+[05.09.2014, 14:30:46,879] [main] INFO  org.hibernate.cfg.SettingsFactory  - Second-level cache: enabled
+[05.09.2014, 14:30:46,879] [main] INFO  org.hibernate.cfg.SettingsFactory  - Query cache: disabled
+[05.09.2014, 14:30:46,879] [main] INFO  org.hibernate.cfg.SettingsFactory  - Cache provider: org.hibernate.cache.NoCacheProvider
+[05.09.2014, 14:30:46,879] [main] INFO  org.hibernate.cfg.SettingsFactory  - Optimize cache for minimal puts: disabled
+[05.09.2014, 14:30:46,880] [main] INFO  org.hibernate.cfg.SettingsFactory  - Structured second-level cache entries: disabled
+[05.09.2014, 14:30:46,880] [main] INFO  org.hibernate.cfg.SettingsFactory  - Statistics: disabled
+[05.09.2014, 14:30:46,880] [main] INFO  org.hibernate.cfg.SettingsFactory  - Deleted entity synthetic identifier rollback: disabled
+[05.09.2014, 14:30:46,880] [main] INFO  org.hibernate.cfg.SettingsFactory  - Default entity-mode: pojo
+[05.09.2014, 14:30:46,880] [main] INFO  org.hibernate.cfg.SettingsFactory  - Named query checking : enabled
+[05.09.2014, 14:30:46,886] [main] INFO  org.hibernate.impl.SessionFactoryImpl  - building session factory
+[05.09.2014, 14:30:46,896] [main] INFO  org.hibernate.impl.SessionFactoryObjectFactory  - Not binding factory to JNDI, no JNDI name configured
+[05.09.2014, 14:30:46,902] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - Running hbm2ddl schema export
+[05.09.2014, 14:30:46,902] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - exporting generated schema to database
+[05.09.2014, 14:30:46,907] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - schema export complete
+[05.09.2014, 14:30:46,913] [main] INFO  org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean  - Updating database schema for Hibernate SessionFactory
+[05.09.2014, 14:30:46,953] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.CONFIGURATION
+[05.09.2014, 14:30:46,954] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [id, value, key]
+[05.09.2014, 14:30:46,954] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: []
+[05.09.2014, 14:30:46,955] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_sys_ct_10063_10065, sys_idx_sys_pk_10062_10064]
+[05.09.2014, 14:30:46,959] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.CUSTOMER
+[05.09.2014, 14:30:46,959] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [id, name]
+[05.09.2014, 14:30:46,960] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: []
+[05.09.2014, 14:30:46,960] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_sys_pk_10067_10069, sys_idx_sys_ct_10068_10070]
+[05.09.2014, 14:30:46,963] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.PROJECT
+[05.09.2014, 14:30:46,964] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [id, name, active, customer_id]
+[05.09.2014, 14:30:46,964] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: [fk50c8e2f9453744ab]
+[05.09.2014, 14:30:46,964] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_sys_pk_10074_10076, sys_idx_10085, sys_idx_sys_ct_10075_10077]
+[05.09.2014, 14:30:46,974] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.TIMESLOT
+[05.09.2014, 14:30:46,974] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [endtime, id, marked, starttime, project_id, active]
+[05.09.2014, 14:30:46,975] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: [fk8816726bbf6d49]
+[05.09.2014, 14:30:46,975] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_10087, sys_idx_sys_pk_10083_10084]
+[05.09.2014, 14:30:47,181] [main] INFO  org.springframework.orm.hibernate3.HibernateTransactionManager  - Using DataSource [org.apache.commons.dbcp.BasicDataSource@71551e68] of Hibernate SessionFactory for HibernateTransactionManager
+[05.09.2014, 14:30:47,187] [main] INFO  de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl  - No active timeslot found
+[05.09.2014, 14:31:50,011] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext-test.xml]
+[05.09.2014, 14:31:50,148] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext.xml]
+[05.09.2014, 14:31:50,195] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [jar:file:/home/thomas/Entwicklung/git/timetool-fx/timetool-services/target/timetool-services-3.0.0.jar!/applicationContext-services.xml]
+[05.09.2014, 14:31:50,268] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [jar:file:/home/thomas/Entwicklung/git/timetool-fx/timetool-jira/target/timetool-jira-3.0.0.jar!/applicationContext-jira.xml]
+[05.09.2014, 14:31:50,357] [main] INFO  org.springframework.context.support.GenericApplicationContext  - Refreshing org.springframework.context.support.GenericApplicationContext@3edfb094: startup date [Fri Sep 05 14:31:50 CEST 2014]; root of context hierarchy
+[05.09.2014, 14:31:50,519] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool.properties]
+[05.09.2014, 14:31:50,519] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool-services.properties]
+[05.09.2014, 14:31:50,520] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool-test.properties]
+[05.09.2014, 14:31:50,529] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool-services.properties]
+[05.09.2014, 14:31:50,531] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool.properties]
+[05.09.2014, 14:31:50,636] [main] INFO  org.springframework.context.support.GenericApplicationContext  - Bean 'dataSource' of type [class org.apache.commons.dbcp.BasicDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[05.09.2014, 14:31:50,654] [main] INFO  org.hibernate.cfg.annotations.Version  - Hibernate Annotations 3.3.1.GA
+[05.09.2014, 14:31:50,661] [main] INFO  org.hibernate.cfg.Environment  - Hibernate 3.2.6
+[05.09.2014, 14:31:50,663] [main] INFO  org.hibernate.cfg.Environment  - hibernate.properties not found
+[05.09.2014, 14:31:50,666] [main] INFO  org.hibernate.cfg.Environment  - Bytecode provider name : cglib
+[05.09.2014, 14:31:50,669] [main] INFO  org.hibernate.cfg.Environment  - using JDK 1.4 java.sql.Timestamp handling
+[05.09.2014, 14:31:50,747] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Timeslot
+[05.09.2014, 14:31:50,774] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Timeslot on table Timeslot
+[05.09.2014, 14:31:50,838] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Project
+[05.09.2014, 14:31:50,839] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Project on table Project
+[05.09.2014, 14:31:50,866] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Configuration
+[05.09.2014, 14:31:50,867] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Configuration on table Configuration
+[05.09.2014, 14:31:50,875] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Customer
+[05.09.2014, 14:31:50,875] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Customer on table Customer
+[05.09.2014, 14:31:50,923] [main] INFO  org.hibernate.cfg.annotations.CollectionBinder  - Mapping collection: de.tbosch.tools.timetool.model.Project.timeslots -> Timeslot
+[05.09.2014, 14:31:50,925] [main] INFO  org.hibernate.cfg.annotations.CollectionBinder  - Mapping collection: de.tbosch.tools.timetool.model.Customer.projects -> Project
+[05.09.2014, 14:31:50,933] [main] INFO  org.hibernate.validator.Version  - Hibernate Validator 3.0.0.GA
+[05.09.2014, 14:31:50,946] [main] INFO  org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean  - Building new Hibernate SessionFactory
+[05.09.2014, 14:31:50,963] [main] INFO  org.hibernate.connection.ConnectionProviderFactory  - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+[05.09.2014, 14:31:51,226] [main] INFO  org.hibernate.cfg.SettingsFactory  - RDBMS: HSQL Database Engine, version: 2.0.0
+[05.09.2014, 14:31:51,227] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC driver: HSQL Database Engine Driver, version: 2.0.0
+[05.09.2014, 14:31:51,238] [main] INFO  org.hibernate.dialect.Dialect  - Using dialect: org.hibernate.dialect.HSQLDialect
+[05.09.2014, 14:31:51,242] [main] INFO  org.hibernate.transaction.TransactionFactoryFactory  - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+[05.09.2014, 14:31:51,244] [main] INFO  org.hibernate.transaction.TransactionManagerLookupFactory  - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+[05.09.2014, 14:31:51,245] [main] INFO  org.hibernate.cfg.SettingsFactory  - Automatic flush during beforeCompletion(): disabled
+[05.09.2014, 14:31:51,245] [main] INFO  org.hibernate.cfg.SettingsFactory  - Automatic session close at end of transaction: disabled
+[05.09.2014, 14:31:51,245] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC batch size: 15
+[05.09.2014, 14:31:51,245] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC batch updates for versioned data: disabled
+[05.09.2014, 14:31:51,246] [main] INFO  org.hibernate.cfg.SettingsFactory  - Scrollable result sets: enabled
+[05.09.2014, 14:31:51,246] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC3 getGeneratedKeys(): enabled
+[05.09.2014, 14:31:51,247] [main] INFO  org.hibernate.cfg.SettingsFactory  - Connection release mode: on_close
+[05.09.2014, 14:31:51,247] [main] INFO  org.hibernate.cfg.SettingsFactory  - Default batch fetch size: 1
+[05.09.2014, 14:31:51,248] [main] INFO  org.hibernate.cfg.SettingsFactory  - Generate SQL with comments: disabled
+[05.09.2014, 14:31:51,248] [main] INFO  org.hibernate.cfg.SettingsFactory  - Order SQL updates by primary key: disabled
+[05.09.2014, 14:31:51,248] [main] INFO  org.hibernate.cfg.SettingsFactory  - Order SQL inserts for batching: disabled
+[05.09.2014, 14:31:51,248] [main] INFO  org.hibernate.cfg.SettingsFactory  - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+[05.09.2014, 14:31:51,249] [main] INFO  org.hibernate.hql.ast.ASTQueryTranslatorFactory  - Using ASTQueryTranslatorFactory
+[05.09.2014, 14:31:51,249] [main] INFO  org.hibernate.cfg.SettingsFactory  - Query language substitutions: {}
+[05.09.2014, 14:31:51,250] [main] INFO  org.hibernate.cfg.SettingsFactory  - JPA-QL strict compliance: disabled
+[05.09.2014, 14:31:51,250] [main] INFO  org.hibernate.cfg.SettingsFactory  - Second-level cache: enabled
+[05.09.2014, 14:31:51,250] [main] INFO  org.hibernate.cfg.SettingsFactory  - Query cache: disabled
+[05.09.2014, 14:31:51,250] [main] INFO  org.hibernate.cfg.SettingsFactory  - Cache provider: org.hibernate.cache.NoCacheProvider
+[05.09.2014, 14:31:51,250] [main] INFO  org.hibernate.cfg.SettingsFactory  - Optimize cache for minimal puts: disabled
+[05.09.2014, 14:31:51,250] [main] INFO  org.hibernate.cfg.SettingsFactory  - Structured second-level cache entries: disabled
+[05.09.2014, 14:31:51,254] [main] INFO  org.hibernate.cfg.SettingsFactory  - Statistics: disabled
+[05.09.2014, 14:31:51,254] [main] INFO  org.hibernate.cfg.SettingsFactory  - Deleted entity synthetic identifier rollback: disabled
+[05.09.2014, 14:31:51,255] [main] INFO  org.hibernate.cfg.SettingsFactory  - Default entity-mode: pojo
+[05.09.2014, 14:31:51,255] [main] INFO  org.hibernate.cfg.SettingsFactory  - Named query checking : enabled
+[05.09.2014, 14:31:51,291] [main] INFO  org.hibernate.impl.SessionFactoryImpl  - building session factory
+[05.09.2014, 14:31:51,489] [main] INFO  org.hibernate.impl.SessionFactoryObjectFactory  - Not binding factory to JNDI, no JNDI name configured
+[05.09.2014, 14:31:51,498] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - Running hbm2ddl schema export
+[05.09.2014, 14:31:51,499] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - exporting generated schema to database
+[05.09.2014, 14:31:51,512] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - schema export complete
+[05.09.2014, 14:31:51,523] [main] INFO  org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean  - Updating database schema for Hibernate SessionFactory
+[05.09.2014, 14:31:51,679] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.CONFIGURATION
+[05.09.2014, 14:31:51,679] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [id, value, key]
+[05.09.2014, 14:31:51,679] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: []
+[05.09.2014, 14:31:51,680] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_sys_pk_10028_10030, sys_idx_sys_ct_10029_10031]
+[05.09.2014, 14:31:51,683] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.CUSTOMER
+[05.09.2014, 14:31:51,683] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [id, name]
+[05.09.2014, 14:31:51,683] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: []
+[05.09.2014, 14:31:51,683] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_sys_pk_10033_10035, sys_idx_sys_ct_10034_10036]
+[05.09.2014, 14:31:51,703] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.PROJECT
+[05.09.2014, 14:31:51,703] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [id, name, active, customer_id]
+[05.09.2014, 14:31:51,703] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: [fk50c8e2f9453744ab]
+[05.09.2014, 14:31:51,703] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_10051, sys_idx_sys_pk_10040_10042, sys_idx_sys_ct_10041_10043]
+[05.09.2014, 14:31:51,707] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.TIMESLOT
+[05.09.2014, 14:31:51,707] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [endtime, id, marked, starttime, project_id, active]
+[05.09.2014, 14:31:51,707] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: [fk8816726bbf6d49]
+[05.09.2014, 14:31:51,707] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_sys_pk_10049_10050, sys_idx_10053]
+[05.09.2014, 14:31:51,711] [main] INFO  org.springframework.context.support.GenericApplicationContext  - Bean 'sessionFactory' of type [class org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[05.09.2014, 14:31:51,730] [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a99e6a: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#1,de.tbosch.tools.timetool.service.impl.ConfigurationServiceImpl#0,de.tbosch.tools.timetool.service.impl.CustomerServiceImpl#0,de.tbosch.tools.timetool.service.impl.ProjectServiceImpl#0,de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl#0,de.tbosch.tools.timetool.dao.impl.ConfigurationDaoImpl#0,de.tbosch.tools.timetool.dao.impl.CustomerDaoImpl#0,de.tbosch.tools.timetool.dao.impl.ProjectDaoImpl#0,de.tbosch.tools.timetool.dao.impl.TimeslotDaoImpl#0,timer,dataSource,sessionFactory,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,transactionManager,org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor#0,de.tbosch.tools.timetool.service.impl.JiraServiceImpl#0,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#2,guiController,trayiconController,timetoolThread,imageIconAktiv,imageIconInaktiv,imageAktiv,imageInaktiv,trayIcon,iconTimer,resourceBundleMessageSource,testGetBeansByType1,testGetBeansByType2,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[05.09.2014, 14:31:51,851] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Initializing ExecutorService  'timer'
+[05.09.2014, 14:31:51,875] [main] INFO  org.springframework.orm.hibernate3.HibernateTransactionManager  - Using DataSource [org.apache.commons.dbcp.BasicDataSource@12859445] of Hibernate SessionFactory for HibernateTransactionManager
+[05.09.2014, 14:31:52,082] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Initializing ExecutorService  'iconTimer'
+[05.09.2014, 14:31:52,215] [main] INFO  org.springframework.context.support.GenericApplicationContext  - Closing org.springframework.context.support.GenericApplicationContext@3edfb094: startup date [Fri Sep 05 14:31:50 CEST 2014]; root of context hierarchy
+[05.09.2014, 14:31:52,216] [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a99e6a: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#1,de.tbosch.tools.timetool.service.impl.ConfigurationServiceImpl#0,de.tbosch.tools.timetool.service.impl.CustomerServiceImpl#0,de.tbosch.tools.timetool.service.impl.ProjectServiceImpl#0,de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl#0,de.tbosch.tools.timetool.dao.impl.ConfigurationDaoImpl#0,de.tbosch.tools.timetool.dao.impl.CustomerDaoImpl#0,de.tbosch.tools.timetool.dao.impl.ProjectDaoImpl#0,de.tbosch.tools.timetool.dao.impl.TimeslotDaoImpl#0,timer,dataSource,sessionFactory,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,transactionManager,org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor#0,de.tbosch.tools.timetool.service.impl.JiraServiceImpl#0,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#2,guiController,trayiconController,timetoolThread,imageIconAktiv,imageIconInaktiv,imageAktiv,imageInaktiv,trayIcon,iconTimer,resourceBundleMessageSource,testGetBeansByType1,testGetBeansByType2,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[05.09.2014, 14:31:52,220] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Shutting down ExecutorService 'iconTimer'
+[05.09.2014, 14:31:52,229] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Shutting down ExecutorService 'timer'
+[05.09.2014, 14:31:52,231] [main] INFO  org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean  - Closing Hibernate SessionFactory
+[05.09.2014, 14:31:52,231] [main] INFO  org.hibernate.impl.SessionFactoryImpl  - closing
+[05.09.2014, 14:31:52,231] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - Running hbm2ddl schema export
+[05.09.2014, 14:31:52,232] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - exporting generated schema to database
+[05.09.2014, 14:31:52,235] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - schema export complete
+[05.09.2014, 14:31:52,253] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Timeslot
+[05.09.2014, 14:31:52,254] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Timeslot on table Timeslot
+[05.09.2014, 14:31:52,256] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Project
+[05.09.2014, 14:31:52,257] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Project on table Project
+[05.09.2014, 14:31:52,259] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Configuration
+[05.09.2014, 14:31:52,260] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Configuration on table Configuration
+[05.09.2014, 14:31:52,261] [main] INFO  org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: de.tbosch.tools.timetool.model.Customer
+[05.09.2014, 14:31:52,261] [main] INFO  org.hibernate.cfg.annotations.EntityBinder  - Bind entity de.tbosch.tools.timetool.model.Customer on table Customer
+[05.09.2014, 14:31:52,264] [main] INFO  org.hibernate.cfg.annotations.CollectionBinder  - Mapping collection: de.tbosch.tools.timetool.model.Project.timeslots -> Timeslot
+[05.09.2014, 14:31:52,264] [main] INFO  org.hibernate.cfg.annotations.CollectionBinder  - Mapping collection: de.tbosch.tools.timetool.model.Customer.projects -> Project
+[05.09.2014, 14:31:52,268] [main] INFO  org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean  - Building new Hibernate SessionFactory
+[05.09.2014, 14:31:52,273] [main] INFO  org.hibernate.connection.ConnectionProviderFactory  - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+[05.09.2014, 14:31:52,274] [main] INFO  org.hibernate.cfg.SettingsFactory  - RDBMS: HSQL Database Engine, version: 2.0.0
+[05.09.2014, 14:31:52,275] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC driver: HSQL Database Engine Driver, version: 2.0.0
+[05.09.2014, 14:31:52,275] [main] INFO  org.hibernate.dialect.Dialect  - Using dialect: org.hibernate.dialect.HSQLDialect
+[05.09.2014, 14:31:52,275] [main] INFO  org.hibernate.transaction.TransactionFactoryFactory  - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+[05.09.2014, 14:31:52,276] [main] INFO  org.hibernate.transaction.TransactionManagerLookupFactory  - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+[05.09.2014, 14:31:52,276] [main] INFO  org.hibernate.cfg.SettingsFactory  - Automatic flush during beforeCompletion(): disabled
+[05.09.2014, 14:31:52,276] [main] INFO  org.hibernate.cfg.SettingsFactory  - Automatic session close at end of transaction: disabled
+[05.09.2014, 14:31:52,276] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC batch size: 15
+[05.09.2014, 14:31:52,276] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC batch updates for versioned data: disabled
+[05.09.2014, 14:31:52,276] [main] INFO  org.hibernate.cfg.SettingsFactory  - Scrollable result sets: enabled
+[05.09.2014, 14:31:52,277] [main] INFO  org.hibernate.cfg.SettingsFactory  - JDBC3 getGeneratedKeys(): enabled
+[05.09.2014, 14:31:52,277] [main] INFO  org.hibernate.cfg.SettingsFactory  - Connection release mode: on_close
+[05.09.2014, 14:31:52,277] [main] INFO  org.hibernate.cfg.SettingsFactory  - Default batch fetch size: 1
+[05.09.2014, 14:31:52,277] [main] INFO  org.hibernate.cfg.SettingsFactory  - Generate SQL with comments: disabled
+[05.09.2014, 14:31:52,277] [main] INFO  org.hibernate.cfg.SettingsFactory  - Order SQL updates by primary key: disabled
+[05.09.2014, 14:31:52,277] [main] INFO  org.hibernate.cfg.SettingsFactory  - Order SQL inserts for batching: disabled
+[05.09.2014, 14:31:52,278] [main] INFO  org.hibernate.cfg.SettingsFactory  - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+[05.09.2014, 14:31:52,278] [main] INFO  org.hibernate.hql.ast.ASTQueryTranslatorFactory  - Using ASTQueryTranslatorFactory
+[05.09.2014, 14:31:52,278] [main] INFO  org.hibernate.cfg.SettingsFactory  - Query language substitutions: {}
+[05.09.2014, 14:31:52,278] [main] INFO  org.hibernate.cfg.SettingsFactory  - JPA-QL strict compliance: disabled
+[05.09.2014, 14:31:52,278] [main] INFO  org.hibernate.cfg.SettingsFactory  - Second-level cache: enabled
+[05.09.2014, 14:31:52,279] [main] INFO  org.hibernate.cfg.SettingsFactory  - Query cache: disabled
+[05.09.2014, 14:31:52,279] [main] INFO  org.hibernate.cfg.SettingsFactory  - Cache provider: org.hibernate.cache.NoCacheProvider
+[05.09.2014, 14:31:52,279] [main] INFO  org.hibernate.cfg.SettingsFactory  - Optimize cache for minimal puts: disabled
+[05.09.2014, 14:31:52,279] [main] INFO  org.hibernate.cfg.SettingsFactory  - Structured second-level cache entries: disabled
+[05.09.2014, 14:31:52,279] [main] INFO  org.hibernate.cfg.SettingsFactory  - Statistics: disabled
+[05.09.2014, 14:31:52,280] [main] INFO  org.hibernate.cfg.SettingsFactory  - Deleted entity synthetic identifier rollback: disabled
+[05.09.2014, 14:31:52,280] [main] INFO  org.hibernate.cfg.SettingsFactory  - Default entity-mode: pojo
+[05.09.2014, 14:31:52,280] [main] INFO  org.hibernate.cfg.SettingsFactory  - Named query checking : enabled
+[05.09.2014, 14:31:52,288] [main] INFO  org.hibernate.impl.SessionFactoryImpl  - building session factory
+[05.09.2014, 14:31:52,303] [main] INFO  org.hibernate.impl.SessionFactoryObjectFactory  - Not binding factory to JNDI, no JNDI name configured
+[05.09.2014, 14:31:52,312] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - Running hbm2ddl schema export
+[05.09.2014, 14:31:52,313] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - exporting generated schema to database
+[05.09.2014, 14:31:52,320] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - schema export complete
+[05.09.2014, 14:31:52,330] [main] INFO  org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean  - Updating database schema for Hibernate SessionFactory
+[05.09.2014, 14:31:52,375] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.CONFIGURATION
+[05.09.2014, 14:31:52,375] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [id, value, key]
+[05.09.2014, 14:31:52,375] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: []
+[05.09.2014, 14:31:52,375] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_sys_ct_10063_10065, sys_idx_sys_pk_10062_10064]
+[05.09.2014, 14:31:52,379] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.CUSTOMER
+[05.09.2014, 14:31:52,379] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [id, name]
+[05.09.2014, 14:31:52,379] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: []
+[05.09.2014, 14:31:52,379] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_sys_pk_10067_10069, sys_idx_sys_ct_10068_10070]
+[05.09.2014, 14:31:52,383] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.PROJECT
+[05.09.2014, 14:31:52,383] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [id, name, active, customer_id]
+[05.09.2014, 14:31:52,384] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: [fk50c8e2f9453744ab]
+[05.09.2014, 14:31:52,384] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_sys_pk_10074_10076, sys_idx_10085, sys_idx_sys_ct_10075_10077]
+[05.09.2014, 14:31:52,388] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - table found: PUBLIC.PUBLIC.TIMESLOT
+[05.09.2014, 14:31:52,388] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - columns: [endtime, id, marked, starttime, project_id, active]
+[05.09.2014, 14:31:52,389] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - foreign keys: [fk8816726bbf6d49]
+[05.09.2014, 14:31:52,389] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_10087, sys_idx_sys_pk_10083_10084]
+[05.09.2014, 14:31:52,631] [main] INFO  org.springframework.orm.hibernate3.HibernateTransactionManager  - Using DataSource [org.apache.commons.dbcp.BasicDataSource@2b2c013f] of Hibernate SessionFactory for HibernateTransactionManager
+[05.09.2014, 14:31:52,633] [main] INFO  de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl  - No active timeslot found
