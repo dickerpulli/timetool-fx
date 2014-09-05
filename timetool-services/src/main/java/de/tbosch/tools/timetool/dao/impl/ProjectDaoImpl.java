@@ -28,7 +28,7 @@ public class ProjectDaoImpl extends GenericHibernateDao<Project, Long> implement
 	 */
 	@Override
 	public Project findActive() {
-		Criteria criteria = getSession().createCriteria(Project.class);
+		Criteria criteria = currentSession().createCriteria(Project.class);
 		criteria.add(Restrictions.eq("active", true));
 		return (Project) criteria.uniqueResult();
 	}

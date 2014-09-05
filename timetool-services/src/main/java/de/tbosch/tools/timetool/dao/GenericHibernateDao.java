@@ -8,7 +8,7 @@ import javax.annotation.PostConstruct;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 /**
  * The Hibernate implementation of the {@link GenericDao}.
@@ -81,7 +81,7 @@ public class GenericHibernateDao<T, K extends Serializable> extends HibernateDao
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<T> findAll() {
-		Criteria criteria = getSession().createCriteria(type);
+		Criteria criteria = currentSession().createCriteria(type);
 		return criteria.list();
 	}
 
@@ -98,7 +98,7 @@ public class GenericHibernateDao<T, K extends Serializable> extends HibernateDao
 	 */
 	@Override
 	public void evict() {
-		getSessionFactory().evict(type);
+		getSessionFactory().getCache().evictEntityRegion(getClass());
 	}
 
 	/**

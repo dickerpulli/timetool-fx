@@ -38,7 +38,7 @@ public class ConfigurationDaoImpl extends GenericHibernateDao<Configuration, Lon
 	 */
 	@Override
 	public Configuration findByKey(Key key) {
-		Criteria criteria = getSession().createCriteria(Configuration.class);
+		Criteria criteria = currentSession().createCriteria(Configuration.class);
 		criteria.add(Restrictions.eq("key", key));
 		Configuration configuration = (Configuration) criteria.uniqueResult();
 		return configuration;

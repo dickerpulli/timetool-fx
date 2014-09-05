@@ -31,7 +31,7 @@ public class TimeslotDaoImpl extends GenericHibernateDao<Timeslot, Long> impleme
 	 */
 	@Override
 	public Timeslot findActive() {
-		Criteria criteria = getSession().createCriteria(Timeslot.class);
+		Criteria criteria = currentSession().createCriteria(Timeslot.class);
 		criteria.add(Restrictions.eq("active", true));
 		return (Timeslot) criteria.uniqueResult();
 	}
@@ -41,7 +41,7 @@ public class TimeslotDaoImpl extends GenericHibernateDao<Timeslot, Long> impleme
 	 */
 	@Override
 	public Timeslot findWithTodayStarttime(long projectId) {
-		Criteria criteria = getSession().createCriteria(Timeslot.class);
+		Criteria criteria = currentSession().createCriteria(Timeslot.class);
 		criteria.add(Restrictions.eq("project.id", projectId));
 		DateTime today0h = new LocalDate().toDateTimeAtStartOfDay();
 		criteria.add(Restrictions.between("starttime", today0h.toDate(), today0h.plusDays(1).toDate()));

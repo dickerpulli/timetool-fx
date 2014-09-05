@@ -1774,3 +1774,191 @@ Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: Inval
 [05.09.2014, 14:31:52,389] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - indexes: [sys_idx_10087, sys_idx_sys_pk_10083_10084]
 [05.09.2014, 14:31:52,631] [main] INFO  org.springframework.orm.hibernate3.HibernateTransactionManager  - Using DataSource [org.apache.commons.dbcp.BasicDataSource@2b2c013f] of Hibernate SessionFactory for HibernateTransactionManager
 [05.09.2014, 14:31:52,633] [main] INFO  de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl  - No active timeslot found
+[05.09.2014, 14:50:10,175] [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1505a8c9: startup date [Fri Sep 05 14:50:10 CEST 2014]; root of context hierarchy
+[05.09.2014, 14:50:10,451] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext.xml]
+[05.09.2014, 14:50:10,581] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/home/thomas/Entwicklung/git/timetool-fx/timetool-services/target/classes/applicationContext-services.xml]
+[05.09.2014, 14:50:10,692] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/home/thomas/Entwicklung/git/timetool-fx/timetool-jira/target/classes/applicationContext-jira.xml]
+[05.09.2014, 14:50:10,998] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool-services.properties]
+[05.09.2014, 14:50:11,010] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool.properties]
+[05.09.2014, 14:50:44,785] [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3b1938ea: startup date [Fri Sep 05 14:50:44 CEST 2014]; root of context hierarchy
+[05.09.2014, 14:50:44,859] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext.xml]
+[05.09.2014, 14:50:44,992] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/home/thomas/Entwicklung/git/timetool-fx/timetool-services/target/classes/applicationContext-services.xml]
+[05.09.2014, 14:50:45,116] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/home/thomas/Entwicklung/git/timetool-fx/timetool-jira/target/classes/applicationContext-jira.xml]
+[05.09.2014, 14:50:45,417] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool-services.properties]
+[05.09.2014, 14:50:45,428] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool.properties]
+[05.09.2014, 14:55:02,859] [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@c7f55e2: startup date [Fri Sep 05 14:55:02 CEST 2014]; root of context hierarchy
+[05.09.2014, 14:55:02,916] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext.xml]
+[05.09.2014, 14:55:03,050] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/home/thomas/Entwicklung/git/timetool-fx/timetool-services/target/classes/applicationContext-services.xml]
+[05.09.2014, 14:55:03,178] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/home/thomas/Entwicklung/git/timetool-fx/timetool-jira/target/classes/applicationContext-jira.xml]
+[05.09.2014, 14:55:03,474] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool-services.properties]
+[05.09.2014, 14:55:03,482] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool.properties]
+[05.09.2014, 14:55:03,793] [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[05.09.2014, 14:55:03,799] [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.6.Final}
+[05.09.2014, 14:55:03,801] [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+[05.09.2014, 14:55:03,804] [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+[05.09.2014, 14:55:04,183] [main] INFO  HSQLDB484591563A.org.hsqldb.persist.Logger  - Database closed
+[05.09.2014, 14:55:04,368] [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+[05.09.2014, 14:55:04,386] [main] INFO  org.hibernate.engine.jdbc.internal.LobCreatorBuilder  - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+[05.09.2014, 14:55:04,549] [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+[05.09.2014, 14:55:04,778] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate  - HHH000228: Running hbm2ddl schema update
+[05.09.2014, 14:55:04,778] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate  - HHH000102: Fetching database metadata
+[05.09.2014, 14:55:04,783] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate  - HHH000396: Updating schema
+[05.09.2014, 14:55:04,838] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000261: Table found: PUBLIC.PUBLIC.CONFIGURATION
+[05.09.2014, 14:55:04,839] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000037: Columns: [id, value, key]
+[05.09.2014, 14:55:04,839] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000108: Foreign keys: []
+[05.09.2014, 14:55:04,839] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000126: Indexes: [sys_idx_sys_pk_10027_10031, sys_idx_sys_ct_10030_10032]
+[05.09.2014, 14:55:04,842] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000261: Table found: PUBLIC.PUBLIC.CUSTOMER
+[05.09.2014, 14:55:04,842] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000037: Columns: [id, name]
+[05.09.2014, 14:55:04,842] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000108: Foreign keys: []
+[05.09.2014, 14:55:04,843] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000126: Indexes: [sys_idx_sys_pk_10034_10037, sys_idx_sys_ct_10036_10038]
+[05.09.2014, 14:55:04,849] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000261: Table found: PUBLIC.PUBLIC.PROJECT
+[05.09.2014, 14:55:04,849] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000037: Columns: [id, name, active, customer_id]
+[05.09.2014, 14:55:04,849] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000108: Foreign keys: [fk50c8e2f9453744ab]
+[05.09.2014, 14:55:04,850] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000126: Indexes: [sys_idx_sys_pk_10040_10045, sys_idx_10047, sys_idx_sys_ct_10044_10046]
+[05.09.2014, 14:55:04,852] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000261: Table found: PUBLIC.PUBLIC.TIMESLOT
+[05.09.2014, 14:55:04,853] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000037: Columns: [endtime, id, marked, starttime, project_id, active]
+[05.09.2014, 14:55:04,853] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000108: Foreign keys: [fk8816726bbf6d49]
+[05.09.2014, 14:55:04,853] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000126: Indexes: [sys_idx_sys_pk_10050_10056, sys_idx_10057]
+[05.09.2014, 14:55:04,854] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate  - HHH000232: Schema update complete
+[05.09.2014, 14:55:04,865] [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+[05.09.2014, 14:55:05,017] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Initializing ExecutorService  'timer'
+[05.09.2014, 14:55:05,047] [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager  - Using DataSource [org.apache.commons.dbcp.BasicDataSource@62733502] of Hibernate SessionFactory for HibernateTransactionManager
+[05.09.2014, 14:55:05,289] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Initializing ExecutorService  'iconTimer'
+[05.09.2014, 14:55:05,307] [Thread-4] INFO  de.tbosch.tools.timetool.TimetoolThread  - running thread
+[05.09.2014, 14:55:05,597] [Thread-4] INFO  de.tbosch.tools.timetool.SwingExceptionHandler  - exception thrown - handle exception in AWTExceptioHandler
+[05.09.2014, 14:55:06,030] [timer-1] ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler  - Unexpected error occurred in scheduled task.
+java.lang.ClassCastException: org.springframework.orm.hibernate4.SessionHolder cannot be cast to org.springframework.orm.hibernate3.SessionHolder
+	at org.springframework.orm.hibernate3.SessionFactoryUtils.doGetSession(SessionFactoryUtils.java:293)
+	at org.springframework.orm.hibernate3.SessionFactoryUtils.getSession(SessionFactoryUtils.java:239)
+	at org.springframework.orm.hibernate3.support.HibernateDaoSupport.getSession(HibernateDaoSupport.java:177)
+	at org.springframework.orm.hibernate3.support.HibernateDaoSupport.getSession(HibernateDaoSupport.java:148)
+	at de.tbosch.tools.timetool.dao.impl.TimeslotDaoImpl.findActive(TimeslotDaoImpl.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+	at com.sun.proxy.$Proxy32.findActive(Unknown Source)
+	at de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl.getActiveTimeslot(TimeslotServiceImpl.java:111)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:98)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:262)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+	at com.sun.proxy.$Proxy34.getActiveTimeslot(Unknown Source)
+	at de.tbosch.tools.timetool.utils.timer.TimeslotTimerTask.run(TimeslotTimerTask.java:28)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:304)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:178)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[05.09.2014, 14:55:06,291] [iconTimer-1] ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler  - Unexpected error occurred in scheduled task.
+java.lang.ClassCastException: org.springframework.orm.hibernate4.SessionHolder cannot be cast to org.springframework.orm.hibernate3.SessionHolder
+	at org.springframework.orm.hibernate3.SessionFactoryUtils.doGetSession(SessionFactoryUtils.java:293)
+	at org.springframework.orm.hibernate3.SessionFactoryUtils.getSession(SessionFactoryUtils.java:239)
+	at org.springframework.orm.hibernate3.support.HibernateDaoSupport.getSession(HibernateDaoSupport.java:177)
+	at org.springframework.orm.hibernate3.support.HibernateDaoSupport.getSession(HibernateDaoSupport.java:148)
+	at de.tbosch.tools.timetool.dao.impl.TimeslotDaoImpl.findActive(TimeslotDaoImpl.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+	at com.sun.proxy.$Proxy32.findActive(Unknown Source)
+	at de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl.getActiveTimeslot(TimeslotServiceImpl.java:111)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:98)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:262)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+	at com.sun.proxy.$Proxy34.getActiveTimeslot(Unknown Source)
+	at de.tbosch.tools.timetool.controller.TrayiconController.initIcon(TrayiconController.java:106)
+	at de.tbosch.tools.timetool.utils.timer.IconTimerTask.run(IconTimerTask.java:23)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:304)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:178)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[05.09.2014, 14:55:14,910] [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Closing org.springframework.context.support.ClassPathXmlApplicationContext@c7f55e2: startup date [Fri Sep 05 14:55:02 CEST 2014]; root of context hierarchy
+[05.09.2014, 14:55:14,917] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Shutting down ExecutorService 'iconTimer'
+[05.09.2014, 14:55:14,920] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Shutting down ExecutorService 'timer'
+[05.09.2014, 14:59:56,435] [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7bdf6ed6: startup date [Fri Sep 05 14:59:56 CEST 2014]; root of context hierarchy
+[05.09.2014, 14:59:56,518] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext.xml]
+[05.09.2014, 14:59:56,655] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/home/thomas/Entwicklung/git/timetool-fx/timetool-services/target/classes/applicationContext-services.xml]
+[05.09.2014, 14:59:56,793] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/home/thomas/Entwicklung/git/timetool-fx/timetool-jira/target/classes/applicationContext-jira.xml]
+[05.09.2014, 14:59:57,108] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool-services.properties]
+[05.09.2014, 14:59:57,116] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool.properties]
+[05.09.2014, 14:59:57,457] [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[05.09.2014, 14:59:57,463] [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.6.Final}
+[05.09.2014, 14:59:57,465] [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+[05.09.2014, 14:59:57,467] [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+[05.09.2014, 14:59:57,878] [main] INFO  HSQLDB484591563A.org.hsqldb.persist.Logger  - Database closed
+[05.09.2014, 14:59:58,050] [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+[05.09.2014, 14:59:58,066] [main] INFO  org.hibernate.engine.jdbc.internal.LobCreatorBuilder  - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+[05.09.2014, 14:59:58,237] [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+[05.09.2014, 14:59:58,453] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate  - HHH000228: Running hbm2ddl schema update
+[05.09.2014, 14:59:58,454] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate  - HHH000102: Fetching database metadata
+[05.09.2014, 14:59:58,459] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate  - HHH000396: Updating schema
+[05.09.2014, 14:59:58,515] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000261: Table found: PUBLIC.PUBLIC.CONFIGURATION
+[05.09.2014, 14:59:58,516] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000037: Columns: [id, value, key]
+[05.09.2014, 14:59:58,516] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000108: Foreign keys: []
+[05.09.2014, 14:59:58,516] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000126: Indexes: [sys_idx_sys_pk_10027_10031, sys_idx_sys_ct_10030_10032]
+[05.09.2014, 14:59:58,519] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000261: Table found: PUBLIC.PUBLIC.CUSTOMER
+[05.09.2014, 14:59:58,519] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000037: Columns: [id, name]
+[05.09.2014, 14:59:58,519] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000108: Foreign keys: []
+[05.09.2014, 14:59:58,519] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000126: Indexes: [sys_idx_sys_pk_10034_10037, sys_idx_sys_ct_10036_10038]
+[05.09.2014, 14:59:58,526] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000261: Table found: PUBLIC.PUBLIC.PROJECT
+[05.09.2014, 14:59:58,527] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000037: Columns: [id, name, active, customer_id]
+[05.09.2014, 14:59:58,527] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000108: Foreign keys: [fk50c8e2f9453744ab]
+[05.09.2014, 14:59:58,527] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000126: Indexes: [sys_idx_sys_pk_10040_10045, sys_idx_10047, sys_idx_sys_ct_10044_10046]
+[05.09.2014, 14:59:58,530] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000261: Table found: PUBLIC.PUBLIC.TIMESLOT
+[05.09.2014, 14:59:58,530] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000037: Columns: [endtime, id, marked, starttime, project_id, active]
+[05.09.2014, 14:59:58,530] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000108: Foreign keys: [fk8816726bbf6d49]
+[05.09.2014, 14:59:58,530] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000126: Indexes: [sys_idx_sys_pk_10050_10056, sys_idx_10057]
+[05.09.2014, 14:59:58,531] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate  - HHH000232: Schema update complete
+[05.09.2014, 14:59:58,542] [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+[05.09.2014, 14:59:58,693] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Initializing ExecutorService  'timer'
+[05.09.2014, 14:59:58,719] [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager  - Using DataSource [org.apache.commons.dbcp.BasicDataSource@31e4f220] of Hibernate SessionFactory for HibernateTransactionManager
+[05.09.2014, 14:59:58,941] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Initializing ExecutorService  'iconTimer'
+[05.09.2014, 14:59:58,958] [Thread-4] INFO  de.tbosch.tools.timetool.TimetoolThread  - running thread
+[05.09.2014, 14:59:59,212] [Thread-4] INFO  de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl  - No active timeslot found
+[05.09.2014, 14:59:59,243] [Thread-4] INFO  HSQLDB484591563A.org.hsqldb.persist.Logger  - Checkpoint start
+[05.09.2014, 14:59:59,253] [Thread-4] INFO  HSQLDB484591563A.org.hsqldb.persist.Logger  - Checkpoint end
+[05.09.2014, 15:00:19,257] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.SwingExceptionHandler  - exception thrown - handle exception in AWTExceptioHandler
+[05.09.2014, 15:00:42,208] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.service.impl.CustomerServiceImpl  - Create a new customer with name 'aaa'
+[05.09.2014, 15:00:44,515] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.service.impl.ProjectServiceImpl  - Creates a new project with name 'xxx'
+[05.09.2014, 15:00:56,588] [AWT-EventQueue-0] ERROR de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl  - No active project found to start a timeslot
+[05.09.2014, 15:00:56,588] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.SwingExceptionHandler  - exception thrown - handle exception in AWTExceptioHandler
+[05.09.2014, 15:01:04,754] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.service.impl.ProjectServiceImpl  - Set the project with name = xxx as active
+[05.09.2014, 15:01:09,576] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl  - Create new timeslot for projectId = 1
+[05.09.2014, 15:01:11,864] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl  - Update endtime for timeslot, timeslotId = 1
