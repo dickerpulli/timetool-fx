@@ -158,7 +158,7 @@ public class ExcelWorker {
 	 * @return The settings
 	 */
 	private WorkbookSettings getWorkbookSettings() {
-		// Workbook Setting für besser Performance
+		// Workbook Setting fuer besser Performance
 		WorkbookSettings settings = new WorkbookSettings();
 
 		// Array Grow-Size aud 128K statt 1MB

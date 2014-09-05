@@ -19,7 +19,8 @@ public final class Timetool {
 	/**
 	 * The main method.
 	 * 
-	 * @param args The arguments of the call
+	 * @param args
+	 *            The arguments of the call
 	 * @throws InterruptedException
 	 */
 	public static void main(String[] args) {
