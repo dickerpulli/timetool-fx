@@ -3,4 +3,4 @@
 /.classpath
 /.project
 /*.log
-/timetooldb.*
+/*/timetooldb.*
