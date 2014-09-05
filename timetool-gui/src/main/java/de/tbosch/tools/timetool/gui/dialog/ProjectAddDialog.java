@@ -19,12 +19,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-import org.hibernate.validator.InvalidStateException;
-
 import de.tbosch.tools.timetool.controller.GuiController;
 import de.tbosch.tools.timetool.model.Customer;
 import de.tbosch.tools.timetool.model.Project;
-import de.tbosch.tools.timetool.utils.ValidationUtils;
 import de.tbosch.tools.timetool.utils.ValidationUtils.InputFieldData;
 import de.tbosch.tools.timetool.utils.context.MessageHelper;
 
@@ -124,12 +121,12 @@ public class ProjectAddDialog extends JDialog {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				try {
-					guiController.createProject(textField.getText(), ((Customer) customersComboBox.getSelectedItem()).getId());
-					dispose();
-				} catch (InvalidStateException e1) {
-					ValidationUtils.notifyInputFields(e1, inputFields);
-				}
+				// try {
+				guiController.createProject(textField.getText(), ((Customer) customersComboBox.getSelectedItem()).getId());
+				dispose();
+				// } catch (InvalidStateException e1) {
+				// ValidationUtils.notifyInputFields(e1, inputFields);
+				// }
 			}
 		});
 		JButton cancelButton = new JButton(MessageHelper.getMessage("button.cancel"));

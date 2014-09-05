@@ -10,8 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
-import org.hibernate.validator.NotNull;
+import javax.validation.constraints.NotNull;
 
 import de.tbosch.tools.timetool.utils.DateUtils;
 import de.tbosch.tools.timetool.utils.context.MessageHelper;
@@ -90,7 +89,8 @@ public class Timeslot implements Comparable<Timeslot> {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(long id) {
 		this.id = id;
@@ -104,7 +104,8 @@ public class Timeslot implements Comparable<Timeslot> {
 	}
 
 	/**
-	 * @param starttime the starttime to set
+	 * @param starttime
+	 *            the starttime to set
 	 */
 	public void setStarttime(Date starttime) {
 		this.starttime = starttime;
@@ -118,7 +119,8 @@ public class Timeslot implements Comparable<Timeslot> {
 	}
 
 	/**
-	 * @param endtime the endtime to set
+	 * @param endtime
+	 *            the endtime to set
 	 */
 	public void setEndtime(Date endtime) {
 		this.endtime = endtime;
@@ -132,7 +134,8 @@ public class Timeslot implements Comparable<Timeslot> {
 	}
 
 	/**
-	 * @param project the project to set
+	 * @param project
+	 *            the project to set
 	 */
 	public void setProject(Project project) {
 		this.project = project;
@@ -146,7 +149,8 @@ public class Timeslot implements Comparable<Timeslot> {
 	}
 
 	/**
-	 * @param active the active to set
+	 * @param active
+	 *            the active to set
 	 */
 	public void setActive(boolean active) {
 		this.active = active;
@@ -160,7 +164,8 @@ public class Timeslot implements Comparable<Timeslot> {
 	}
 
 	/**
-	 * @param marked the marked to set
+	 * @param marked
+	 *            the marked to set
 	 */
 	public void setMarked(boolean marked) {
 		this.marked = marked;

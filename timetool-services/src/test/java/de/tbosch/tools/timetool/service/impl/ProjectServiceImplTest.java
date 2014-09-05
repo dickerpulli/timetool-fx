@@ -29,6 +29,7 @@ public class ProjectServiceImplTest extends AbstractSpringDbTest {
 		executeSql("database/service/ProjectServiceImplTest.sql");
 	}
 
+
 	@Test
 	public void testSetActiveProject() {
 		Project project = projectService.getActiveProject();

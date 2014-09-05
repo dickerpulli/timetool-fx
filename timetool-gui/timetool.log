@@ -1962,3 +1962,66 @@ java.lang.ClassCastException: org.springframework.orm.hibernate4.SessionHolder c
 [05.09.2014, 15:01:04,754] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.service.impl.ProjectServiceImpl  - Set the project with name = xxx as active
 [05.09.2014, 15:01:09,576] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl  - Create new timeslot for projectId = 1
 [05.09.2014, 15:01:11,864] [AWT-EventQueue-0] INFO  de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl  - Update endtime for timeslot, timeslotId = 1
+[05.09.2014, 15:33:30,135] [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@625e4591: startup date [Fri Sep 05 15:33:30 CEST 2014]; root of context hierarchy
+[05.09.2014, 15:33:30,239] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext.xml]
+[05.09.2014, 15:33:30,432] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/home/thomas/Entwicklung/git/timetool-fx/timetool-services/target/classes/applicationContext-services.xml]
+[05.09.2014, 15:33:30,558] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/home/thomas/Entwicklung/git/timetool-fx/timetool-jira/target/classes/applicationContext-jira.xml]
+[05.09.2014, 15:33:30,836] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool-services.properties]
+[05.09.2014, 15:33:30,845] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool.properties]
+[05.09.2014, 15:35:21,925] [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3aa8c31b: startup date [Fri Sep 05 15:35:21 CEST 2014]; root of context hierarchy
+[05.09.2014, 15:35:21,979] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext.xml]
+[05.09.2014, 15:35:22,251] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/home/thomas/Entwicklung/git/timetool-fx/timetool-services/target/classes/applicationContext-services.xml]
+[05.09.2014, 15:35:22,370] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/home/thomas/Entwicklung/git/timetool-fx/timetool-jira/target/classes/applicationContext-jira.xml]
+[05.09.2014, 15:35:22,660] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool-services.properties]
+[05.09.2014, 15:35:22,671] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool.properties]
+[05.09.2014, 15:35:22,948] [main] INFO  org.hibernate.annotations.common.Version  - Hibernate Commons Annotations 3.1.0.GA
+[05.09.2014, 15:37:42,493] [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@455d0ff7: startup date [Fri Sep 05 15:37:42 CEST 2014]; root of context hierarchy
+[05.09.2014, 15:37:42,557] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext.xml]
+[05.09.2014, 15:37:42,683] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/home/thomas/Entwicklung/git/timetool-fx/timetool-services/target/classes/applicationContext-services.xml]
+[05.09.2014, 15:37:43,031] [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/home/thomas/Entwicklung/git/timetool-fx/timetool-jira/target/classes/applicationContext-jira.xml]
+[05.09.2014, 15:37:43,287] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool-services.properties]
+[05.09.2014, 15:37:43,303] [main] INFO  org.springframework.context.support.PropertySourcesPlaceholderConfigurer  - Loading properties file from class path resource [timetool.properties]
+[05.09.2014, 15:37:43,638] [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[05.09.2014, 15:37:43,644] [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.6.Final}
+[05.09.2014, 15:37:43,645] [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+[05.09.2014, 15:37:43,647] [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+[05.09.2014, 15:37:44,072] [main] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - checkpointClose start
+[05.09.2014, 15:37:44,095] [main] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - checkpointClose end
+[05.09.2014, 15:37:44,132] [main] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - Database closed
+[05.09.2014, 15:37:44,304] [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+[05.09.2014, 15:37:44,487] [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+[05.09.2014, 15:37:44,526] [main] INFO  org.hibernate.validator.internal.util.Version  - HV000001: Hibernate Validator 5.1.2.Final
+[05.09.2014, 15:37:44,740] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate  - HHH000228: Running hbm2ddl schema update
+[05.09.2014, 15:37:44,740] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate  - HHH000102: Fetching database metadata
+[05.09.2014, 15:37:44,760] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate  - HHH000396: Updating schema
+[05.09.2014, 15:37:44,815] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000261: Table found: PUBLIC.PUBLIC.CONFIGURATION
+[05.09.2014, 15:37:44,816] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000037: Columns: [id, value, key]
+[05.09.2014, 15:37:44,816] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000108: Foreign keys: []
+[05.09.2014, 15:37:44,816] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000126: Indexes: [sys_idx_sys_pk_10092_10096, sys_idx_sys_ct_10095_10100]
+[05.09.2014, 15:37:44,821] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000261: Table found: PUBLIC.PUBLIC.CUSTOMER
+[05.09.2014, 15:37:44,821] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000037: Columns: [id, name]
+[05.09.2014, 15:37:44,821] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000108: Foreign keys: []
+[05.09.2014, 15:37:44,822] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000126: Indexes: [sys_idx_sys_pk_10102_10105, sys_idx_sys_ct_10104_10108]
+[05.09.2014, 15:37:44,831] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000261: Table found: PUBLIC.PUBLIC.PROJECT
+[05.09.2014, 15:37:44,831] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000037: Columns: [id, name, active, customer_id]
+[05.09.2014, 15:37:44,832] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000108: Foreign keys: [fk50c8e2f9453744ab]
+[05.09.2014, 15:37:44,832] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000126: Indexes: [sys_idx_10121, sys_idx_sys_ct_10114_10120, sys_idx_sys_pk_10110_10115]
+[05.09.2014, 15:37:44,836] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000261: Table found: PUBLIC.PUBLIC.TIMESLOT
+[05.09.2014, 15:37:44,837] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000037: Columns: [endtime, id, marked, starttime, project_id, active]
+[05.09.2014, 15:37:44,837] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000108: Foreign keys: [fk8816726bbf6d49]
+[05.09.2014, 15:37:44,837] [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata  - HHH000126: Indexes: [sys_idx_10137, sys_idx_sys_pk_10124_10130]
+[05.09.2014, 15:37:44,842] [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate  - HHH000232: Schema update complete
+[05.09.2014, 15:37:44,851] [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+[05.09.2014, 15:37:44,982] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Initializing ExecutorService  'timer'
+[05.09.2014, 15:37:45,015] [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager  - Using DataSource [org.apache.commons.dbcp.BasicDataSource@6fe4525] of Hibernate SessionFactory for HibernateTransactionManager
+[05.09.2014, 15:37:45,273] [main] INFO  org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean  - Initializing ExecutorService  'iconTimer'
+[05.09.2014, 15:37:45,295] [Thread-3] INFO  de.tbosch.tools.timetool.TimetoolThread  - running thread
+[05.09.2014, 15:37:45,568] [Thread-3] INFO  de.tbosch.tools.timetool.service.impl.TimeslotServiceImpl  - No active timeslot found
+[05.09.2014, 15:37:45,639] [Thread-3] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - Checkpoint start
+[05.09.2014, 15:37:45,639] [Thread-3] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - checkpointClose start
+[05.09.2014, 15:37:45,665] [Thread-3] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - checkpointClose end
+[05.09.2014, 15:37:45,666] [Thread-3] INFO  hsqldb.db.HSQLDB484591563A.ENGINE  - Checkpoint end - txts: 136
+[05.09.2014, 15:38:04,505] [AWT-EventQueue-0] WARN  de.tbosch.tools.timetool.service.impl.ConfigurationServiceImpl  - Configuration for key LAST_USED_URL not found
+[05.09.2014, 15:38:04,518] [AWT-EventQueue-0] WARN  de.tbosch.tools.timetool.service.impl.ConfigurationServiceImpl  - Configuration for key LAST_USED_USER not found
+[05.09.2014, 15:38:04,520] [AWT-EventQueue-0] WARN  de.tbosch.tools.timetool.service.impl.ConfigurationServiceImpl  - Configuration for key LAST_USED_PASS not found
+[05.09.2014, 15:38:04,526] [AWT-EventQueue-0] WARN  de.tbosch.tools.timetool.service.impl.ConfigurationServiceImpl  - Configuration for key LAST_USED_PASS_SAVE not found

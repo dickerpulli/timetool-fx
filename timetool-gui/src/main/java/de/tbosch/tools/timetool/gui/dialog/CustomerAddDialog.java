@@ -18,11 +18,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-import org.hibernate.validator.InvalidStateException;
-
 import de.tbosch.tools.timetool.controller.GuiController;
 import de.tbosch.tools.timetool.model.Customer;
-import de.tbosch.tools.timetool.utils.ValidationUtils;
 import de.tbosch.tools.timetool.utils.ValidationUtils.InputFieldData;
 import de.tbosch.tools.timetool.utils.context.MessageHelper;
 
@@ -35,9 +32,9 @@ public class CustomerAddDialog extends JDialog {
 
 	private static final long serialVersionUID = 14633808809997205L;
 
-	private GuiController guiController;
+	private final GuiController guiController;
 
-	private Map<InputFieldData, JComponent> inputFields = new HashMap<InputFieldData, JComponent>();
+	private final Map<InputFieldData, JComponent> inputFields = new HashMap<InputFieldData, JComponent>();
 
 	/**
 	 * Constructor. Model type.
@@ -86,12 +83,12 @@ public class CustomerAddDialog extends JDialog {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				try {
-					guiController.createCustomer(textField.getText());
-					dispose();
-				} catch (InvalidStateException e1) {
-					ValidationUtils.notifyInputFields((InvalidStateException) e1, inputFields);
-				}
+				// try {
+				guiController.createCustomer(textField.getText());
+				dispose();
+				// } catch (InvalidStateException e1) {
+				// ValidationUtils.notifyInputFields(e1, inputFields);
+				// }
 			}
 		});
 		JButton cancelButton = new JButton(MessageHelper.getMessage("button.cancel"));

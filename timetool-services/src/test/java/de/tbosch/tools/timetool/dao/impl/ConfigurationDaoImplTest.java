@@ -33,6 +33,12 @@ public class ConfigurationDaoImplTest extends AbstractSpringDbTest {
 	}
 
 	@Test
+	public void save() {
+		configurationDao.create(new Configuration());
+		configurationDao.flush();
+	}
+
+	@Test
 	public void findValue() {
 		String value = configurationDao.findValue(Key.LAST_USED_PASS);
 		assertNotNull(value);

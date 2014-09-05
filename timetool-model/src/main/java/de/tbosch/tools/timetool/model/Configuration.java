@@ -6,9 +6,9 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
-import org.hibernate.validator.Length;
-import org.hibernate.validator.NotNull;
+import org.hibernate.validator.constraints.Length;
 
 /**
  * Configuration holder.
@@ -22,16 +22,18 @@ public class Configuration {
 	 * The configuration keys.
 	 */
 	public enum Key {
-		LAST_USED_URL(false), LAST_USED_USER(false), LAST_USED_PASS(false), LAST_USED_TICKET(false), LAST_USED_PASS_SAVE(false), LAST_USED_TICKET_LIST(true),
-		LAST_USED_STARTROW(false), LAST_USED_DATECOLUMN(false), LAST_USED_STARTCOLUMN(false), LAST_USED_ENDCOLUMN(false), LAST_USED_PAUSECOLUMN(false),
-		LAST_USED_INPUT_FILE(false), LAST_USED_OUTPUT_FOLDER(false);
+		LAST_USED_URL(false), LAST_USED_USER(false), LAST_USED_PASS(false), LAST_USED_TICKET(false), LAST_USED_PASS_SAVE(
+				false), LAST_USED_TICKET_LIST(true), LAST_USED_STARTROW(false), LAST_USED_DATECOLUMN(false), LAST_USED_STARTCOLUMN(
+				false), LAST_USED_ENDCOLUMN(false), LAST_USED_PAUSECOLUMN(false), LAST_USED_INPUT_FILE(false), LAST_USED_OUTPUT_FOLDER(
+				false);
 
-		private boolean listKey;
+		private final boolean listKey;
 
 		/**
 		 * Private constructor for this enum.
 		 * 
-		 * @param listKey The marker for list keys
+		 * @param listKey
+		 *            The marker for list keys
 		 */
 		private Key(boolean listKey) {
 			this.listKey = listKey;
@@ -79,7 +81,8 @@ public class Configuration {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(long id) {
 		this.id = id;
@@ -93,7 +96,8 @@ public class Configuration {
 	}
 
 	/**
-	 * @param key the key to set
+	 * @param key
+	 *            the key to set
 	 */
 	public void setKey(Key key) {
 		this.key = key;
@@ -107,7 +111,8 @@ public class Configuration {
 	}
 
 	/**
-	 * @param value the value to set
+	 * @param value
+	 *            the value to set
 	 */
 	public void setValue(String value) {
 		this.value = value;

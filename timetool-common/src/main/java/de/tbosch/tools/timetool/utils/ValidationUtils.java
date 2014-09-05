@@ -1,12 +1,5 @@
 package de.tbosch.tools.timetool.utils;
 
-import java.awt.Color;
-import java.util.Map;
-
-import javax.swing.JComponent;
-
-import org.hibernate.validator.InvalidStateException;
-import org.hibernate.validator.InvalidValue;
 
 /**
  * Utilities for field validation with hibernate validator.
@@ -74,27 +67,27 @@ public final class ValidationUtils {
 		// Utils
 	}
 
-	/**
-	 * Notifies all input field on an error.
-	 * 
-	 * @param exception The error
-	 * @param inputFields The map of all known input fields
-	 */
-	@SuppressWarnings("rawtypes")
-	public static void notifyInputFields(InvalidStateException exception, Map<InputFieldData, JComponent> inputFields) {
-		InvalidValue[] invalidValues = exception.getInvalidValues();
-		for (InvalidValue invalidValue : invalidValues) {
-			String propertyPath = invalidValue.getPropertyPath();
-			Class beanClass = invalidValue.getBeanClass();
-			for (InputFieldData inputFieldData : inputFields.keySet()) {
-				if (inputFieldData.getBeanClass().equals(beanClass) && inputFieldData.getPropertyPath().equals(propertyPath)) {
-					JComponent component = inputFields.get(inputFieldData);
-					component.setToolTipText(invalidValue.getMessage());
-					component.grabFocus();
-					component.setBackground(Color.RED);
-				}
-			}
-		}
-	}
+	// /**
+	// * Notifies all input field on an error.
+	// *
+	// * @param exception The error
+	// * @param inputFields The map of all known input fields
+	// */
+	// @SuppressWarnings("rawtypes")
+	// public static void notifyInputFields(InvalidStateException exception, Map<InputFieldData, JComponent> inputFields) {
+	// InvalidValue[] invalidValues = exception.getInvalidValues();
+	// for (InvalidValue invalidValue : invalidValues) {
+	// String propertyPath = invalidValue.getPropertyPath();
+	// Class beanClass = invalidValue.getBeanClass();
+	// for (InputFieldData inputFieldData : inputFields.keySet()) {
+	// if (inputFieldData.getBeanClass().equals(beanClass) && inputFieldData.getPropertyPath().equals(propertyPath)) {
+	// JComponent component = inputFields.get(inputFieldData);
+	// component.setToolTipText(invalidValue.getMessage());
+	// component.grabFocus();
+	// component.setBackground(Color.RED);
+	// }
+	// }
+	// }
+	// }
 
 }
