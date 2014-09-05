@@ -20,7 +20,7 @@ import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
 import jxl.write.biff.RowsExceededException;
 
-import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -38,7 +38,7 @@ public class ExcelWorker {
 	private static final Log LOG = LogFactory.getLog(ExcelWorker.class);
 
 	/** The file to read from. */
-	private File inputFile;
+	private final File inputFile;
 
 	/** The file to write to. */
 	private File outputFile;
