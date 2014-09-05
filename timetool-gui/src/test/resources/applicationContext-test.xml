@@ -5,10 +5,9 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<context:property-placeholder location="timetool-services.properties,timetool-services-test.properties"/>
+	<context:property-placeholder location="timetool.properties,timetool-services.properties,timetool-test.properties"/>
 	
-	<import resource="applicationContext-services.xml" />
-	<import resource="applicationContext-jira.xml" />
+	<import resource="applicationContext.xml" />
 	
 	<bean id="testGetBeansByType1" class="java.lang.String">
 		<constructor-arg value="test1" type="java.lang.String" />

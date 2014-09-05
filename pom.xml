@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<groupId>de.tbosch.tools</groupId>
 	<artifactId>timetool-parent</artifactId>
 	<description>Zeiterfassung</description>
@@ -14,7 +14,11 @@
 	</properties>
 
 	<modules>
+		<module>timetool-common</module>
+		<module>timetool-model</module>
+		<module>timetool-jira</module>
 		<module>timetool-services</module>
+		<module>timetool-gui</module>
 	</modules>
 
 	<repositories>
@@ -160,6 +164,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.5</version>
 				<configuration>
 					<archive>
 						<manifest>
@@ -169,6 +174,14 @@
 						</manifest>
 					</archive>
 				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>jar</goal>
+							<goal>test-jar</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
