@@ -9,16 +9,15 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.transaction.TransactionConfiguration;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.test.context.ContextConfiguration;
 
-import de.tbosch.tools.timetool.AbstractSpringDbTest;
+import de.tbosch.tools.timetool.AbstractSpringDbJavaConfigTest;
+import de.tbosch.tools.timetool.configuration.TestConfiguration;
 import de.tbosch.tools.timetool.model.Configuration.Key;
 import de.tbosch.tools.timetool.service.ConfigurationService;
 
-@Transactional
-@TransactionConfiguration(defaultRollback = true)
-public class ConfigurationServiceImplTest extends AbstractSpringDbTest {
+@ContextConfiguration(classes = TestConfiguration.class)
+public class ConfigurationServiceImplTest extends AbstractSpringDbJavaConfigTest {
 
 	@Autowired
 	private ConfigurationService configurationService;

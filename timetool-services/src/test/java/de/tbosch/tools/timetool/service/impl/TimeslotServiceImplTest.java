@@ -13,17 +13,16 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.transaction.TransactionConfiguration;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.test.context.ContextConfiguration;
 
-import de.tbosch.tools.timetool.AbstractSpringDbTest;
+import de.tbosch.tools.timetool.AbstractSpringDbJavaConfigTest;
+import de.tbosch.tools.timetool.configuration.TestConfiguration;
 import de.tbosch.tools.timetool.exception.ServiceBusinessException;
 import de.tbosch.tools.timetool.model.Timeslot;
 import de.tbosch.tools.timetool.service.TimeslotService;
 
-@Transactional
-@TransactionConfiguration(defaultRollback = true)
-public class TimeslotServiceImplTest extends AbstractSpringDbTest {
+@ContextConfiguration(classes = TestConfiguration.class)
+public class TimeslotServiceImplTest extends AbstractSpringDbJavaConfigTest {
 
 	private final SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
 

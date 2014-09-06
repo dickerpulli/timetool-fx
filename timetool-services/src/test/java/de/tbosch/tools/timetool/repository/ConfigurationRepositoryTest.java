@@ -7,12 +7,15 @@ import static org.junit.Assert.assertNull;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
 
-import de.tbosch.tools.timetool.AbstractSpringDbTest;
+import de.tbosch.tools.timetool.AbstractSpringDbJavaConfigTest;
+import de.tbosch.tools.timetool.configuration.TestConfiguration;
 import de.tbosch.tools.timetool.model.Configuration;
 import de.tbosch.tools.timetool.model.Configuration.Key;
 
-public class ConfigurationRepositoryTest extends AbstractSpringDbTest {
+@ContextConfiguration(classes = TestConfiguration.class)
+public class ConfigurationRepositoryTest extends AbstractSpringDbJavaConfigTest {
 
 	@Autowired
 	private ConfigurationRepository repository;

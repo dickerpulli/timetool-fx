@@ -9,16 +9,15 @@ import javax.validation.ConstraintViolationException;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.transaction.TransactionConfiguration;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.test.context.ContextConfiguration;
 
-import de.tbosch.tools.timetool.AbstractSpringDbTest;
+import de.tbosch.tools.timetool.AbstractSpringDbJavaConfigTest;
+import de.tbosch.tools.timetool.configuration.TestConfiguration;
 import de.tbosch.tools.timetool.model.Project;
 import de.tbosch.tools.timetool.service.ProjectService;
 
-@Transactional
-@TransactionConfiguration(defaultRollback = true)
-public class ProjectServiceImplTest extends AbstractSpringDbTest {
+@ContextConfiguration(classes = TestConfiguration.class)
+public class ProjectServiceImplTest extends AbstractSpringDbJavaConfigTest {
 
 	@Autowired
 	private ProjectService projectService;

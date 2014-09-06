@@ -1,5 +1,6 @@
 package de.tbosch.tools.timetool;
 
+import de.tbosch.tools.timetool.configuration.ApplicationConfiguration;
 import de.tbosch.tools.timetool.utils.context.TimetoolContext;
 
 /**
@@ -23,8 +24,8 @@ public final class Timetool {
 	 * @throws InterruptedException
 	 */
 	public static void main(String[] args) {
-		TimetoolContext.init();
-		TimetoolThread timetoolThread = (TimetoolThread) TimetoolContext.getBean("timetoolThread");
+		TimetoolContext.init(ApplicationConfiguration.class);
+		TimetoolThread timetoolThread = TimetoolContext.getBeansByType(TimetoolThread.class).get(0);
 		timetoolThread.start();
 		try {
 			timetoolThread.join();

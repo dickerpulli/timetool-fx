@@ -7,15 +7,14 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.transaction.TransactionConfiguration;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.test.context.ContextConfiguration;
 
-import de.tbosch.tools.timetool.AbstractSpringDbTest;
+import de.tbosch.tools.timetool.AbstractSpringDbJavaConfigTest;
+import de.tbosch.tools.timetool.configuration.TestConfiguration;
 import de.tbosch.tools.timetool.service.CustomerService;
 
-@Transactional
-@TransactionConfiguration(defaultRollback = true)
-public class CustomerServiceImplTest extends AbstractSpringDbTest {
+@ContextConfiguration(classes = TestConfiguration.class)
+public class CustomerServiceImplTest extends AbstractSpringDbJavaConfigTest {
 
 	@Autowired
 	private CustomerService customerService;

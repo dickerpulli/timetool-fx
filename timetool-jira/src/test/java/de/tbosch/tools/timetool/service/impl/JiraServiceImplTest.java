@@ -8,14 +8,17 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
 
-import de.tbosch.tools.timetool.AbstractSpringTest;
+import de.tbosch.tools.timetool.AbstractSpringJavaConfigTest;
+import de.tbosch.tools.timetool.configuration.JiraConfiguration;
 import de.tbosch.tools.timetool.exception.JiraBusinessException;
 import de.tbosch.tools.timetool.model.JiraSettings;
 import de.tbosch.tools.timetool.service.JiraService;
 
+@ContextConfiguration(classes = JiraConfiguration.class)
 @Ignore
-public class JiraServiceImplTest extends AbstractSpringTest {
+public class JiraServiceImplTest extends AbstractSpringJavaConfigTest {
 
 	@Autowired
 	private JiraService jiraService;

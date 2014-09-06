@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.util.Assert;
 
 /**
@@ -71,8 +71,8 @@ public final class TimetoolContext {
 	/**
 	 * Creates the context, if it is null.
 	 */
-	public static void init() {
-		context = new ClassPathXmlApplicationContext("applicationContext.xml");
+	public static void init(Class<?>... configs) {
+		context = new AnnotationConfigApplicationContext(configs);
 	}
 
 	/**
