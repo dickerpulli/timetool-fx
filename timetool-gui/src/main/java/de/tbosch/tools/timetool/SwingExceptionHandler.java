@@ -4,8 +4,8 @@ import java.lang.Thread.UncaughtExceptionHandler;
 
 import javax.swing.JOptionPane;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import de.tbosch.tools.timetool.exception.AbstractBusinessException;
 import de.tbosch.tools.timetool.utils.LogUtils;
@@ -18,7 +18,7 @@ import de.tbosch.tools.timetool.utils.context.MessageHelper;
  */
 public class SwingExceptionHandler implements UncaughtExceptionHandler {
 
-	private static final Log LOG = LogFactory.getLog(SwingExceptionHandler.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(SwingExceptionHandler.class);
 
 	/**
 	 * Registers this Handler.
@@ -32,10 +32,10 @@ public class SwingExceptionHandler implements UncaughtExceptionHandler {
 	 */
 	@Override
 	public void uncaughtException(Thread arg0, Throwable t) {
-		LogUtils.logInfo("exception thrown - handle exception in AWTExceptioHandler", LOG);
+		LogUtils.logInfo("exception thrown - handle exception in AWTExceptioHandler", LOGGER);
 		String text = t.getLocalizedMessage();
 		if (!(t instanceof AbstractBusinessException)) {
-			LogUtils.logDebug("Technical Exception handled: ", t, LOG);
+			LogUtils.logDebug("Technical Exception handled: ", t, LOGGER);
 			text = t.getClass().getCanonicalName() + " at " + t.getStackTrace()[0].getClassName() + ":" + t.getStackTrace()[0].getLineNumber() + "\n" + text;
 		}
 		JOptionPane.showMessageDialog(null, text, MessageHelper.getMessage("title.error"), JOptionPane.ERROR_MESSAGE);

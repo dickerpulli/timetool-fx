@@ -1,9 +1,8 @@
 package de.tbosch.tools.timetool.service.impl;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 
-import org.joda.time.DateTime;
-import org.joda.time.LocalDateTime;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -30,8 +29,8 @@ public class JiraServiceImplTest extends AbstractSpringJavaConfigTest {
 	@Test(expected = JiraBusinessException.class)
 	public void addWorklogFail() {
 		String name = "TIMXIII-269";
-		DateTime startDate = new LocalDateTime(2014, 9, 5, 8, 1).toDateTime();
-		int minutesSpent = 1;
+		LocalDateTime startDate = LocalDateTime.of(2014, 9, 5, 8, 1);
+		long minutesSpent = 1;
 		String comment = "test";
 		String url = "https://localhost/1234";
 		String user = "";
@@ -43,8 +42,8 @@ public class JiraServiceImplTest extends AbstractSpringJavaConfigTest {
 	@Test
 	public void addWorklog() {
 		String name = "TIMXIII-269";
-		DateTime startDate = new LocalDateTime(2014, 9, 5, 8, 1).toDateTime();
-		int minutesSpent = 1;
+		LocalDateTime startDate = LocalDateTime.of(2014, 9, 5, 8, 1);
+		long minutesSpent = 1;
 		String comment = "test";
 		String url = "https://jira.codecentric.de";
 		String user = "";

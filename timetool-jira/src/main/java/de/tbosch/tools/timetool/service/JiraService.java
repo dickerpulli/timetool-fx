@@ -1,8 +1,7 @@
 package de.tbosch.tools.timetool.service;
 
+import java.time.LocalDateTime;
 import java.util.List;
-
-import org.joda.time.DateTime;
 
 import com.atlassian.jira.rest.client.domain.input.WorklogInput;
 
@@ -27,7 +26,7 @@ public interface JiraService {
 	 * @return The created worklog
 	 * @throws JiraBusinessException if something went wrong
 	 */
-	WorklogInput addWorklog(String name, DateTime startDate, int minutesSpent, String comment, JiraSettings settings);
+	WorklogInput addWorklog(String name, LocalDateTime startDate, long minutesSpent, String comment, JiraSettings settings);
 
 	/**
 	 * Gets the description of the given ticket name.

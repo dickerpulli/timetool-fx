@@ -1,7 +1,7 @@
 package de.tbosch.tools.timetool;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import de.tbosch.tools.timetool.controller.TrayiconController;
@@ -15,7 +15,7 @@ import de.tbosch.tools.timetool.utils.LogUtils;
  */
 public class TimetoolThread extends Thread {
 
-	private static final Log LOG = LogFactory.getLog(TimetoolThread.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(TimetoolThread.class);
 
 	@Autowired
 	private TrayiconController timetoolEvents;
@@ -25,7 +25,7 @@ public class TimetoolThread extends Thread {
 
 	@Override
 	public void run() {
-		LogUtils.logInfo("running thread", LOG);
+		LogUtils.logInfo("running thread", LOGGER);
 		SwingExceptionHandler.registerExceptionHandler();
 		timetoolEvents.registerTrayIcon();
 		databaseInitializer.configureDatabase();
@@ -36,7 +36,7 @@ public class TimetoolThread extends Thread {
 				break;
 			}
 		}
-		LogUtils.logInfo("exiting thread", LOG);
+		LogUtils.logInfo("exiting thread", LOGGER);
 	}
 
 }

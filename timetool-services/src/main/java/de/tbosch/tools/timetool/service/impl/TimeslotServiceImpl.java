@@ -1,5 +1,9 @@
 package de.tbosch.tools.timetool.service.impl;
 
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -9,12 +13,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.joda.time.DateTime;
-import org.joda.time.LocalDate;
-import org.joda.time.LocalDateTime;
-import org.joda.time.Period;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -41,7 +41,7 @@ import de.tbosch.tools.timetool.utils.TimeslotUtils;
 public class TimeslotServiceImpl implements TimeslotService {
 
 	/** The logger. */
-	private static final Log LOG = LogFactory.getLog(TimeslotServiceImpl.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(TimeslotServiceImpl.class);
 
 	@Autowired
 	private TimeslotRepository timeslotRepository;
@@ -67,10 +67,10 @@ public class TimeslotServiceImpl implements TimeslotService {
 	public void activateTimeslot(long projectId) {
 		Timeslot timeslot = getActiveTimeslot();
 		if (timeslot != null) {
-			LogUtils.logWarn("Active timeslot found - we do not create new one", LOG);
+			LogUtils.logWarn("Active timeslot found - we do not create new one", LOGGER);
 		} else {
 			// no active timeslot found, create a new one
-			LogUtils.logInfo("Create new timeslot for projectId = " + projectId, LOG);
+			LogUtils.logInfo("Create new timeslot for projectId = " + projectId, LOGGER);
 			timeslot = new Timeslot();
 			timeslot.setStarttime(new Date());
 			timeslot.setEndtime(new Date());
@@ -87,11 +87,11 @@ public class TimeslotServiceImpl implements TimeslotService {
 	public void deactivateTimeslot(long timeslotId) {
 		Timeslot timeslot = timeslotRepository.findOne(timeslotId);
 		if (timeslot != null) {
-			LogUtils.logInfo("Update endtime for timeslot, timeslotId = " + timeslotId, LOG);
+			LogUtils.logInfo("Update endtime for timeslot, timeslotId = " + timeslotId, LOGGER);
 			timeslot.setActive(false);
 			timeslotRepository.save(timeslot);
 		} else {
-			LogUtils.logError("Timeslot could not be ended", LOG);
+			LogUtils.logError("Timeslot could not be ended", LOGGER);
 		}
 	}
 
@@ -141,13 +141,13 @@ public class TimeslotServiceImpl implements TimeslotService {
 			// Test difference, if the difference is bigger than 5 minutes
 			// the computer was shut down / hibernated
 			if (DateUtils.getDifferenceInMinutes(timeslot.getEndtime(), now) > 5) {
-				LogUtils.logWarn("The time 'now' is more than 5 minutes later than the timeslot endtime, maybe computer was shut down", LOG);
+				LogUtils.logWarn("The time 'now' is more than 5 minutes later than the timeslot endtime, maybe computer was shut down", LOGGER);
 				return null;
 			}
 			timeslot.setEndtime(now);
 			return timeslotRepository.save(timeslot);
 		} else {
-			LogUtils.logError("Endtime is changed to a time in the past - last endtime = " + timeslot.getEndtime() + ", now = " + now, LOG);
+			LogUtils.logError("Endtime is changed to a time in the past - last endtime = " + timeslot.getEndtime() + ", now = " + now, LOGGER);
 			return null;
 		}
 	}
@@ -159,11 +159,11 @@ public class TimeslotServiceImpl implements TimeslotService {
 	public void deactivateActiveTimeslot() {
 		Timeslot timeslot = getActiveTimeslot();
 		if (timeslot != null) {
-			LogUtils.logInfo("Deactivate active timeslot - timeslot starttime=" + timeslot.getStarttime(), LOG);
+			LogUtils.logInfo("Deactivate active timeslot - timeslot starttime=" + timeslot.getStarttime(), LOGGER);
 			timeslot.setActive(false);
 			timeslotRepository.save(timeslot);
 		} else {
-			LogUtils.logInfo("No active timeslot found", LOG);
+			LogUtils.logInfo("No active timeslot found", LOGGER);
 		}
 	}
 
@@ -172,7 +172,7 @@ public class TimeslotServiceImpl implements TimeslotService {
 	 */
 	@Override
 	public void deleteTimeslot(Timeslot ts) {
-		LogUtils.logInfo("Delete timeslot for projectId = " + ts.getProject() + " and starttime = " + ts.getStarttime(), LOG);
+		LogUtils.logInfo("Delete timeslot for projectId = " + ts.getProject() + " and starttime = " + ts.getStarttime(), LOGGER);
 		Timeslot timeslot = timeslotRepository.findOne(ts.getId());
 		timeslotRepository.delete(timeslot);
 	}
@@ -188,7 +188,7 @@ public class TimeslotServiceImpl implements TimeslotService {
 		}
 		LogUtils.logInfo(
 				"Set new endtime for timeslot, old = " + DateUtils.toDateTimeString(timeslot.getEndtime()) + ", new = " + DateUtils.toDateTimeString(endtime),
-				LOG);
+				LOGGER);
 		timeslot = timeslotRepository.findOne(timeslot.getId());
 		timeslot.setEndtime(endtime);
 		timeslotRepository.save(timeslot);
@@ -205,7 +205,7 @@ public class TimeslotServiceImpl implements TimeslotService {
 		}
 		LogUtils.logInfo(
 				"Set new starttime for timeslot, old = " + DateUtils.toDateTimeString(timeslot.getStarttime()) + ", new = "
-						+ DateUtils.toDateTimeString(starttime), LOG);
+						+ DateUtils.toDateTimeString(starttime), LOGGER);
 		timeslot = timeslotRepository.findOne(timeslot.getId());
 		timeslot.setStarttime(starttime);
 		timeslotRepository.save(timeslot);
@@ -222,7 +222,7 @@ public class TimeslotServiceImpl implements TimeslotService {
 		}
 		LogUtils.logInfo(
 				"Set new starttime for timeslot, old = " + DateUtils.toDateTimeString(timeslot.getStarttime()) + ", new = "
-						+ DateUtils.toDateTimeString(starttime), LOG);
+						+ DateUtils.toDateTimeString(starttime), LOGGER);
 		timeslot = timeslotRepository.findOne(timeslot.getId());
 		timeslot.setStarttime(starttime);
 		timeslot.setEndtime(endtime);
@@ -234,8 +234,8 @@ public class TimeslotServiceImpl implements TimeslotService {
 	 */
 	@Override
 	public String addTimeslots(List<Timeslot> timeslots) {
-		Period periodSum = TimeslotUtils.getSum(timeslots);
-		return DateUtils.getPeriodAsString(periodSum);
+		Duration sum = TimeslotUtils.getSum(timeslots);
+		return DateUtils.getDurationAsString(sum);
 	}
 
 	/**
@@ -254,8 +254,8 @@ public class TimeslotServiceImpl implements TimeslotService {
 	@Override
 	public void sendTimeslots(List<Timeslot> timeslots, String ticketname, String comments, JiraSettings settings) {
 		Collections.sort(timeslots);
-		DateTime startDate = LocalDateTime.fromDateFields(timeslots.get(0).getStarttime()).toDateTime();
-		int minutesSpent = TimeslotUtils.getSum(timeslots).toStandardMinutes().getMinutes();
+		LocalDateTime startDate = LocalDateTime.from(timeslots.get(0).getStarttime().toInstant());
+		long minutesSpent = (int) TimeslotUtils.getSum(timeslots).toMinutes();
 		jiraService.addWorklog(ticketname, startDate, minutesSpent, comments, settings);
 		for (Timeslot timeslot : timeslots) {
 			markTimeslot(timeslot, true);
@@ -285,10 +285,10 @@ public class TimeslotServiceImpl implements TimeslotService {
 			if (timeslot.isMarked()) {
 				throw new ServiceBusinessException(ServiceBusinessException.TIMESLOT_ALREADY_SENT);
 			}
-			if (dates.size() == 1 && !dates.contains(new LocalDate(timeslot.getStarttime().getTime()))) {
+			if (dates.size() == 1 && !dates.contains(LocalDateTime.ofInstant(timeslot.getStarttime().toInstant(), ZoneId.systemDefault()).toLocalDate())) {
 				throw new ServiceBusinessException(ServiceBusinessException.DIFFERENT_DATES_IN_LIST);
 			} else {
-				dates.add(new LocalDate(timeslot.getStarttime().getTime()));
+				dates.add(LocalDateTime.ofInstant(timeslot.getStarttime().toInstant(), ZoneId.systemDefault()).toLocalDate());
 			}
 		}
 	}
@@ -304,7 +304,7 @@ public class TimeslotServiceImpl implements TimeslotService {
 			Project activeProject = projectService.getActiveProject();
 			if (activeProject == null) {
 				// uups, no active timeslot found
-				LogUtils.logError("No active project found to start a timeslot", LOG);
+				LogUtils.logError("No active project found to start a timeslot", LOGGER);
 				throw new ServiceBusinessException(ServiceBusinessException.NO_ACTIVE_PROJECT_FOUND);
 			} else {
 				activateTimeslot(activeProject.getId());

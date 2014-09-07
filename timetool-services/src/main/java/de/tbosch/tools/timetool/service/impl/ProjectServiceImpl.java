@@ -2,8 +2,8 @@ package de.tbosch.tools.timetool.service.impl;
 
 import java.util.List;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,7 +27,7 @@ import de.tbosch.tools.timetool.utils.LogUtils;
 public class ProjectServiceImpl implements ProjectService {
 
 	/** The logger. */
-	private static final Log LOG = LogFactory.getLog(ProjectServiceImpl.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ProjectServiceImpl.class);
 
 	@Autowired
 	private ProjectRepository projectRepository;
@@ -66,12 +66,12 @@ public class ProjectServiceImpl implements ProjectService {
 		}
 		Timeslot activeTimeslot = timeslotService.getActiveTimeslot();
 		if (activeTimeslot != null) {
-			LogUtils.logInfo("Stop active timeslot with starttime = " + activeTimeslot.getStarttime(), LOG);
+			LogUtils.logInfo("Stop active timeslot with starttime = " + activeTimeslot.getStarttime(), LOGGER);
 			timeslotService.deactivateTimeslot(activeTimeslot.getId());
 		}
 		Project project = projectRepository.findOne(projectId);
 		project.setActive(true);
-		LogUtils.logInfo("Set the project with name = " + project.getName() + " as active", LOG);
+		LogUtils.logInfo("Set the project with name = " + project.getName() + " as active", LOGGER);
 		projectRepository.save(project);
 	}
 
@@ -88,7 +88,7 @@ public class ProjectServiceImpl implements ProjectService {
 	 */
 	@Override
 	public long createProject(String name, long customerId) {
-		LogUtils.logInfo("Creates a new project with name '" + name + "'", LOG);
+		LogUtils.logInfo("Creates a new project with name '" + name + "'", LOGGER);
 		Customer customer = customerService.getCustomer(customerId);
 		Project project = new Project();
 		project.setCustomer(customer);
@@ -111,7 +111,7 @@ public class ProjectServiceImpl implements ProjectService {
 	 */
 	@Override
 	public void saveProject(Project project, String name, long customerId) {
-		LogUtils.logInfo("Save project with new name '" + name + "' and customerId '" + customerId + "'", LOG);
+		LogUtils.logInfo("Save project with new name '" + name + "' and customerId '" + customerId + "'", LOGGER);
 		Customer customer = customerService.getCustomer(customerId);
 		Project projectEntity = projectRepository.findOne(project.getId());
 		projectEntity.setName(name);

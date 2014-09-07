@@ -1,5 +1,9 @@
 package de.tbosch.tools.timetool.utils;
 
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -8,13 +12,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.joda.time.DateTime;
-import org.joda.time.Duration;
-import org.joda.time.Interval;
-import org.joda.time.LocalDate;
-import org.joda.time.Period;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import de.tbosch.tools.timetool.exception.UtilsBusinessException;
 import de.tbosch.tools.timetool.model.Timeslot;
@@ -26,7 +25,7 @@ import de.tbosch.tools.timetool.model.Timeslot;
  */
 public final class TimeslotUtils {
 
-	private static final Log LOG = LogFactory.getLog(TimeslotUtils.class);
+	private static final Logger LOG = LoggerFactory.getLogger(TimeslotUtils.class);
 
 	/**
 	 * Compares two Interval objects. The one with the smaller start time is the smaller one.
@@ -58,7 +57,7 @@ public final class TimeslotUtils {
 	public static Map<Integer, List<Timeslot>> getTimeslotsPerMonth(List<Timeslot> timeslots) {
 		Map<Integer, List<Timeslot>> timeslotsPerMonth = new LinkedHashMap<Integer, List<Timeslot>>();
 		for (Timeslot timeslot : timeslots) {
-			int month = new DateTime(timeslot.getStarttime()).getMonthOfYear();
+			int month = LocalDateTime.ofInstant(timeslot.getStarttime().toInstant(), ZoneId.systemDefault()).getMonthValue();
 			List<Timeslot> timeslotsInMonth = timeslotsPerMonth.get(month);
 			if (timeslotsInMonth == null) {
 				timeslotsInMonth = new ArrayList<Timeslot>();
@@ -78,7 +77,7 @@ public final class TimeslotUtils {
 	public static Map<LocalDate, List<Timeslot>> getTimeslotsPerDay(List<Timeslot> timeslots) {
 		Map<LocalDate, List<Timeslot>> timeslotsPerDay = new LinkedHashMap<LocalDate, List<Timeslot>>();
 		for (Timeslot timeslot : timeslots) {
-			LocalDate day = new DateTime(timeslot.getStarttime()).toLocalDate();
+			LocalDate day = LocalDateTime.ofInstant(timeslot.getStarttime().toInstant(), ZoneId.systemDefault()).toLocalDate();
 			List<Timeslot> timeslotsInDay = timeslotsPerDay.get(day);
 			if (timeslotsInDay == null) {
 				timeslotsInDay = new ArrayList<Timeslot>();
@@ -98,8 +97,8 @@ public final class TimeslotUtils {
 	public static Map<LocalDate, Map<LocalDate, List<Timeslot>>> getTimeslotsPerMonthAndDay(List<Timeslot> timeslots) {
 		Map<LocalDate, Map<LocalDate, List<Timeslot>>> timeslotsPerMonthAndDay = new LinkedHashMap<LocalDate, Map<LocalDate, List<Timeslot>>>();
 		for (Timeslot timeslot : timeslots) {
-			LocalDate month = new DateTime(timeslot.getStarttime()).toLocalDate().withDayOfMonth(1);
-			LocalDate day = new DateTime(timeslot.getStarttime()).toLocalDate();
+			LocalDate month = LocalDateTime.ofInstant(timeslot.getStarttime().toInstant(), ZoneId.systemDefault()).toLocalDate().withDayOfMonth(1);
+			LocalDate day = LocalDateTime.ofInstant(timeslot.getStarttime().toInstant(), ZoneId.systemDefault()).toLocalDate();
 			Map<LocalDate, List<Timeslot>> timeslotsPerDay = timeslotsPerMonthAndDay.get(month);
 			if (timeslotsPerDay == null) {
 				timeslotsPerDay = new LinkedHashMap<LocalDate, List<Timeslot>>();
@@ -122,13 +121,13 @@ public final class TimeslotUtils {
 	 * @param timeslots List of timeslots
 	 * @return The sum
 	 */
-	public static Period getSum(List<Timeslot> timeslots) {
-		Period periodSum = new Period();
+	public static Duration getSum(List<Timeslot> timeslots) {
+		Duration sum = Duration.ZERO;
 		for (Timeslot timeslot : timeslots) {
-			Period period = new Interval(timeslot.getStarttime().getTime(), timeslot.getEndtime().getTime()).toPeriod();
-			periodSum = periodSum.plus(period);
+			Duration period = Duration.between(timeslot.getStarttime().toInstant(), timeslot.getEndtime().toInstant());
+			sum = sum.plus(period);
 		}
-		return periodSum;
+		return sum;
 	}
 
 	/**
@@ -138,8 +137,8 @@ public final class TimeslotUtils {
 	 * @return The interval
 	 */
 	public static Interval toInterval(Timeslot timeslot) {
-		DateTime starttime = new DateTime(timeslot.getStarttime().getTime());
-		DateTime endtime = new DateTime(timeslot.getEndtime().getTime());
+		LocalDateTime starttime = LocalDateTime.ofInstant(timeslot.getStarttime().toInstant(), ZoneId.systemDefault());
+		LocalDateTime endtime = LocalDateTime.ofInstant(timeslot.getEndtime().toInstant(), ZoneId.systemDefault());
 		return new Interval(starttime, endtime);
 	}
 
@@ -154,8 +153,8 @@ public final class TimeslotUtils {
 		// Create map with a list of intervals per day
 		Map<LocalDate, List<Interval>> intervalsPerDay = new HashMap<LocalDate, List<Interval>>();
 		for (Timeslot timeslot : timeslots) {
-			DateTime starttime = new DateTime(timeslot.getStarttime().getTime());
-			DateTime endtime = new DateTime(timeslot.getEndtime().getTime());
+			LocalDateTime starttime = LocalDateTime.ofInstant(timeslot.getStarttime().toInstant(), ZoneId.systemDefault());
+			LocalDateTime endtime = LocalDateTime.ofInstant(timeslot.getEndtime().toInstant(), ZoneId.systemDefault());
 			LocalDate starttimeDay = starttime.toLocalDate();
 			LocalDate endtimeDay = endtime.toLocalDate();
 			if (!starttimeDay.equals(endtimeDay)) {
@@ -176,11 +175,11 @@ public final class TimeslotUtils {
 			List<Interval> intervalsInDay = intervalEntry.getValue();
 			// Sort, so that the first element is the first in chronological order
 			Collections.sort(intervalsInDay, INTERVAL_COMPARATOR);
-			Duration durationPauseInDay = new Duration(0);
+			Duration durationPauseInDay = Duration.ZERO;
 			for (int i = 0; i < intervalsInDay.size() - 1; i++) {
 				Interval interval = intervalsInDay.get(i);
 				Interval intervalNext = intervalsInDay.get(i + 1);
-				Duration pause = new Duration(interval.getEnd(), intervalNext.getStart());
+				Duration pause = Duration.between(interval.getEnd(), intervalNext.getStart());
 				durationPauseInDay = durationPauseInDay.plus(pause);
 			}
 			Interval sumInterval = new Interval(intervalsInDay.get(0).getStart(), intervalsInDay.get(intervalsInDay.size() - 1).getEnd());
@@ -200,10 +199,10 @@ public final class TimeslotUtils {
 	public static class Workday implements Comparable<Workday> {
 
 		/** The interval of worktime, start->end. */
-		private Interval interval;
+		private final Interval interval;
 
 		/** The sum of pauses of the workday. */
-		private Duration pause;
+		private final Duration pause;
 
 		/**
 		 * Constructor.

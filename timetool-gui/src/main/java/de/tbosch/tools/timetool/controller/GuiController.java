@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dialog;
 import java.io.File;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -20,7 +21,6 @@ import javax.swing.tree.TreePath;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
-import org.joda.time.LocalDate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
@@ -352,7 +352,7 @@ public class GuiController {
 									DefaultMutableTreeNode treeNodeMonth = (DefaultMutableTreeNode) nodeMonth;
 									if (treeNodeMonth.getUserObject() instanceof Month) {
 										Month month = (Month) treeNodeMonth.getUserObject();
-										if (month.getFirstOfMonth().equals(new LocalDate().withDayOfMonth(1))) {
+										if (month.getFirstOfMonth().equals(LocalDate.now().withDayOfMonth(1))) {
 											path = path.pathByAddingChild(treeNodeMonth);
 											timeslotsTree.expandPath(path);
 										}

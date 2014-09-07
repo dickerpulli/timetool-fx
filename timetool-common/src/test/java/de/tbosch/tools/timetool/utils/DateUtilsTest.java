@@ -87,7 +87,7 @@ public class DateUtilsTest {
 	public void testGetDifferenceInMinutes() throws ParseException {
 		Date from = sdf.parse("01.01.2010 00:00:00,000");
 		Date to = sdf.parse("01.01.2010 00:00:59,999");
-		int minutes = DateUtils.getDifferenceInMinutes(from, to);
+		long minutes = DateUtils.getDifferenceInMinutes(from, to);
 		assertEquals(0, minutes);
 
 		from = sdf.parse("01.01.2010 00:00:00,000");

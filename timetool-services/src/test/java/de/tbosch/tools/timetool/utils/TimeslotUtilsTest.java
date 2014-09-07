@@ -6,12 +6,12 @@ import static org.junit.Assert.assertTrue;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import org.joda.time.Interval;
-import org.joda.time.LocalDate;
 import org.junit.Test;
 
 import de.tbosch.tools.timetool.model.Timeslot;
@@ -83,12 +83,12 @@ public class TimeslotUtilsTest {
 
 		Map<LocalDate, Map<LocalDate, List<Timeslot>>> perMonthAndDay = TimeslotUtils.getTimeslotsPerMonthAndDay(all);
 
-		assertEquals(timeslot1, perMonthAndDay.get(new LocalDate(2009, 1, 1)).get(new LocalDate(2009, 1, 1)).get(0));
-		assertEquals(timeslot2, perMonthAndDay.get(new LocalDate(2009, 1, 1)).get(new LocalDate(2009, 1, 2)).get(0));
-		assertEquals(timeslot3, perMonthAndDay.get(new LocalDate(2009, 2, 1)).get(new LocalDate(2009, 2, 1)).get(0));
-		assertEquals(timeslot4, perMonthAndDay.get(new LocalDate(2009, 2, 1)).get(new LocalDate(2009, 2, 1)).get(1));
-		assertEquals(timeslot5, perMonthAndDay.get(new LocalDate(2009, 4, 1)).get(new LocalDate(2009, 4, 1)).get(0));
-		assertEquals(timeslot6, perMonthAndDay.get(new LocalDate(2009, 4, 1)).get(new LocalDate(2009, 4, 1)).get(1));
+		assertEquals(timeslot1, perMonthAndDay.get(LocalDate.of(2009, 1, 1)).get(LocalDate.of(2009, 1, 1)).get(0));
+		assertEquals(timeslot2, perMonthAndDay.get(LocalDate.of(2009, 1, 1)).get(LocalDate.of(2009, 1, 2)).get(0));
+		assertEquals(timeslot3, perMonthAndDay.get(LocalDate.of(2009, 2, 1)).get(LocalDate.of(2009, 2, 1)).get(0));
+		assertEquals(timeslot4, perMonthAndDay.get(LocalDate.of(2009, 2, 1)).get(LocalDate.of(2009, 2, 1)).get(1));
+		assertEquals(timeslot5, perMonthAndDay.get(LocalDate.of(2009, 4, 1)).get(LocalDate.of(2009, 4, 1)).get(0));
+		assertEquals(timeslot6, perMonthAndDay.get(LocalDate.of(2009, 4, 1)).get(LocalDate.of(2009, 4, 1)).get(1));
 	}
 
 	@Test
@@ -97,8 +97,8 @@ public class TimeslotUtilsTest {
 		timeslot.setStarttime(sdf.parse("01.01.2009 12:00"));
 		timeslot.setEndtime(sdf.parse("01.01.2009 13:00"));
 		Interval interval = TimeslotUtils.toInterval(timeslot);
-		assertEquals("01-01-2009 12:00:00", interval.getStart().toString("dd-MM-yyyy HH:mm:ss"));
-		assertEquals("01-01-2009 13:00:00", interval.getEnd().toString("dd-MM-yyyy HH:mm:ss"));
+		assertEquals("01-01-2009 12:00:00", interval.getStart().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")));
+		assertEquals("01-01-2009 13:00:00", interval.getEnd().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")));
 	}
 
 	@Test
@@ -130,17 +130,17 @@ public class TimeslotUtilsTest {
 		all.add(timeslot6);
 		List<Workday> workdays = TimeslotUtils.getWorkdays(all);
 		assertEquals(4, workdays.size());
-		assertEquals("01.01.2009 12:00", workdays.get(0).getInterval().getStart().toString("dd.MM.yyyy HH:mm"));
-		assertEquals("01.01.2009 13:00", workdays.get(0).getInterval().getEnd().toString("dd.MM.yyyy HH:mm"));
+		assertEquals("01.01.2009 12:00", workdays.get(0).getInterval().getStart().format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")));
+		assertEquals("01.01.2009 13:00", workdays.get(0).getInterval().getEnd().format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")));
 		assertEquals("PT0S", workdays.get(0).getPause().toString());
-		assertEquals("02.01.2009 12:00", workdays.get(1).getInterval().getStart().toString("dd.MM.yyyy HH:mm"));
-		assertEquals("02.01.2009 14:00", workdays.get(1).getInterval().getEnd().toString("dd.MM.yyyy HH:mm"));
+		assertEquals("02.01.2009 12:00", workdays.get(1).getInterval().getStart().format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")));
+		assertEquals("02.01.2009 14:00", workdays.get(1).getInterval().getEnd().format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")));
 		assertEquals("PT0S", workdays.get(1).getPause().toString());
-		assertEquals("01.02.2009 12:00", workdays.get(2).getInterval().getStart().toString("dd.MM.yyyy HH:mm"));
-		assertEquals("01.02.2009 15:00", workdays.get(2).getInterval().getEnd().toString("dd.MM.yyyy HH:mm"));
+		assertEquals("01.02.2009 12:00", workdays.get(2).getInterval().getStart().format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")));
+		assertEquals("01.02.2009 15:00", workdays.get(2).getInterval().getEnd().format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")));
 		assertEquals("PT3600S", workdays.get(2).getPause().toString());
-		assertEquals("01.04.2009 00:00", workdays.get(3).getInterval().getStart().toString("dd.MM.yyyy HH:mm"));
-		assertEquals("01.04.2009 01:59", workdays.get(3).getInterval().getEnd().toString("dd.MM.yyyy HH:mm"));
+		assertEquals("01.04.2009 00:00", workdays.get(3).getInterval().getStart().format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")));
+		assertEquals("01.04.2009 01:59", workdays.get(3).getInterval().getEnd().format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")));
 		assertEquals("PT3480S", workdays.get(3).getPause().toString());
 	}
 }

@@ -1,12 +1,14 @@
 package de.tbosch.tools.timetool.gui.model;
 
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.joda.time.LocalDate;
-import org.joda.time.Period;
 import org.springframework.util.CollectionUtils;
 
 import de.tbosch.tools.timetool.model.Timeslot;
@@ -20,9 +22,9 @@ import de.tbosch.tools.timetool.utils.TimeslotUtils;
  */
 public class Day {
 
-	private List<Timeslot> timeslots;
+	private final List<Timeslot> timeslots;
 
-	private LocalDate day;
+	private final LocalDate day;
 
 	/**
 	 * Constructor.
@@ -35,7 +37,7 @@ public class Day {
 		}
 		Set<LocalDate> starttimeDays = new HashSet<LocalDate>();
 		for (Timeslot timeslot : timeslots) {
-			starttimeDays.add(new LocalDate(timeslot.getStarttime().getTime()));
+			starttimeDays.add(LocalDateTime.ofInstant(timeslot.getStarttime().toInstant(), ZoneId.systemDefault()).toLocalDate());
 		}
 		if (starttimeDays.size() > 1) {
 			throw new IllegalArgumentException("timeslots should be in one day");
@@ -63,8 +65,8 @@ public class Day {
 	 */
 	@Override
 	public String toString() {
-		Period sum = TimeslotUtils.getSum(timeslots);
-		String summary = DateUtils.getPeriodAsString(sum);
+		Duration sum = TimeslotUtils.getSum(timeslots);
+		String summary = DateUtils.getDurationAsString(sum);
 		Collections.sort(timeslots);
 		String theDay = DateUtils.toDateString(day);
 		return theDay + " - " + summary;

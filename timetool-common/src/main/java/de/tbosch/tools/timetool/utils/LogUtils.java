@@ -1,6 +1,6 @@
 package de.tbosch.tools.timetool.utils;
 
-import org.apache.commons.logging.Log;
+import org.slf4j.Logger;
 
 /**
  * Utility class for logging.
@@ -15,7 +15,7 @@ public final class LogUtils {
 	 * @author thomas.bosch
 	 */
 	public enum Level {
-		FATAL, ERROR, WARN, INFO, DEBUG, TRACE
+		ERROR, WARN, INFO, DEBUG, TRACE
 	}
 
 	/**
@@ -30,7 +30,6 @@ public final class LogUtils {
 	 * <ul>
 	 * <li>{@link Log#isDebugEnabled()}</li>
 	 * <li>{@link Log#isErrorEnabled()}</li>
-	 * <li>{@link Log#isFatalEnabled()}</li>
 	 * <li>{@link Log#isInfoEnabled()}</li>
 	 * <li>{@link Log#isTraceEnabled()}</li>
 	 * <li>{@link Log#isWarnEnabled()}</li>
@@ -40,7 +39,7 @@ public final class LogUtils {
 	 * @param logLevel The level to log : {@link Level}
 	 * @param log The Log itself
 	 */
-	public static void log(Object message, Level logLevel, Log log) {
+	public static void log(Object message, Level logLevel, Logger log) {
 		log(message, null, logLevel, log);
 	}
 
@@ -49,7 +48,6 @@ public final class LogUtils {
 	 * <ul>
 	 * <li>{@link Log#isDebugEnabled()}</li>
 	 * <li>{@link Log#isErrorEnabled()}</li>
-	 * <li>{@link Log#isFatalEnabled()}</li>
 	 * <li>{@link Log#isInfoEnabled()}</li>
 	 * <li>{@link Log#isTraceEnabled()}</li>
 	 * <li>{@link Log#isWarnEnabled()}</li>
@@ -60,11 +58,8 @@ public final class LogUtils {
 	 * @param logLevel The level to log : {@link Level}
 	 * @param log The Log itself
 	 */
-	public static void log(Object message, Throwable t, Level logLevel, Log log) {
+	public static void log(Object message, Throwable t, Level logLevel, Logger log) {
 		switch (logLevel) {
-		case FATAL:
-			logFatal(message, t, log);
-			break;
 		case DEBUG:
 			logDebug(message, t, log);
 			break;
@@ -86,18 +81,6 @@ public final class LogUtils {
 	}
 
 	/**
-	 * Logs a message with level FATAL and uses check if logging is enabled.<br>
-	 * 
-	 * {@link Log#isFatalEnabled()}
-	 * 
-	 * @param message The message to log
-	 * @param log The Log itself
-	 */
-	public static void logFatal(Object message, Log log) {
-		logFatal(message, null, log);
-	}
-
-	/**
 	 * Logs a message with level DEBUG and uses check if logging is enabled.<br>
 	 * 
 	 * {@link Log#isDebugEnabled()}
@@ -105,7 +88,7 @@ public final class LogUtils {
 	 * @param message The message to log
 	 * @param log The Log itself
 	 */
-	public static void logDebug(Object message, Log log) {
+	public static void logDebug(Object message, Logger log) {
 		logDebug(message, null, log);
 	}
 
@@ -117,7 +100,7 @@ public final class LogUtils {
 	 * @param message The message to log
 	 * @param log The Log itself
 	 */
-	public static void logError(Object message, Log log) {
+	public static void logError(Object message, Logger log) {
 		logError(message, null, log);
 	}
 
@@ -129,7 +112,7 @@ public final class LogUtils {
 	 * @param message The message to log
 	 * @param log The Log itself
 	 */
-	public static void logInfo(Object message, Log log) {
+	public static void logInfo(Object message, Logger log) {
 		logInfo(message, null, log);
 	}
 
@@ -141,7 +124,7 @@ public final class LogUtils {
 	 * @param message The message to log
 	 * @param log The Log itself
 	 */
-	public static void logTrace(Object message, Log log) {
+	public static void logTrace(Object message, Logger log) {
 		logTrace(message, null, log);
 	}
 
@@ -153,7 +136,7 @@ public final class LogUtils {
 	 * @param message The message to log
 	 * @param log The Log itself
 	 */
-	public static void logWarn(Object message, Log log) {
+	public static void logWarn(Object message, Logger log) {
 		logWarn(message, null, log);
 	}
 
@@ -166,9 +149,9 @@ public final class LogUtils {
 	 * @param t A Throwable to attach
 	 * @param log The Log itself
 	 */
-	public static void logDebug(Object message, Throwable t, Log log) {
+	public static void logDebug(Object message, Throwable t, Logger log) {
 		if (log.isDebugEnabled()) {
-			log.debug(message, t);
+			log.debug(message.toString(), t);
 		}
 	}
 
@@ -181,24 +164,9 @@ public final class LogUtils {
 	 * @param t A Throwable to attach
 	 * @param log The Log itself
 	 */
-	public static void logError(Object message, Throwable t, Log log) {
+	public static void logError(Object message, Throwable t, Logger log) {
 		if (log.isErrorEnabled()) {
-			log.error(message, t);
-		}
-	}
-
-	/**
-	 * Logs a message with level FATAL and uses check if logging is enabled.<br>
-	 * 
-	 * {@link Log#isFatalEnabled()}
-	 * 
-	 * @param message The message to log
-	 * @param t A Throwable to attach
-	 * @param log The Log itself
-	 */
-	public static void logFatal(Object message, Throwable t, Log log) {
-		if (log.isFatalEnabled()) {
-			log.fatal(message, t);
+			log.error(message.toString(), t);
 		}
 	}
 
@@ -211,9 +179,9 @@ public final class LogUtils {
 	 * @param t A Throwable to attach
 	 * @param log The Log itself
 	 */
-	public static void logInfo(Object message, Throwable t, Log log) {
+	public static void logInfo(Object message, Throwable t, Logger log) {
 		if (log.isInfoEnabled()) {
-			log.info(message, t);
+			log.info(message.toString(), t);
 		}
 	}
 
@@ -226,9 +194,9 @@ public final class LogUtils {
 	 * @param t A Throwable to attach
 	 * @param log The Log itself
 	 */
-	public static void logTrace(Object message, Throwable t, Log log) {
+	public static void logTrace(Object message, Throwable t, Logger log) {
 		if (log.isTraceEnabled()) {
-			log.trace(message, t);
+			log.trace(message.toString(), t);
 		}
 	}
 
@@ -241,9 +209,9 @@ public final class LogUtils {
 	 * @param t A Throwable to attach
 	 * @param log The Log itself
 	 */
-	public static void logWarn(Object message, Throwable t, Log log) {
+	public static void logWarn(Object message, Throwable t, Logger log) {
 		if (log.isWarnEnabled()) {
-			log.warn(message, t);
+			log.warn(message.toString(), t);
 		}
 	}
 

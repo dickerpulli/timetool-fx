@@ -1,17 +1,14 @@
 package de.tbosch.tools.timetool.utils;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Locale;
 
 import org.apache.commons.lang3.StringUtils;
-import org.joda.time.DateTime;
-import org.joda.time.Interval;
-import org.joda.time.LocalDate;
-import org.joda.time.LocalDateTime;
-import org.joda.time.Period;
-import org.joda.time.PeriodType;
 
 import de.tbosch.tools.timetool.utils.context.MessageHelper;
 
@@ -36,13 +33,13 @@ public final class DateUtils {
 	 * @return The rounded value
 	 */
 	public static Date roundUpToSeconds(Date date) {
-		LocalDateTime localDateTime = new LocalDateTime(date.getTime());
-		int millis = localDateTime.getMillisOfSecond();
-		if (millis > 0) {
-			localDateTime = localDateTime.minusMillis(millis);
+		LocalDateTime localDateTime = LocalDateTime.ofInstant(date.toInstant(), ZoneId.systemDefault());
+		int nanos = localDateTime.getNano();
+		if (nanos > 0) {
+			localDateTime = localDateTime.minusNanos(nanos);
 			localDateTime = localDateTime.plusSeconds(1);
 		}
-		return localDateTime.toDateTime().toDate();
+		return Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant());
 	}
 
 	/**
@@ -71,7 +68,9 @@ public final class DateUtils {
 	 * @return The text
 	 */
 	public static String getDifferenceAsString(Date starttime, Date endtime, boolean deleteZeros, boolean detailed) {
-		return getPeriodAsString(new Interval(starttime.getTime(), endtime.getTime()).toDuration().toPeriod(), deleteZeros, detailed);
+		return getDurationAsString(
+				Duration.between(LocalDateTime.ofInstant(starttime.toInstant(), ZoneId.systemDefault()),
+						LocalDateTime.ofInstant(endtime.toInstant(), ZoneId.systemDefault())), deleteZeros, detailed);
 	}
 
 	/**
@@ -82,8 +81,8 @@ public final class DateUtils {
 	 * @param deleteZeros Whether to delete leading zeros
 	 * @return The text
 	 */
-	public static String getPeriodAsString(Period period, boolean deleteZeros) {
-		return getPeriodAsString(period, deleteZeros, false);
+	public static String getDurationAsString(Duration period, boolean deleteZeros) {
+		return getDurationAsString(period, deleteZeros, false);
 	}
 
 	/**
@@ -94,8 +93,8 @@ public final class DateUtils {
 	 * @param period A period
 	 * @return The text
 	 */
-	public static String getPeriodAsString(Period period) {
-		return getPeriodAsString(period, true);
+	public static String getDurationAsString(Duration duration) {
+		return getDurationAsString(duration, true);
 	}
 
 	/**
@@ -103,18 +102,17 @@ public final class DateUtils {
 	 * It will look like: <code>1d 2h 12m 56s</code> If the difference is smaller than 1 second,the number of milliseconds will be shown like:
 	 * <code>568 millis</code>. The precision is days. The period will be normalized.
 	 * 
-	 * @param period A period
+	 * @param duration A period
 	 * @param deleteZeros Whether to delete leading zeros
 	 * @param detailed Lists also seconds and milliseconds
 	 * @return The text
 	 */
-	public static String getPeriodAsString(Period period, boolean deleteZeros, boolean detailed) {
-		period = period.normalizedStandard();
-		long millis = period.getMillis();
-		long seconds = period.getSeconds();
-		long minutes = period.getMinutes();
-		long hours = period.getHours();
-		long days = period.getDays();
+	public static String getDurationAsString(Duration duration, boolean deleteZeros, boolean detailed) {
+		long millis = duration.getNano() / 1000000;
+		long seconds = duration.getSeconds();
+		long minutes = duration.getSeconds() / 60;
+		long hours = duration.getSeconds() / (60 * 60);
+		long days = duration.getSeconds() / (60 * 60 * 24);
 		if (deleteZeros) {
 			String text = "";
 			if (days > 0) {
@@ -166,7 +164,7 @@ public final class DateUtils {
 	 * @return The name, i.e. 1 = January
 	 */
 	public static String getNameOfMonthAndYear(Date date) {
-		return getNameOfMonthAndYear(new LocalDate(date.getTime()));
+		return getNameOfMonthAndYear(LocalDate.from(date.toInstant()));
 	}
 
 	/**
@@ -176,7 +174,7 @@ public final class DateUtils {
 	 * @return The name, i.e. 1 = January
 	 */
 	public static String getNameOfMonthAndYear(LocalDate date) {
-		int month = date.getMonthOfYear();
+		int month = date.getMonthValue();
 		int year = date.getYear();
 		return getNameOfMonth(month) + " " + year;
 	}
@@ -188,7 +186,7 @@ public final class DateUtils {
 	 * @return The name, i.e. 1 = January
 	 */
 	public static String getNameOfMonth(Date date) {
-		int month = new LocalDate(date).getMonthOfYear();
+		int month = LocalDate.from(date.toInstant()).getMonthValue();
 		return getNameOfMonth(month);
 	}
 
@@ -199,9 +197,8 @@ public final class DateUtils {
 	 * @return The name, i.e. 1 = January
 	 */
 	public static String getNameOfMonth(int month) {
-		DateFormat df = new SimpleDateFormat("MMMM", Locale.getDefault());
-		Date dateMonth = new LocalDate(1, month, 1).toDateMidnight().toDate();
-		return df.format(dateMonth);
+		LocalDateTime dateMonth = LocalDate.of(1, month, 1).atStartOfDay();
+		return dateMonth.format(DateTimeFormatter.ofPattern("MMMM", Locale.getDefault()));
 	}
 
 	/**
@@ -211,10 +208,10 @@ public final class DateUtils {
 	 * @param to To date
 	 * @return The count of minutes
 	 */
-	public static int getDifferenceInMinutes(Date from, Date to) {
-		Interval interval = new Interval(from.getTime(), to.getTime());
-		Period period = interval.toPeriod().normalizedStandard(PeriodType.minutes());
-		return period.getMinutes();
+	public static long getDifferenceInMinutes(Date from, Date to) {
+		Duration duration = Duration.between(LocalDateTime.ofInstant(from.toInstant(), ZoneId.systemDefault()),
+				LocalDateTime.ofInstant(to.toInstant(), ZoneId.systemDefault()));
+		return duration.getSeconds() / 60;
 	}
 
 	/**
@@ -224,7 +221,7 @@ public final class DateUtils {
 	 * @return The text representation
 	 */
 	public static String toDateString(Date date) {
-		return toDateString(new LocalDate(date.getTime()));
+		return toDateString(LocalDate.from(date.toInstant()));
 	}
 
 	/**
@@ -234,8 +231,7 @@ public final class DateUtils {
 	 * @return The text representation
 	 */
 	public static String toDateString(LocalDate date) {
-		SimpleDateFormat sdf = new SimpleDateFormat(MessageHelper.getMessage("format.date"));
-		return sdf.format(date.toDateMidnight().toDate());
+		return date.atStartOfDay().format(DateTimeFormatter.ofPattern(MessageHelper.getMessage("format.date")));
 	}
 
 	/**
@@ -245,7 +241,7 @@ public final class DateUtils {
 	 * @return The text representation
 	 */
 	public static String toDateTimeString(Date date) {
-		return toDateTimeString(new LocalDate(date.getTime()));
+		return toDateTimeString(LocalDate.from(date.toInstant()));
 	}
 
 	/**
@@ -255,8 +251,7 @@ public final class DateUtils {
 	 * @return The text representation
 	 */
 	public static String toDateTimeString(LocalDate date) {
-		SimpleDateFormat sdf = new SimpleDateFormat(MessageHelper.getMessage("format.timestamp"));
-		return sdf.format(date.toDateMidnight().toDate());
+		return date.atStartOfDay().format(DateTimeFormatter.ofPattern(MessageHelper.getMessage("format.timestamp")));
 	}
 
 	/**
@@ -266,7 +261,7 @@ public final class DateUtils {
 	 * @return The text representation
 	 */
 	public static String toTimeString(Date date) {
-		return toTimeString(new DateTime(date.getTime()));
+		return toTimeString(LocalDateTime.from(date.toInstant()));
 	}
 
 	/**
@@ -275,9 +270,8 @@ public final class DateUtils {
 	 * @param date The date
 	 * @return The text representation
 	 */
-	public static String toTimeString(DateTime date) {
-		SimpleDateFormat sdf = new SimpleDateFormat(MessageHelper.getMessage("format.time"));
-		return sdf.format(date.toDate());
+	public static String toTimeString(LocalDateTime date) {
+		return date.format(DateTimeFormatter.ofPattern(MessageHelper.getMessage("format.time")));
 	}
 
 }

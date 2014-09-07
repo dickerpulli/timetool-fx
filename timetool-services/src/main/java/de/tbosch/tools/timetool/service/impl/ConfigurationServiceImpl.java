@@ -5,8 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.apache.commons.lang3.Validate;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,7 +27,7 @@ import de.tbosch.tools.timetool.utils.LogUtils;
 public class ConfigurationServiceImpl implements ConfigurationService {
 
 	/** The logger. */
-	private static final Log LOG = LogFactory.getLog(ConfigurationServiceImpl.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ConfigurationServiceImpl.class);
 
 	/** Delimiter for the list value. */
 	private static final String DELIMITER = "@#;#@";
@@ -42,7 +42,7 @@ public class ConfigurationServiceImpl implements ConfigurationService {
 	public String getValue(Key key) {
 		Configuration configuration = configurationRepository.findByKey(key);
 		if (configuration == null || configuration.getValue() == null) {
-			LogUtils.logWarn("Configuration for key " + key + " not found", LOG);
+			LogUtils.logWarn("Configuration for key " + key + " not found", LOGGER);
 			return null;
 		}
 		return configuration.getValue();
@@ -61,11 +61,11 @@ public class ConfigurationServiceImpl implements ConfigurationService {
 			configuration.setKey(key);
 			configuration.setValue(value);
 			configurationRepository.save(configuration);
-			LogUtils.logInfo("New configuration for key " + key + " was created: " + value, LOG);
+			LogUtils.logInfo("New configuration for key " + key + " was created: " + value, LOGGER);
 		} else {
 			configuration.setValue(value);
 			configurationRepository.save(configuration);
-			LogUtils.logDebug("New configuration for key " + key + " is now: " + value, LOG);
+			LogUtils.logDebug("New configuration for key " + key + " is now: " + value, LOGGER);
 		}
 	}
 
@@ -76,7 +76,7 @@ public class ConfigurationServiceImpl implements ConfigurationService {
 	public List<String> getValueList(Key key) {
 		Configuration configuration = configurationRepository.findByKey(key);
 		if (configuration == null) {
-			LogUtils.logWarn("Configuration for key " + key + " not found", LOG);
+			LogUtils.logWarn("Configuration for key " + key + " not found", LOGGER);
 			return null;
 		}
 		String valuesString = configuration.getValue();
@@ -102,11 +102,11 @@ public class ConfigurationServiceImpl implements ConfigurationService {
 			configuration.setKey(key);
 			configuration.setValue(valuesString);
 			configurationRepository.save(configuration);
-			LogUtils.logInfo("New configuration for key " + key + " was created: " + valuesString, LOG);
+			LogUtils.logInfo("New configuration for key " + key + " was created: " + valuesString, LOGGER);
 		} else {
 			configuration.setValue(valuesString);
 			configurationRepository.save(configuration);
-			LogUtils.logDebug("New configuration for key " + key + " is now: " + valuesString, LOG);
+			LogUtils.logDebug("New configuration for key " + key + " is now: " + valuesString, LOGGER);
 		}
 	}
 
@@ -121,7 +121,7 @@ public class ConfigurationServiceImpl implements ConfigurationService {
 		List<String> values = getValueList(key);
 		if (values == null) {
 			values = new ArrayList<String>();
-			LogUtils.logDebug("Adding element to non existing list, create new list for key " + key, LOG);
+			LogUtils.logDebug("Adding element to non existing list, create new list for key " + key, LOGGER);
 		}
 		// Add the new value to the old list and save it
 		// Only insert new value if it not already exists in the list

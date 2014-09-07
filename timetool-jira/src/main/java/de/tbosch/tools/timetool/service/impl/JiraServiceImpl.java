@@ -6,14 +6,14 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.rmi.RemoteException;
 import java.text.DecimalFormat;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.joda.time.DateTime;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.atlassian.jira.rest.client.JiraRestClient;
@@ -41,7 +41,7 @@ import de.tbosch.tools.timetool.utils.LogUtils;
 @Service
 public class JiraServiceImpl implements JiraService {
 
-	private static final Log LOG = LogFactory.getLog(JiraServiceImpl.class);
+	private static final Logger LOG = LoggerFactory.getLogger(JiraServiceImpl.class);
 
 	private static final Map<String, JiraSession> CACHE = new HashMap<String, JiraServiceImpl.JiraSession>();
 
@@ -49,7 +49,7 @@ public class JiraServiceImpl implements JiraService {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public WorklogInput addWorklog(String name, DateTime startDate, int minutesSpent, String comment, JiraSettings settings) {
+	public WorklogInput addWorklog(String name, LocalDateTime startDate, long minutesSpent, String comment, JiraSettings settings) {
 		try {
 			// Establisch remote connection to Jira
 			URL url = new URL(settings.getUrl());
@@ -60,8 +60,8 @@ public class JiraServiceImpl implements JiraService {
 			// Create new worklog item to add to Jira
 			Issue issue = jiraClient.getIssueClient().getIssue(name, pm);
 			URI worklogUri = issue.getWorklogUri();
-			WorklogInput worklog = new WorklogInputBuilder(worklogUri).setStartDate(startDate).setComment(comment).setMinutesSpent(minutesSpent)
-					.setAdjustEstimateAuto().build();
+			WorklogInput worklog = new WorklogInputBuilder(worklogUri).setStartDate(new org.joda.time.DateTime(startDate.getChronology())).setComment(comment)
+					.setMinutesSpent((int) minutesSpent).setAdjustEstimateAuto().build();
 
 			// Add it and return the result
 			jiraClient.getIssueClient().addWorklog(worklogUri, worklog, pm);
@@ -202,7 +202,7 @@ public class JiraServiceImpl implements JiraService {
 	 */
 	private static class JiraSession {
 
-		private static final Log LOG = LogFactory.getLog(JiraSession.class);
+		private static final Logger LOGGER = LoggerFactory.getLogger(JiraSession.class);
 
 		private JiraRestClient jiraRestClient;
 
@@ -223,10 +223,10 @@ public class JiraServiceImpl implements JiraService {
 		 * @throws URISyntaxException
 		 */
 		public void connect(URL baseUrl, String userName, String password) throws URISyntaxException {
-			LogUtils.logInfo("\tConnnecting via REST as : " + userName, LOG);
+			LogUtils.logInfo("\tConnnecting via REST as : " + userName, LOGGER);
 			URI jiraServerUri = baseUrl.toURI();
 			jiraRestClient = new FixedJerseyJiraRestClient(jiraServerUri, new BasicHttpAuthenticationHandler(userName, password));
-			LogUtils.logInfo("\tConnected", LOG);
+			LogUtils.logInfo("\tConnected", LOGGER);
 		}
 
 		/**

@@ -21,8 +21,8 @@ import jxl.write.WriteException;
 import jxl.write.biff.RowsExceededException;
 
 import org.apache.commons.lang3.Validate;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import de.tbosch.tools.timetool.exception.UtilsBusinessException;
 import de.tbosch.tools.timetool.utils.LogUtils;
@@ -35,7 +35,7 @@ import de.tbosch.tools.timetool.utils.LogUtils;
 public class ExcelWorker {
 
 	/** The logger. */
-	private static final Log LOG = LogFactory.getLog(ExcelWorker.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ExcelWorker.class);
 
 	/** The file to read from. */
 	private final File inputFile;
@@ -79,10 +79,10 @@ public class ExcelWorker {
 			readableWorkbook = Workbook.getWorkbook(inputFile);
 			if (outputFile != null) {
 				writableWorkbook = Workbook.createWorkbook(outputFile, readableWorkbook, getWorkbookSettings());
-				LogUtils.logInfo("The workbook inside the new worker is readable and writeable", LOG);
-				LogUtils.logInfo("A workbook for writing was created in file " + outputFile.getAbsolutePath(), LOG);
+				LogUtils.logInfo("The workbook inside the new worker is readable and writeable", LOGGER);
+				LogUtils.logInfo("A workbook for writing was created in file " + outputFile.getAbsolutePath(), LOGGER);
 			} else {
-				LogUtils.logInfo("The workbook inside the new worker is just readable", LOG);
+				LogUtils.logInfo("The workbook inside the new worker is just readable", LOGGER);
 			}
 		} catch (BiffException e) {
 			throw new UtilsBusinessException(UtilsBusinessException.EXCEL_ERROR, e);
@@ -98,7 +98,7 @@ public class ExcelWorker {
 		try {
 			writableWorkbook.write();
 			writableWorkbook.close();
-			LogUtils.logInfo("Closing workbook was successful", LOG);
+			LogUtils.logInfo("Closing workbook was successful", LOGGER);
 		} catch (IOException e) {
 			throw new UtilsBusinessException(UtilsBusinessException.IO_ERROR, outputFile.getName() + ", " + inputFile.getName(), e);
 		} catch (WriteException e) {
@@ -130,7 +130,7 @@ public class ExcelWorker {
 
 			label.setCellFormat(format);
 			sheet.addCell(label);
-			LogUtils.logDebug("Written value " + value + " to row " + row + " and column " + column + " on sheet " + sheetIndex, LOG);
+			LogUtils.logDebug("Written value " + value + " to row " + row + " and column " + column + " on sheet " + sheetIndex, LOGGER);
 		} catch (RowsExceededException e) {
 			throw new UtilsBusinessException(UtilsBusinessException.EXCEL_ERROR, e);
 		} catch (WriteException e) {

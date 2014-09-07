@@ -1,15 +1,15 @@
 package de.tbosch.tools.timetool.utils.excel;
 
 import java.io.File;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.joda.time.DateTime;
-import org.joda.time.LocalDate;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.DateTimeFormatterBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import de.tbosch.tools.timetool.exception.UtilsBusinessException;
 import de.tbosch.tools.timetool.model.Timeslot;
@@ -24,7 +24,7 @@ import de.tbosch.tools.timetool.utils.TimeslotUtils.Workday;
  */
 public class TimeslotExcelWorker extends ExcelWorker {
 
-	private static final Log LOG = LogFactory.getLog(TimeslotExcelWorker.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(TimeslotExcelWorker.class);
 
 	private static final int MAX_DAYS_IN_MONTH = 31;
 
@@ -52,25 +52,25 @@ public class TimeslotExcelWorker extends ExcelWorker {
 		List<Workday> workdays = TimeslotUtils.getWorkdays(timeslots);
 		for (int row = rowBegin; row < rowBegin + MAX_DAYS_IN_MONTH; row++) {
 			String dateString = read(sheet, row, columnDate);
-			DateTimeFormatter formatter1 = new DateTimeFormatterBuilder().appendPattern("dd/MM/yyyy").toFormatter();
-			DateTimeFormatter formatter2 = new DateTimeFormatterBuilder().appendPattern("dd.MM.yyyy").toFormatter();
+			DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+			DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 			List<DateTimeFormatter> formatters = Arrays.asList(formatter1, formatter2);
 			boolean patternMatches = false;
 			for (DateTimeFormatter formatter : formatters) {
 				try {
-					LocalDate date = formatter.parseDateTime(dateString).toLocalDate();
+					LocalDate date = LocalDate.from(formatter.parse(dateString));
 					patternMatches = true;
 					int found = 0;
 					for (Workday workday : workdays) {
-						DateTime starttime = workday.getInterval().getStart();
-						DateTime endtime = workday.getInterval().getEnd();
-						String starttimeText = starttime.toString("HH:mm");
-						String endtimeText = endtime.toString("HH:mm");
+						LocalDateTime starttime = workday.getInterval().getStart();
+						LocalDateTime endtime = workday.getInterval().getEnd();
+						String starttimeText = starttime.format(DateTimeFormatter.ofPattern("HH:mm"));
+						String endtimeText = endtime.format(DateTimeFormatter.ofPattern("HH:mm"));
 						LocalDate starttimeDay = starttime.toLocalDate();
 						LocalDate endtimeDay = endtime.toLocalDate();
-						long pauseMillis = workday.getPause().getMillis();
-						DateTime pauseDateTime = new DateTime(starttimeDay.toDateTimeAtStartOfDay());
-						String pause = pauseDateTime.plus(pauseMillis).toString("HH:mm");
+						long pauseNanos = workday.getPause().getNano();
+						LocalDateTime pauseDateTime = LocalDateTime.from(starttimeDay.atStartOfDay());
+						String pause = pauseDateTime.plusNanos(pauseNanos).format(DateTimeFormatter.ofPattern("HH:mm"));
 						if (!starttimeDay.equals(endtimeDay)) {
 							throw new UtilsBusinessException(UtilsBusinessException.NOT_SAME_DAY, starttimeDay, endtimeDay);
 						}
@@ -85,10 +85,10 @@ public class TimeslotExcelWorker extends ExcelWorker {
 						}
 					}
 					if (found == 0) {
-						LogUtils.logWarn("No timeslot found in the list for " + date, LOG);
+						LogUtils.logWarn("No timeslot found in the list for " + date, LOGGER);
 					}
-				} catch (IllegalArgumentException e) {
-					LogUtils.logInfo("Pattern not matching, try another date pattern ...", LOG);
+				} catch (DateTimeParseException e) {
+					LogUtils.logInfo("Pattern not matching, try another date pattern ...", LOGGER);
 				}
 			}
 			if (!patternMatches) {

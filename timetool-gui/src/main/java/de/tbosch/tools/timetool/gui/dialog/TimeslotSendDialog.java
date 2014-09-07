@@ -170,7 +170,7 @@ public class TimeslotSendDialog extends JDialog {
 		constraints = new GridBagConstraints();
 		Collections.sort(timeslots);
 		String start = DateUtils.toDateString(timeslots.get(0).getStarttime());
-		String time = DateUtils.getPeriodAsString(TimeslotUtils.getSum(timeslots));
+		String time = DateUtils.getDurationAsString(TimeslotUtils.getSum(timeslots));
 		JLabel labelTimeString = new JLabel(start + " : " + time);
 		constraints.insets = new Insets(5, 5, 5, 5);
 		constraints.gridx = 1;

@@ -3,8 +3,8 @@ package de.tbosch.tools.timetool.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,7 +24,7 @@ import de.tbosch.tools.timetool.utils.LogUtils;
 public class CustomerServiceImpl implements CustomerService {
 
 	/** The logger. */
-	private static final Log LOG = LogFactory.getLog(CustomerServiceImpl.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(CustomerServiceImpl.class);
 
 	@Autowired
 	private CustomerRepository customerRepository;
@@ -63,7 +63,7 @@ public class CustomerServiceImpl implements CustomerService {
 	 */
 	@Override
 	public long createCustomer(String name) {
-		LogUtils.logInfo("Create a new customer with name '" + name + "'", LOG);
+		LogUtils.logInfo("Create a new customer with name '" + name + "'", LOGGER);
 		Customer customer = new Customer();
 		customer.setName(name);
 		return customerRepository.save(customer).getId();
@@ -75,7 +75,7 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public void deleteCustomer(Customer customer) {
 		Customer customerEntity = customerRepository.findOne(customer.getId());
-		LogUtils.logInfo("Delete customer with name '" + customerEntity.getName() + "'", LOG);
+		LogUtils.logInfo("Delete customer with name '" + customerEntity.getName() + "'", LOGGER);
 		customerRepository.delete(customerEntity);
 	}
 
@@ -84,7 +84,7 @@ public class CustomerServiceImpl implements CustomerService {
 	 */
 	@Override
 	public void saveCustomer(long id, String name) {
-		LogUtils.logInfo("Save customer with new name '" + name + "'", LOG);
+		LogUtils.logInfo("Save customer with new name '" + name + "'", LOGGER);
 		Customer customer = customerRepository.findOne(id);
 		customer.setName(name);
 		customerRepository.save(customer);
