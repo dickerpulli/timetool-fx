@@ -4,9 +4,9 @@ public class JiraBusinessException extends AbstractBusinessException {
 
 	private static final long serialVersionUID = 1L;
 
-	public static final String URL_MALFORMED = "de.tbosch.tools.service.url_incorrect";
+	public static final String URL_MALFORMED = "de.tbosch.tools.service.jira.url_incorrect";
 
-	public static final String CONNCETION_FAILURE = "de.tbosch.tools.service.connection_error";
+	public static final String CONNCETION_FAILURE = "de.tbosch.tools.service.jira.connection_error";
 
 	/**
 	 * @see AbstractBusinessException#AbstractBusinessException()

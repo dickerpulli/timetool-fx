@@ -58,7 +58,7 @@ public abstract class AbstractBusinessException extends RuntimeException {
 	public String getMessage() {
 		String message = super.getMessage();
 		ResourceBundleMessageSource bundle = new ResourceBundleMessageSource();
-		bundle.setBasenames("exceptions-gui", "exceptions-services");
+		bundle.setBasenames("exceptions-gui", "exceptions-services", "exceptions-jira");
 		if (bundle != null) {
 			// try to get translated message from resource bundle and fill in the message parameters
 			message = bundle.getMessage(message, params, Locale.getDefault());
