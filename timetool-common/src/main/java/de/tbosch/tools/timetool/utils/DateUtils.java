@@ -164,7 +164,7 @@ public final class DateUtils {
 	 * @return The name, i.e. 1 = January
 	 */
 	public static String getNameOfMonthAndYear(Date date) {
-		return getNameOfMonthAndYear(LocalDate.from(date.toInstant()));
+		return getNameOfMonthAndYear(LocalDateTime.ofInstant(date.toInstant(), ZoneId.systemDefault()).toLocalDate());
 	}
 
 	/**
@@ -186,7 +186,7 @@ public final class DateUtils {
 	 * @return The name, i.e. 1 = January
 	 */
 	public static String getNameOfMonth(Date date) {
-		int month = LocalDate.from(date.toInstant()).getMonthValue();
+		int month = LocalDateTime.ofInstant(date.toInstant(), ZoneId.systemDefault()).toLocalDate().getMonthValue();
 		return getNameOfMonth(month);
 	}
 
@@ -221,7 +221,7 @@ public final class DateUtils {
 	 * @return The text representation
 	 */
 	public static String toDateString(Date date) {
-		return toDateString(LocalDate.from(date.toInstant()));
+		return toDateString(LocalDateTime.ofInstant(date.toInstant(), ZoneId.systemDefault()).toLocalDate());
 	}
 
 	/**
@@ -241,7 +241,7 @@ public final class DateUtils {
 	 * @return The text representation
 	 */
 	public static String toDateTimeString(Date date) {
-		return toDateTimeString(LocalDate.from(date.toInstant()));
+		return toDateTimeString(LocalDateTime.ofInstant(date.toInstant(), ZoneId.systemDefault()).toLocalDate());
 	}
 
 	/**
@@ -261,7 +261,7 @@ public final class DateUtils {
 	 * @return The text representation
 	 */
 	public static String toTimeString(Date date) {
-		return toTimeString(LocalDateTime.from(date.toInstant()));
+		return toTimeString(LocalDateTime.ofInstant(date.toInstant(), ZoneId.systemDefault()));
 	}
 
 	/**
