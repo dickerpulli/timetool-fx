@@ -1,8 +1,8 @@
 package de.tbosch.tools.timetool.exception;
 
-import java.text.MessageFormat;
 import java.util.Locale;
-import java.util.ResourceBundle;
+
+import org.springframework.context.support.ResourceBundleMessageSource;
 
 /**
  * Exception to signal business problems.
@@ -12,8 +12,6 @@ import java.util.ResourceBundle;
 public abstract class AbstractBusinessException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
-
-	private static final String RESOURCE_BUNDLE = "exceptions";
 
 	private Object[] params;
 
@@ -59,11 +57,11 @@ public abstract class AbstractBusinessException extends RuntimeException {
 	@Override
 	public String getMessage() {
 		String message = super.getMessage();
-		ResourceBundle bundle = ResourceBundle.getBundle(RESOURCE_BUNDLE, Locale.getDefault());
+		ResourceBundleMessageSource bundle = new ResourceBundleMessageSource();
+		bundle.setBasenames("exceptions-gui", "exceptions-services");
 		if (bundle != null) {
 			// try to get translated message from resource bundle and fill in the message parameters
-			message = bundle.getString(message);
-			message = MessageFormat.format(message, params);
+			message = bundle.getMessage(message, params, Locale.getDefault());
 		}
 		return message;
 	}
