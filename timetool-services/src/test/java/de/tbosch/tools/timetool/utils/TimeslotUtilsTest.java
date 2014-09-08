@@ -138,9 +138,9 @@ public class TimeslotUtilsTest {
 		assertEquals("PT0S", workdays.get(1).getPause().toString());
 		assertEquals("01.02.2009 12:00", workdays.get(2).getInterval().getStart().format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")));
 		assertEquals("01.02.2009 15:00", workdays.get(2).getInterval().getEnd().format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")));
-		assertEquals("PT3600S", workdays.get(2).getPause().toString());
+		assertEquals("PT1H", workdays.get(2).getPause().toString());
 		assertEquals("01.04.2009 00:00", workdays.get(3).getInterval().getStart().format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")));
 		assertEquals("01.04.2009 01:59", workdays.get(3).getInterval().getEnd().format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")));
-		assertEquals("PT3480S", workdays.get(3).getPause().toString());
+		assertEquals("PT58M", workdays.get(3).getPause().toString());
 	}
 }

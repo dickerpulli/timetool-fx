@@ -74,6 +74,11 @@ public class DateUtilsTest {
 		date2 = sdf.parse("01.01.2009 08:59:59,000");
 		diff = DateUtils.getDifferenceAsString(date1, date2, true, false);
 		assertEquals("8h 59m", diff);
+
+		date1 = sdf.parse("01.01.2009 00:00:00,000");
+		date2 = sdf.parse("01.01.2009 00:00:00,111");
+		diff = DateUtils.getDifferenceAsString(date1, date2, true, true);
+		assertEquals("111 millis", diff);
 	}
 
 	@Test

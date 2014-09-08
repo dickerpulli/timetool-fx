@@ -99,7 +99,7 @@ public final class DateUtils {
 
 	/**
 	 * Return the Period as formatted text.<br/>
-	 * It will look like: <code>1d 2h 12m 56s</code> If the difference is smaller than 1 second,the number of milliseconds will be shown like:
+	 * It will look like: <code>1d 2h 12m 56s</code> If the difference is smaller than 1 second, the number of milliseconds will be shown like:
 	 * <code>568 millis</code>. The precision is days. The period will be normalized.
 	 * 
 	 * @param duration A period
@@ -108,11 +108,11 @@ public final class DateUtils {
 	 * @return The text
 	 */
 	public static String getDurationAsString(Duration duration, boolean deleteZeros, boolean detailed) {
-		long millis = duration.getNano() / 1000000;
-		long seconds = duration.getSeconds();
-		long minutes = duration.getSeconds() / 60;
-		long hours = duration.getSeconds() / (60 * 60);
 		long days = duration.getSeconds() / (60 * 60 * 24);
+		long hours = duration.getSeconds() % (60 * 60 * 24) / (60 * 60);
+		long minutes = duration.getSeconds() % (60 * 60) / 60;
+		long seconds = duration.getSeconds() % 60;
+		long millis = duration.getNano() / 1000000;
 		if (deleteZeros) {
 			String text = "";
 			if (days > 0) {
